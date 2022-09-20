@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 const FeatureList = [
@@ -15,8 +16,7 @@ const FeatureList = [
     title: 'Dynamic Weather',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Together with <Link to="https://acstuff.ru/patch/">Custom Shaders Patch</Link> AssettoServer delivers dynamic weather, including smooth weather transitions and rain.
       </>
     ),
   },

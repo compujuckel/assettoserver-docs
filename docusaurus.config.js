@@ -37,14 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/compujuckel/assettoserver-docs/blob/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -108,7 +101,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} AssettoServer. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} AssettoServer. Built with Docusaurus.<br/><a href="/impressum" style="--ifm-link-color: --ifm-footer-color">Impressum</a>`,
       },
       prism: {
         theme: lightCodeTheme,
