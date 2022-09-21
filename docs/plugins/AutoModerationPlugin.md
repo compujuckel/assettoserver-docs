@@ -13,6 +13,9 @@ Admins are exempt from these rules.
 
 When `EnableClientMessages` is enabled, wrong way / no parking / no lights signs will be shown to the player.  
 Included in the `Flags` folder are Japanese-style signs. You can replace these with custom signs.
+## Demo
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FojgcDgF-Iw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`

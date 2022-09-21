@@ -1,5 +1,6 @@
 ---
 title: Server Details
+description: Important info regarding Server Details
 ---
 
 Do not enable "Provide extra details about the server, such as links to extra content, assists or description" in Content Manager.

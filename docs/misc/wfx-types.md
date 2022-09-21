@@ -1,5 +1,6 @@
 ---
 title: WeatherFX Types
+description: List of all CSP WeatherFX types
 ---
 
 |Name|ID|

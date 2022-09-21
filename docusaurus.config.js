@@ -14,6 +14,10 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
+  clientModules: [
+    require.resolve('./atob.js'),
+  ],
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'compujuckel', // Usually your GitHub org/user name.
