@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Introduction
 
@@ -13,19 +15,31 @@ This is a fork of https://github.com/Niewiarowski/AssettoServer.
 
 ## Installation
 
-### Windows
-* Install the ASP.NET 6 Runtime (select "Hosting Bundle"): https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime
-* Download `assetto-server-win-x64.zip` from the [latest stable release](https://github.com/compujuckel/AssettoServer/releases/latest) and extract it whereever you want.  
-  **DO NOT EXTRACT TO YOUR ASSETTO CORSA FOLDER.** AC and AssettoServer use different versions of the Steam SDK that will conflict with each other.
-  If you still feel the need to extract to your AC folder delete the steam_api64.dll from the server first, but this will cause Steam Auth to be broken.
+<Tabs>
+<TabItem value="windows" label="Windows" default>
 
-### Linux
-* Follow the ASP.NET 6 Runtime installation instructions for your distro: https://docs.microsoft.com/en-us/dotnet/core/install/linux
-* Download `assetto-server-linux-x64.tar.gz` from the [latest stable release](https://github.com/compujuckel/AssettoServer/releases/latest) and extract it whereever you want.
+  * Install the [ASP.NET 6 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0/runtime) (select "Hosting Bundle")
+  * Download `assetto-server-win-x64.zip` from the [latest stable release](https://github.com/compujuckel/AssettoServer/releases/latest) and extract it wherever you want.  
+
+  :::caution DO NOT EXTRACT TO YOUR ASSETTO CORSA FOLDER!
+
+    AC and AssettoServer use different versions of the Steam SDK that will conflict with each other.
+    If you still feel the need to extract to your AC folder delete the steam_api64.dll from the server first, but this will cause Steam Auth to be broken.
+  
+  :::
+
+</TabItem>
+<TabItem value="linux" label="Linux">
+
+  * Follow the [ASP.NET 6 Runtime installation instructions for your distro](https://docs.microsoft.com/en-us/dotnet/core/install/linux)
+  * Download `assetto-server-linux-x64.tar.gz` from the [latest stable release](https://github.com/compujuckel/AssettoServer/releases/latest) and extract it wherever you want.
+
+</TabItem>
+</Tabs>
 
 ## Usage
 
-### Through Content Manager (AssettoServer 0.0.44 or later)
+### Through Content Manager (full)
 
 * Open your AC server folder in Explorer, e.g. `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\server`
 * Rename `acServer.exe` to something else
@@ -62,9 +76,13 @@ CSP Discord: [https://discord.gg/KAbXE5Y](https://discord.gg/KAbXE5Y)
 
 ### Logging in as administrator via SteamID
 
-It is possible to specify the SteamIDs of players that should be administrator on the server.
+To automatically login as admin enter your SteamID in `admins.txt` in the server folder.
 
-**Do not use this feature with Steam Auth disabled! Someone might be able to gain admin rights with SteamID spoofing.**
+:::caution
+
+Do not use this feature with Steam Auth disabled! Someone might be able to gain admin rights with SteamID spoofing.
+
+:::
 
 ### AI Traffic
 
@@ -78,6 +96,7 @@ MODEL=ktyu_c8_lav_s1
 SKIN=04_gunmetal_grey/ADAn
 BALLAST=0
 RESTRICTOR=0
+// highlight-next-line
 AI=auto
 ```
 
@@ -88,14 +107,20 @@ Possible values for the `AI` parameter are
 
 When using `AI=auto` slots it is highly recommended to specify a `MaxPlayerCount` in `extra_cfg.yml` to make sure there is always a minimum amount of AI cars available.
 
+:::note
+
+Admins can always join on AI slots.
+
+:::
 
 ### Dynamic Weather
 
 The server supports CSPs WeatherFX v1 which allows dynamic weather, smooth weather transitions and RainFX. CSP 0.1.76+ is required for this feature.
 
-Two plugins are included that utilize dynamic weather:
-* `LiveWeatherPlugin` for getting realtime weather from openweathermap.org
-* `VotingWeatherPlugin` for letting players vote for weather changes
+Three plugins are included that utilize dynamic weather:
+* [LiveWeatherPlugin](./plugins/LiveWeatherPlugin) for getting realtime weather from openweathermap.org
+* [RandomWeatherPlugin](./plugins/RandomWeatherPlugin) for random weather
+* [VotingWeatherPlugin](./plugins/VotingWeatherPlugin.md) for letting players vote for weather changes
 
 ### Anti AFK system
 
@@ -111,44 +136,44 @@ The API is still under development and might change in the future.
 
 ## Getting help
 If you have trouble setting up a server feel free to visit the #server-troubleshooting channel on our [Discord](https://discord.gg/uXEXRcSkyz) (read #welcome if you can't see that channel).
-Alternatively you can ask questions here: https://github.com/compujuckel/AssettoServer/discussions/categories/help
+Alternatively you can ask questions [here](https://github.com/compujuckel/AssettoServer/discussions/categories/help).
 
-**Please don't use the Issue tracker for installation help or configuration questions. Also make sure to read this README first before asking questions that are already answered here!**
+:::note
 
-## Wiki
-For more information on configuration, admin commands, etc. also check out the [Wiki](https://github.com/compujuckel/AssettoServer/wiki).
+Please don't use the GitHub Issue tracker for installation help or configuration questions. Also make sure to read this page first before asking questions that are already answered here!
+
+:::
 
 ## License
 AssettoServer is licensed under the GNU Affero General Public License v3.0, see [LICENSE](https://github.com/compujuckel/AssettoServer/blob/master/LICENSE) for more info.  
 Additionally, you must preserve the legal notices and author attributions present in the server.
 
-```
-Copyright (C)  2022 Niewiarowski, compujuckel
+> Copyright (C)  2022 Niewiarowski, compujuckel
+> 
+> This program is free software: you can redistribute it and/or modify
+> it under the terms of the GNU Affero General Public License as published
+> by the Free Software Foundation, either version 3 of the License, or
+> (at your option) any later version.
+> 
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU Affero General Public License for more details.
+> 
+> You should have received a copy of the GNU Affero General Public License
+> along with this program.  If not, see <https://www.gnu.org/licenses/>.
+> 
+> 
+> Additional permission under GNU AGPL version 3 section 7
+> 
+> If you modify this Program, or any covered work, by linking or combining it 
+> with the Steamworks SDK by Valve Corporation, containing parts covered by the
+> terms of the Steamworks SDK License, the licensors of this Program grant you
+> additional permission to convey the resulting work.
+> 
+> Additional permission under GNU AGPL version 3 section 7
+> 
+> If you modify this Program, or any covered work, by linking or combining it 
+> with plugins published on https://www.patreon.com/assettoserver, the licensors
+> of this Program grant you additional permission to convey the resulting work.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published
-by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
-Additional permission under GNU AGPL version 3 section 7
-
-If you modify this Program, or any covered work, by linking or combining it 
-with the Steamworks SDK by Valve Corporation, containing parts covered by the
-terms of the Steamworks SDK License, the licensors of this Program grant you
-additional permission to convey the resulting work.
-
-Additional permission under GNU AGPL version 3 section 7
-
-If you modify this Program, or any covered work, by linking or combining it 
-with plugins published on https://www.patreon.com/assettoserver, the licensors
-of this Program grant you additional permission to convey the resulting work.
-```

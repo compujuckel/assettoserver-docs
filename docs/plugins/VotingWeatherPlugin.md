@@ -5,7 +5,12 @@ description: Let players vote for a server weather at a specified interval
 # VotingWeatherPlugin
 Plugin to let players vote for a server weather at a specified interval.
 
-**Important:** For smooth weather transitions and rain you need to set `EnableWeatherFx` to `true` in `extra_cfg.yml`.
+:::note
+
+For smooth weather transitions and rain you need to set `EnableWeatherFx` to `true` in `extra_cfg.yml`.
+
+:::
+
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
 ```yaml
@@ -14,7 +19,7 @@ EnablePlugins:
 ```
 
 Example configuration (add to bottom of `extra_cfg.yml`)  
-For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](https://github.com/compujuckel/AssettoServer/wiki/WeatherFX-Types)
+For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](/docs/misc/wfx-types)
 ```yaml
 ---
 !VotingWeatherConfiguration

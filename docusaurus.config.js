@@ -34,10 +34,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/compujuckel/assettoserver-docs/blob/master/',
+          editUrl: 'https://github.com/compujuckel/assettoserver-docs/blob/master/',
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -54,7 +52,7 @@ const config = {
         path: 'patreon-docs',
         routeBasePath: 'patreon-docs',
         sidebarPath: require.resolve('./sidebars.js'),
-        // ... other options
+        showLastUpdateTime: true,
       },
     ],
   ],
@@ -83,13 +81,15 @@ const config = {
             docsPluginId: 'patreon-docs',
           },
           {
-            to: 'https://github.com/compujuckel/AssettoServer',
-            label: 'GitHub',
+            to: 'https://discord.gg/uXEXRcSkyz',
+            "aria-label": 'Discord',
+            className: 'navbar-discord',
             position: 'right',
           },
           {
-            to: 'https://discord.gg/uXEXRcSkyz',
-            label: 'Discord',
+            to: 'https://github.com/compujuckel/AssettoServer',
+            "aria-label": 'GitHub',
+            className: 'navbar-github',
             position: 'right',
           },
           {
@@ -106,6 +106,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['ini'],
       },
       colorMode: {
         defaultMode: 'dark',

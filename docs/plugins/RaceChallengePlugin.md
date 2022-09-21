@@ -1,3 +1,7 @@
+---
+description: Challenge other players to races by flashing your headlights
+---
+
 # RaceChallengePlugin
 Plugin to challenge other players to races by flashing your headlights three times
 ## Configuration
