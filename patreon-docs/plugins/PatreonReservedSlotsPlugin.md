@@ -3,7 +3,8 @@ description: Reserve car models and slots for "reserved" players
 ---
 
 # PatreonReservedSlotsPlugin
-Plugin to reserve car models and slots for "reserved" players. Only players with SteamIDs listed in the configured GUID list files will be allowed to join on these slots.
+Plugin to reserve car models and slots for "reserved" players. Only players with SteamIDs listed in the configured user groups will be allowed to join on these slots.  
+It is possible to sync user groups from AssettoServer Hub, see [here](/patreon-docs/assettoserver-hub/#how-to-sync-user-groups-from-the-hub-to-your-game-servers).
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`

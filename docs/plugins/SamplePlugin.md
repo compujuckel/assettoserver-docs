@@ -4,6 +4,13 @@ description: Sample to show how to add custom HTTP routes and chat commands to t
 
 # SamplePlugin
 Sample to show how to add custom HTTP routes and chat commands to the server.
+
+:::caution
+
+Please keep in mind that AssettoServer is licensed under the AGPL license. This license requires that all changes to the server code, including plugins, is made open source.
+
+:::
+
 ## How to create your own plugin
 Create a new `Class Library` project and make sure to have the following in your `*.csproj` file:
 

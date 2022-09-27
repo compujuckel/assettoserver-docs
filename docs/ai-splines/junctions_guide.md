@@ -3,13 +3,17 @@ title: Junctions Guide
 description: Introduction to creating AI Spline junctions
 ---
 ## Prerequisites
-- Blender with io_import_accsv addon https://github.com/leBluem/io_import_accsv
+- Blender with [io_import_accsv addon](https://github.com/leBluem/io_import_accsv)
 - CSP 0.1.77 or later (for recording the splines only)
 - New AI spline recorder from pinned message in #ai-spline-discussion
 - AssettoServer 0.0.47-pre11 or later
 - FastLaneUtils (included in AssettoServer download)
 
-**New to Blender? [This guide](https://docs.google.com/presentation/d/1Qh0qBiuyNIxGNFkCEvPtKm4lhmXrD9HtXm1CPiH-UVA/edit?usp=sharing) by srinoob#8671 will be helpful!**
+:::note
+
+New to Blender? [This guide](https://docs.google.com/presentation/d/1Qh0qBiuyNIxGNFkCEvPtKm4lhmXrD9HtXm1CPiH-UVA/edit?usp=sharing) by srinoob#8671 will be helpful!
+
+:::
 
 ## Recording splines
 - Point-to-point splines should be recorded with the new AI spline recorder app.

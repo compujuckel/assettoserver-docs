@@ -5,7 +5,7 @@ description: Link in-game chat to the chat of a Twitch channel
 # PatreonTwitchChatPlugin
 Plugin to link in-game chat to the chat of a Twitch channel.
 
-A Twitch access token can be obtained here: https://twitchtokengenerator.com/ (select "Bot Chat Token")
+A Twitch access token can be obtained [here](https://twitchtokengenerator.com/) (select "Bot Chat Token")
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`

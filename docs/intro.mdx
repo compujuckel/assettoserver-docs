@@ -57,22 +57,17 @@ After that just click "Pack" to create an archive with all required configs and 
 
 Most features can be controlled via `extra_cfg.yml`. If this file does not exist it will be created at first server startup.
 
-### Steam Ticket Validation
+### Steam Authentication
 
-The default server implementation of Assetto Corsa does not use the Steam API to determine whether a connected players
-account is actually the account they claim to be. This opens the door for SteamID spoofing, which means someone can
+The default server implementation of Assetto Corsa does not use the Steam API to determine whether a connected player
+is actually the account they claim to be. This opens the door for SteamID spoofing, which means someone can
 impersonate another player.
 
-In this server the Steam Auth API is utilized, as documented
-here: https://partner.steamgames.com/doc/features/auth
+In this server the [Steam Auth API](https://partner.steamgames.com/doc/features/auth) is utilized, which makes SteamID spoofing impossible.
 
-Since the player needs to get a Steam session ticket on client side that he has to transfer to the server upon joining,
-a minimum CSP (Custom Shaders Patch) version of 0.1.75 or higher is required along with Content Manager v0.8.2297.38573 or higher for players to be able to join the server.
+Since the player needs to get a Steam session ticket before joining, a CSP (Custom Shaders Patch) version of 0.1.75 or higher and Content Manager v0.8.2297.38573 or higher is required.
 
 This feature must be enabled in `extra_cfg.yml`.
-
-CSP can be found and downloaded here [https://acstuff.ru/patch/](https://acstuff.ru/patch/)  
-CSP Discord: [https://discord.gg/KAbXE5Y](https://discord.gg/KAbXE5Y)
 
 ### Logging in as administrator via SteamID
 
@@ -86,8 +81,8 @@ Do not use this feature with Steam Auth disabled! Someone might be able to gain 
 
 ### AI Traffic
 
-It is possible to load one or more AI splines to provide AI traffic. Place `fast_lane.ai` in the maps `ai/` folder and set `EnableAi` to `true` in `extra_cfg.yml`.  
-The default AI settings have been tuned for Shutoko Revival Project, other maps will require different settings.
+It is possible to load one or more AI splines to provide AI traffic. Place `fast_lane.ai` (or `fast_lane.aip`) in the maps `ai/` folder and set `EnableAi` to `true` in `extra_cfg.yml`.  
+The default AI settings have been tuned for Shutoko Revival Project, other maps may require different settings.
 
 To allow AI to take a car slot you have to add a new parameter to the `entry_list.ini`, for example:
 ```ini
@@ -122,15 +117,9 @@ Three plugins are included that utilize dynamic weather:
 * [RandomWeatherPlugin](./plugins/RandomWeatherPlugin) for random weather
 * [VotingWeatherPlugin](./plugins/VotingWeatherPlugin.md) for letting players vote for weather changes
 
-### Anti AFK system
-
-Will kick players if they are not honking, braking, toggling headlights, moving steering wheel, using gas or sending
-messages in chat. Can be adjusted by an admin by using the `/setafktime` command.
-
 ### Plugin Interface
 
-There is an experimental plugin interface for adding functionality to the server. Take a look at one of the
-included plugins to get started with developing your own plugin.
+There is an experimental plugin interface for adding functionality to the server. Take a look at the [sample plugin](./plugins/SamplePlugin) to get started with developing your own plugin.
 
 The API is still under development and might change in the future.
 

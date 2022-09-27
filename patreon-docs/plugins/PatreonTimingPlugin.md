@@ -16,7 +16,12 @@ Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in 
 Each checkpoint needs two coordinates, "Position" and "Forward". Use the Object Inspector app to find coordinates like this:  
 ![](./assets/timing_checkpoints.png)  
 The checkpoint will be placed on "Position", facing in the direction of "Forward".  
-**Direction of a checkpoint is important!** Checkpoints won't trigger if you drive through them from the opposite direction.
+
+:::caution Direction of a checkpoint is important!
+
+Checkpoints won't trigger if you drive through them from the opposite direction.
+
+:::
 
 After creating checkpoints, you can view them ingame by ticking the "Debug checkpoints" checkbox on the Timing Leaderboard:
 ![](./assets/debug_checkpoints.png)
@@ -38,7 +43,7 @@ Example configuration for SRP (add to bottom of `extra_cfg.yml`)
 # For example if you don't want traffic- and non-traffic servers to show on the same leaderboard, just use different
 # leaderboard names for them.
 LeaderboardName: Default
-# Number of allowed collisions before a lap time is invalidated. Set to -1 for unlimited collisions.
+# Number of allowed environment collisions before a lap time is invalidated. Set to -1 for unlimited collisions.
 MaxCollisions: 0
 # List of timed stages
 Stages:

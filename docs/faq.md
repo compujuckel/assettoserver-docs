@@ -45,3 +45,8 @@ Depending on if you have the full version of Content Manager or not, there are t
 
 ## Does anyone have the teleport locations for SRP?
 Either use the [official SRP teleports](https://discord.com/channels/890676433746268231/890676434245419031/937681626152980491) or make some yourself with Objects Inspector or [this app](https://www.racedepartment.com/downloads/comfy-map.52623/).  
+
+## How do I get dense traffic?
+* Use more traffic slots
+* Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
+* Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount` 
