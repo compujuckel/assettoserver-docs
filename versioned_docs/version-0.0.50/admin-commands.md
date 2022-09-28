@@ -56,7 +56,7 @@ title: Admin Commands
 
 | Parameter | Description                                                   |
 | --------- | ------------------------------------------------------------- |
-| weatherType | WeatherFX type ([list of possible values](./misc/wfx-types.md)) |
+| weatherType | WeatherFX type ([list of possible values](https://github.com/compujuckel/AssettoServer/wiki/WeatherFX-Types)) |
 | transitionDuration | How long the weather transition should take (seconds), only functional when `EnableWeatherFx` is set to `true` in `extra_cfg.yml` |
 
 ### Force headlights for a player

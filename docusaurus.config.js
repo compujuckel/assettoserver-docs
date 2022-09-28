@@ -40,6 +40,11 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/compujuckel/assettoserver-docs/blob/master/',
           showLastUpdateTime: true,
+          versions: {
+            current: {
+              label: "0.0.51"
+            }
+          }
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -78,10 +83,21 @@ const config = {
             label: 'Docs',
           },
           {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true,
+          },
+          {
             type: 'doc',
             docId: 'index',
             position: 'left',
             label: 'Patreon Docs',
+            docsPluginId: 'patreon-docs',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'left',
+            dropdownActiveClassDisabled: true,
             docsPluginId: 'patreon-docs',
           },
           {
