@@ -6,7 +6,10 @@ like leaderboards, blacklist, whitelist and more in the future.
 
 ## Getting started
 When starting `AssettoServer.Hub` for the first time, a default configuration file called `configuration.yml` will be generated.  
-Use the server address and generated key to connect an AssettoServer instance by loading and configuring `PatreonHubPlugin`.
+Use the server address and generated key to connect an AssettoServer instance by loading and configuring [PatreonHubPlugin](/patreon-docs/plugins/PatreonHubPlugin/).
+
+## Web Interface
+The web interface can be reached at the `HttpPort` you specified in your config, for example `http://yourip:8000`. You can also check out a demo [here](https://demo.assettoserver.org).
 
 ## How to add more servers
 You can add more servers by adding more `Name` entries like this:
