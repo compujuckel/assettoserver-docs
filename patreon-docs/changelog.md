@@ -32,7 +32,7 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 ### v0.0.4
 
-* Added a web interface for timing leaderboards (demo)
+* Added a web interface for timing leaderboards ([demo](https://demo.assettoserver.org/timing))
 * Introduced a new concept called user groups, making it possible to have multiple whitelists/blacklists and sync all lists to your game servers
 
 :::caution Breaking changes!
