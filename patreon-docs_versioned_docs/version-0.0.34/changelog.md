@@ -13,7 +13,7 @@ Thanks to **AEGIS | VISUALS** for commissioning this plugin!
 
 #### PatreonSpeedTrapPlugin
 
-* Now works with maps other than SRP, custom speed traps can be defined in the [configuration](./plugins/PatreonSpeedTrapPlugin#custom-speed-traps)
+* Now works with maps other than SRP, custom speed traps can be defined in the [configuration](./plugins/PatreonSpeedTrapPlugin.md#custom-speed-traps)
 * Overlay and grayscale can be disabled
 * Allow players to disable picture upload, can help with slow internet connections
 
@@ -37,6 +37,6 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 :::caution Breaking changes!
 
-Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/#how-to-sync-user-groups-from-the-hub-to-your-game-servers).
+Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/index.md#how-to-sync-user-groups-from-the-hub-to-your-game-servers).
 
 :::

@@ -19,7 +19,7 @@ EnablePlugins:
 ```
 
 Example configuration (add to bottom of `extra_cfg.yml`)  
-For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](../misc/wfx-types)
+For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](../misc/wfx-types.md)
 ```yaml
 ---
 !VotingWeatherConfiguration
