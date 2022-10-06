@@ -61,7 +61,7 @@ Depending on if you have the full version of Content Manager or not, there are t
 
 Either use the [official SRP teleports](<https://raw.githubusercontent.com/C1XTZ/AssettoServer-CommunityReleases/main/Shutoko%20Revival%20Project/Teleport%20Locations/Shutoko%20Revival%20Project%20(Official).txt>) or make some yourself.
 
-## How do I make my own teleports locations?
+## How do I make my own teleport locations?
 
 You can use the Objects Inspector or the [comfy map app](https://www.racedepartment.com/downloads/comfy-map.52623/) to determine the coordinates and heading.  
 The formating is as follows:
@@ -104,7 +104,8 @@ SPEED_KMH = 80         ; the maximum speed allowed, the default is 80.
 
 ## How do I allow people to download missing content?
 
-It's possible to allow people to download missing content like tracks and cars in the Content Manager server browser.  
+It's possible to allow people to download missing content like tracks and cars in the Content Manager server browser.
+
 ![](./assets/HfLjm64.png)
 
 :::caution
@@ -114,7 +115,7 @@ Please use the download links the authors of the content you're using provide un
 :::
 
 <Tabs>
-<TabItem value="content-manager" label="With Content Manager" default>
+<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
 
   - Navigate to the `Details` Tab in your Server preset.
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
@@ -155,8 +156,10 @@ Please use the download links the authors of the content you're using provide un
 
 ## Where can I find the CSP version IDs?
 
-The easiest way to get the ID for the CSP Version you're using is opening Content Manager and navigating to `Settings > Custom Shaders Patch > About & Updates` and then reading the Currently active Shaders Patch version ID.  
+The easiest way to get the ID for the CSP Version you're using is opening Content Manager and navigating to `Settings > Custom Shaders Patch > About & Updates` and then reading the Currently active Shaders Patch version ID.
+
 ![](./assets/lKOfMSR.png)
 
-If you need the ID of a version you currently don't have installed [the Offical CSP Website](https://acstuff.ru/patch/) also has the IDs in the `Other Versions` sections.
+If you need the ID of a version you currently don't have installed [the official CSP Website](https://acstuff.ru/patch/) also has the IDs in the `Other Versions` sections.
+
 ![](./assets/Upd4ZJl.png)
