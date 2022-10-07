@@ -18,6 +18,14 @@ If the file doesn't exist yet, create it yourself. For example:**
 ![](https://i.imgur.com/oxp4a21.png)    
 Place the file in the `cfg` folder of your server. If you're running your server via Content Manager, click the `Folder` button and place it there instead.   
 
+# How do I allow driving the wrong way?
+
+```ini
+[EXTRA_RULES]
+ALLOW_WRONG_WAY = 1 
+```  
+If you get teleported back to pits, you may need to remove the `fast_lane.aip` for the track in your local game files.  
+By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
 
 ## How do I enable Teleportation?
 
