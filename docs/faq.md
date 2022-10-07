@@ -11,6 +11,23 @@ import TabItem from '@theme/TabItem';
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
+## How do I use CSP extra server options?
+
+Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
+If the file doesn't exist yet, create it yourself. For example:
+
+![](https://i.imgur.com/oxp4a21.png)    
+Place the file in the `cfg` folder of your server. If you're running your server via Content Manager, click the `Folder` button and place it there instead.   
+
+# How do I allow driving the wrong way?
+
+```ini
+[EXTRA_RULES]
+ALLOW_WRONG_WAY = 1 
+```  
+If you get teleported back to pits, you may need to remove the `fast_lane.aip` for the track in your local game files.  
+By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
+
 ## How do I enable Teleportation?
 
 For teleporting, two things have to be done:
