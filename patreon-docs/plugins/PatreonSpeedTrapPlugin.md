@@ -58,7 +58,7 @@ DiscordWebhook:
     番号　{{ SpeedTrapId | math.format "000" }}・{{ Counter | math.format "000" }}
     違反者　{{ Name }}
 # Define custom speed traps here if you are not using SRP 
-CustomSpeedtraps:
+CustomSpeedTraps:
 ```
 
 ### Custom Speed Traps
