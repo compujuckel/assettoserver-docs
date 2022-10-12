@@ -19,7 +19,7 @@ If the file doesn't exist yet, create it yourself. For example:
 ![](./assets/oxp4a21.png)    
 Place the file in the `cfg` folder of your server. If you're running your server via Content Manager, click the `Folder` button and place it there instead.   
 
-# How do I allow driving the wrong way?
+## How do I allow driving the wrong way?
 
 ```ini
 [EXTRA_RULES]
