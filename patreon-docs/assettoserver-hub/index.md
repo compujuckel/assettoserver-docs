@@ -20,6 +20,10 @@ GrpcPort: 5085
 HttpPort: 8000
 # Name of the hub, will be shown in web page titles
 HubName: AssettoServer Hub
+# Filename of main logo in wwwroot/images
+MainLogoFile: logo.svg
+# Filename of logo shown in nav bar in wwwroot/images
+NavbarLogoFile: logo.svg
 # List of keys that are allowed to connect to the hub. Do not share these keys with other people!
 Keys:
 - Name: server-1
