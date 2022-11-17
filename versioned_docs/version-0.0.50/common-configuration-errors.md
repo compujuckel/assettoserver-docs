@@ -18,7 +18,7 @@ When there is no entry in this file for your map this error will be shown. This 
 
 As of CSP version 0.1.78 you can also specify timezone, as well as latitude and longitude in the `csp_extra_options.ini` directly to ensure all clients will be in the same lighting conditions. Read the CSP Wiki for more info: https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#timezone
 
-Additionally you can manually add an entry for your track in `cfg/data_track_params.ini`, **but if you enable WeatherFX in `extra_cfg.yml`, time will not be in sync between server and client, unless you add that entry to `extension/config/data_track_params.ini` in your AC folder as well.**
+Additionally you can manually add an entry for your track in `cfg/data_track_params.ini`, **but if you enable WeatherFX in `extra_cfg.yml`, time will not be in sync between server and client, unless you also enable ForceServerTrackParams.**
 
 If you want to ignore this error set this in `extra_cfg.yml`:
 ```yaml
