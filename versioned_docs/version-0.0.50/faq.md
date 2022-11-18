@@ -11,6 +11,30 @@ import TabItem from '@theme/TabItem';
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
+## How do I remove checksums?
+
+:::caution ONLY REMOVE CHECKSUMS IF YOU'RE OKAY WITH USERS CHEATING
+Checksums are required to prevent people from cheating by modifying their car and track data. Remove them at your own risk.
+:::
+
+<Tabs>
+<TabItem value="cars" label="Car Checksums" default>
+
+  - Navigate to the `\content\cars` folder on your server.
+  - Remove the `data.acd` in the folder of every car that you want to use without checksums.
+  - Enable MissingCarChecksums in `extra_cfg.yml` and restart the server.
+  - If you've done everything correctly you should no longer see a `Added checksum for car_name` log message for the car you removed. If you've removed the checksum of all cars it should also log `Initialized 0 car checksums`.
+
+</TabItem>
+<TabItem value="tracks" label="Track Checksums">
+
+  - Navigate to the `\content\tracks\<track>\<layout>\data` (or `\content\tracks\csp\<track>\<layout>\data` if you're forcing a CSP version.) and `\system` folders on your server.
+  - Remove both of the `surfaces.ini` files and restart the server.
+  - If you've done everything correctly you should see the log message saying `Initialized 0 track checksums`
+
+</TabItem>
+</Tabs>
+
 ## How do I use CSP extra server options?
 
 Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
