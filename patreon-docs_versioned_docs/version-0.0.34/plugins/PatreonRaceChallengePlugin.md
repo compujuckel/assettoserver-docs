@@ -6,11 +6,13 @@ description: Challenge other players to races with a TXR-like UI
 Plugin to challenge other players to races.  
 Extended with a simple TXR-like UI and leaderboard with Elo rating.
 
-PatreonHubPlugin is required for the leaderboard to work.
-
 :::note
 
+PatreonHubPlugin is required for the leaderboard to work.
+
 Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required!
+
+Do not use RaceChallengePlugin and PatreonRaceChallengePlugin at the same time!
 
 :::
 
