@@ -5,13 +5,13 @@ title: Frequently Asked Questions
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## How do I get dense traffic?
+## How do I get dense traffic? {#dense-traffic}
 
 - Use more traffic slots
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
-## How do I remove checksums?
+## How do I remove checksums? {#remove-checksums}
 
 :::caution ONLY REMOVE CHECKSUMS IF YOU'RE OKAY WITH USERS CHEATING
 Checksums are required to prevent people from cheating by modifying their car and track data. Remove them at your own risk.
@@ -35,7 +35,7 @@ Checksums are required to prevent people from cheating by modifying their car an
 </TabItem>
 </Tabs>
 
-## How do I use CSP extra server options?
+## How do I use CSP extra server options? {#csp-extra-options}
 
 Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
 If the file doesn't exist yet, create it yourself. For example:
@@ -43,7 +43,7 @@ If the file doesn't exist yet, create it yourself. For example:
 ![](./assets/oxp4a21.png)    
 Place the file in the `cfg` folder of your server. If you're running your server via Content Manager, click the `Folder` button and place it there instead.   
 
-## How do I allow driving the wrong way?
+### How do I allow driving the wrong way? {#wrong-way}
 
 ```ini
 [EXTRA_RULES]
@@ -52,7 +52,7 @@ ALLOW_WRONG_WAY = 1
 If you get teleported back to pits, you may need to remove the `fast_lane.aip` for the track in your local game files.  
 By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
 
-## How do I enable Teleportation?
+### How do I enable Teleportation? {#teleportation}
 
 For teleporting, two things have to be done:
 
@@ -98,9 +98,9 @@ Depending on if you have the full version of Content Manager or not, there are t
 </TabItem>
 </Tabs>
 
-## Where can I find teleport locations for SRP?
+### Where can I find teleport locations for SRP? {#srp-teleports}
 
-Either use the official SRP teleports below or make some yourself.
+Either use the official SRP teleports below or make some yourself.  
 
 <details>
 <summary>Official Shutoko Revival Project Teleport locations</summary>
@@ -346,7 +346,7 @@ POINT_48_HEADING = 86
 </p>
 </details>
 
-## How do I make my own teleport locations?
+#### How do I make my own teleport locations? {#making-teleports}
 
 You can use the Objects Inspector or the [comfy map app](https://www.racedepartment.com/downloads/comfy-map.52623/) to determine the coordinates and heading.  
 The formating is as follows:
@@ -360,7 +360,7 @@ POINT_0_HEADING = 0          ; heading angle in degrees
 
 **Having the comfy map app is not necessary to create points, enable or use teleportation!**
 
-## How do I enable Color Changing?
+### How do I enable Color Changing? {#color-changing}
 
 :::caution
 
@@ -377,7 +377,7 @@ ALLOW_EVERYWHERE = 1   ; change car colors anywhere as long as the car is stoppe
 If AI cars are allowed to change their colors everywhere they will spawn in random colors if possible.  
 **Keep in mind that you still need to allow cars to change colors via the entry list even if you're using `ALLOW_EVERYWHERE`.**
 
-## How do I increase the speed in the pits?
+### How do I increase the speed in the pits? {#pit-speed-limiter}
 
 ```ini
 [PITS_SPEED_LIMITER]
@@ -387,9 +387,9 @@ SPEED_KMH = 80         ; the maximum speed allowed, the default is 80.
 
 [There are more options available here.](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#pit-speed-limiter-settings)
 
-## How do I allow people to download missing content?
+## How do I allow players to download missing content? {#download-missing-content}
 
-It's possible to allow people to download missing content like tracks and cars in the Content Manager server browser.
+It's possible to allow players to download missing content like tracks and cars in the Content Manager server browser.
 
 ![](./assets/HfLjm64.png)
 
@@ -439,7 +439,46 @@ Please use the download links the authors of the content you're using provide un
 </TabItem>
 </Tabs>
 
-## Where can I find the CSP version IDs?
+## How can I format my server description? {#server-description}
+
+**Linebreaks**  
+The `|-` modifier is probably the most important part to properly format your description.  
+Read this site for more information: https://yaml-multiline.info/
+
+**BBcode**  
+The description in Content Manager uses BBcode tags, read: https://www.bbcode.org/reference.php  
+To add images use `[img=<link>]img1[/img]`    
+Keep in mind that some functions of BBcode are not supported by Content Manager.
+
+**Example Description**
+```yaml
+ServerDescription: |-
+  [img=https://i.imgur.com/MCkI3Eh.png]SRP Logo[/img]
+  [size=16]                   UNOFFICIAL AI TRAFFIC TEST SERVER
+                Car and track downloads, installation help:
+                          [url=https://discord.com/invite/shutokorevivalproject]Shutoko Revival Project Discord[/url]
+                              Server news and feedback:
+                      [url=https://discord.gg/uXEXRcSkyz]AssettoServer Development Discord[/url]
+                                    [color=#FF424D]Support the server:[/color]
+                                              [url=https://www.patreon.com/assettoserver]Patreon[/url]
+  [size=22][b]Rules[/b][/size]
+  [color=#E82A1F][size=18][b]- Keep chat app open at all times.[/b][/size][/color]
+  [size=18][color=#E82A1F][b]- [u]PLEASE TURN YOUR LIGHTS ON[/u][size=16]
+    when its night so other drivers can see you.[/size][/b][/color][/size]
+  - Don't run into other cars on purpose.
+  - Do not park or block the road.
+    Pull off as much to the side as possible or return to pits.
+  - Be respectful of other drivers, keep a comfortable distance
+    when driving with others.
+  - Don't drive into oncoming traffic. This is Japan.
+    Drive on the left side of the road.
+  - Don't cause drama in the chat. This includes spamming and
+    harassment.
+  - If you dont have Sol working, or are otherwise in doubt,
+    keep your lights on.
+```
+
+## Where can I find the CSP version IDs? {#csp-version-ids}
 
 The easiest way to get the ID for the CSP Version you're using is opening Content Manager and navigating to `Settings > Custom Shaders Patch > About & Updates` and then reading the Currently active Shaders Patch version ID.
 
