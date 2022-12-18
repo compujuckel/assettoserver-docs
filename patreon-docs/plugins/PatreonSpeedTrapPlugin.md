@@ -61,6 +61,11 @@ DiscordWebhook:
 CustomSpeedTraps:
 ```
 
+### Custom image overlays
+
+Images can be completely customized using Lua. Source code for the default overlay can be found in the plugin folder `lua/script.lua`.
+This plugin uses ImageMagick (or more specifically [Magick.NET](https://github.com/dlemstra/Magick.NET)) to process images.
+
 ### Custom Speed Traps
 
 If you want to use this plugin on maps other than SRP it is possible to define custom speed trap locations.  

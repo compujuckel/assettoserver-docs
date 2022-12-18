@@ -29,7 +29,7 @@ IgnoreConfigurationErrors:
 ## Wrong server details
 In Content Manager `Server > Details > Mode to provide extra details` you selected `Via ID in name (recommended)`. For AssettoServer this is **NOT** recommended because AssettoServer has its own way to ensure server details are always up to date.
 
-See [this page](./misc/server-details) for more info.
+See [this page](./misc/server-details.md) for more info.
 
 If you want to ignore this error set this in `extra_cfg.yml`:
 ```yaml

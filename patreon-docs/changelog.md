@@ -3,6 +3,22 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.35
+
+#### PatreonSafetyRatingPlugin (new!)
+
+This plugin calculates a safety rating based on number of collisions and driven distance. Clean drivers will get a higher rating than people crashing every corner.
+
+#### PatreonTimingPlugin
+
+* Disable timing for cars marked as `AI=fixed` (admins taking these cars were able to set times on the leaderboard)
+
+#### PatreonSpeedTrapPlugin
+
+* Ability to customize image overlays with Lua
+* Fix wrong calculation of forward vector for custom speed traps
+* add new variables `Guid` and `Car` for Discord webhooks
+
 ### v0.0.34
 
 #### PatreonTwitchChatPlugin (new!)
@@ -29,6 +45,13 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 :::
 
 ## AssettoServer Hub
+
+### v0.0.5
+
+* Add race challenge leaderboard
+* Improvements to timing leaderboards
+* Add support for safety ratings
+* Updated to .NET 7
 
 ### v0.0.4
 
