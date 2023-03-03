@@ -48,6 +48,7 @@ SafetyRatingRanks:
   Color: '#00FF00'
   MinimumRating: 3
 - Name: B
+  # Leave Color empty for no color
   Color: 
   MinimumRating: 1
 - Name: C

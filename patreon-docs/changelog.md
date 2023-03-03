@@ -7,7 +7,8 @@ title: Changelog
 
 #### PatreonSafetyRatingPlugin (new!)
 
-This plugin calculates a safety rating based on number of collisions and driven distance. Clean drivers will get a higher rating than people crashing every corner.
+This plugin calculates a safety rating based on number of collisions and driven distance. Clean drivers will get a higher rating than people crashing every corner.  
+You can also set a color for each safety rating rank that will be shown in chat and name tags.
 
 #### PatreonTimingPlugin
 
@@ -52,6 +53,7 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 * Improvements to timing leaderboards
 * Add support for safety ratings
 * Updated to .NET 7
+* Fix menu not working on mobile
 
 ### v0.0.4
 

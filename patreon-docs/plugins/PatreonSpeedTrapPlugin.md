@@ -97,3 +97,7 @@ CustomSpeedTraps:
     # Name of mesh that is turned into a red emissive (optional, when in doubt leave empty)
     MeshName:
 ```
+
+## Known issues
+
+The plugin will not work when there are non-ASCII characters (Cyrillic etc.) in the server path.
