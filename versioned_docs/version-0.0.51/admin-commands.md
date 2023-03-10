@@ -68,8 +68,6 @@ title: Admin Commands
 | on/off    | On = Active forcing of headlights, Off = Disable forcing of headlights  |
 | id        | The car ID or name of the player                                        |
 
-Not specifying an id will enable/disable forced headlights for all players on the server.
-
 **NOTE**: Forcing headlights for a player will still give him the opportunity to turn on/off his lights locally. His
 lights will however appear turned on for all other players.
 
