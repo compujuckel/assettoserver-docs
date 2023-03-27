@@ -6,7 +6,7 @@ description: Change chat colors, nametag color and add name pre-/postfixes for p
 Plugin to change chat color of players and optionally add name prefixes or postfixes for them.  
 It is advised to use square brackets for name prefixes/postfixes, since it is not possible to join with them normally.
 
-Please see [this page](../assettoserver-hub/user-groups) for general info on user groups.
+Please see [this page](../assettoserver-hub/user-groups) for general information on user groups.
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`

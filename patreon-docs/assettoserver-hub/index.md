@@ -40,22 +40,5 @@ FileBasedUserGroups:
 After starting the hub, keys will be automatically generated for each entry without a key. You can then enter the generated key
 in your AssettoServer configuration.
 
-## How to sync user groups from the Hub to your game servers
-When specifying a user group, prefix the user group name with a `+`. This will cause the PatreonHubPlugin to load this user group from AssettoServer Hub.
-
-**Example (Blacklist)**  
-Set `BlacklistUserGroup` to `+blacklist` in `extra_cfg.yml`.
-
-**Example (Whitelist)**  
-Set `WhitelistUserGroup` to `+whitelist` in `extra_cfg.yml`.
-
-**Example (PatreonReservedSlotsPlugin)**  
-Set `ReservedEntryListSlotsUserGroup` and/or `ReservedSlotsUserGroup` to `+reserved` in `extra_cfg.yml` and create a new file-based user group in `configuration.yml` of your Hub:  
-```yaml
-FileBasedUserGroups:
-  - Name: reserved
-    Path: reserved.txt
-```
-
 ## How it works
 AssettoServerHub and AssettoServer are using gRPC to communicate. Data is stored in an SQLite database called `Hub.db`.
