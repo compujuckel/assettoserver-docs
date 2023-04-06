@@ -519,6 +519,13 @@ Please use the download links the authors of the content you're using provide un
 </TabItem>
 </Tabs>
 
+## How can I enable a Custom Steam API Replacement?
+**AssettoServer does not support piracy and as such there is no way around buying Assetto Corsa and the DLC's required by the content you want to use.**  
+If you used a pirated version of Assetto Corsa in the past and have since purchased everything, make sure to:  
+- Verify your game files via Steam
+- Change the Assetto Corsa game folder in the Content Manager general settings to your Steam installation.  
+By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\`
+
 ## How can I format my server description? {#server-description}
 
 **Linebreaks**  
