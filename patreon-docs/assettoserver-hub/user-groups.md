@@ -9,7 +9,7 @@ By default, three user groups (`default_admins`, `default_blacklist`, `default_w
 
 ## Adding local User Groups
 To create a new file-based user group, just add it to `extra_cfg.yml`:
-```yaml
+```yaml title="extra_cfg.yml (AssettoServer)"
 UserGroups:
   default_admins: admins.txt
   default_blacklist: blacklist.txt
@@ -25,7 +25,7 @@ User groups can be synchronized to multiple game servers via AssettoServer Hub.
 
 ### Hub Setup
 In `configuration.yml` of your Hub, add a new file-based user group:
-```yaml
+```yaml title="configuration.yml (AssettoServer Hub)"
 FileBasedUserGroups:
   - Name: my_group
     Path: my_group.txt
@@ -37,41 +37,35 @@ When specifying a user group, prefix the user group name in `extra_cfg.yml` with
 ### Examples
 
 #### Synchronizing Blacklist
-AssettoServer Hub configuration (`configuration.yml`):
-```yaml
+```yaml title="configuration.yml (AssettoServer Hub)"
 FileBasedUserGroups:
   - Name: blacklist
     Path: blacklist.txt
 ```
 
-AssettoServer configuration (`extra_cfg.yml`):
-```yaml
+```yaml title="extra_cfg.yml (AssettoServer)"
 BlacklistUserGroup: +blacklist
 ```
 
 #### Synchronizing Whitelist
-AssettoServer Hub configuration (`configuration.yml`):
-```yaml
+```yaml title="configuration.yml (AssettoServer Hub)"
 FileBasedUserGroups:
   - Name: whitelist
     Path: whitelist.txt
 ```
 
-AssettoServer configuration (`extra_cfg.yml`):
-```yaml
-BlacklistUserGroup: +whitelist
+```yaml title="extra_cfg.yml (AssettoServer)"
+WhitelistUserGroup: +whitelist
 ```
 
 #### Synchronizing Reserved Slots
-AssettoServer Hub configuration (`configuration.yml`):
-```yaml
+```yaml title="configuration.yml (AssettoServer Hub)"
 FileBasedUserGroups:
   - Name: reserved
     Path: reserved.txt
 ```
 
-AssettoServer configuration (`extra_cfg.yml`, under `!PatreonReservedSlotsConfiguration`):
-```yaml
+```yaml title="extra_cfg.yml (AssettoServer, under !PatreonReservedSlotsConfiguration)"
 ReservedEntryListSlotsUserGroup: +reserved
 # and/or
 ReservedSlotsUserGroup: +reserved

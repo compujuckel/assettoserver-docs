@@ -3,6 +3,24 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.36
+
+#### PatreonDynamicSkinsPlugin (new!)
+
+#### PatreonChatRolesPlugin (new!)
+
+#### PatreonRaceChallengePlugin
+
+* Fix chat commands not working
+
+#### PatreonSafetyRatingPlugin
+
+* Fix chat name colors on CSP <0.1.79
+
+#### PatreonSpeedTrapPlugin
+
+* Fix speed trap flash not showing for other players
+
 ### v0.0.35
 
 #### PatreonSafetyRatingPlugin (new!)
@@ -46,6 +64,19 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 :::
 
 ## AssettoServer Hub
+
+### v0.0.6
+
+#### Timing Leaderboard
+* Add filter for current month
+* Add API
+* Do not show tracks with no lap times set
+
+#### Discord
+* Add Discord Bot
+* Add ability to link Steam account to Discord account
+* Add Discord role mappings
+* Add server status embeds
 
 ### v0.0.5
 
