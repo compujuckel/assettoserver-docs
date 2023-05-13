@@ -519,7 +519,7 @@ Please use the download links the authors of the content you're using provide un
 </TabItem>
 </Tabs>
 
-## How can I enable a Custom Steam API Replacement?
+## How can I enable a Custom Steam API Replacement? {#custom-steam-api}
 **AssettoServer does not support piracy and as such there is no way around buying Assetto Corsa and the DLC's required by the content you want to use.**  
 If you used a pirated version of Assetto Corsa in the past and have since purchased everything, make sure to:  
 - Verify your game files via Steam
