@@ -28,6 +28,8 @@ Roles:
     NamePrefix: "[ADM] "
     # Name postfix. Will be added to the end of the player name (optional)
     NamePostfix: " (Admin)"
+    # Image to replace the country flag with. CSP 0.1.80-preview218 or higher required
+    IconUrl: 
 # Prevent players from joining with role name prefixes/postfixes.
 # For example, when trying to join with "Player (Admin)", the connection will be denied.
 ProhibitRoleImpersonation: true
