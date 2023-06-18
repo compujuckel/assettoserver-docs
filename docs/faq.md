@@ -485,6 +485,8 @@ Please use the download links the authors of the content you're using provide un
   - Navigate to the `Details` Tab in your Server preset.
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
+  - A `content.json` file will be created in the `cm_content` folder under the directory of the server. Currently, this file does not get included when using the Pack feature.
+
   ![](./assets/TN1XGgZ.png)
 
 </TabItem>
