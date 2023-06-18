@@ -3,7 +3,7 @@ description: Change chat colors, nametag color and add name pre-/postfixes for p
 ---
 
 # PatreonChatRolesPlugin
-Plugin to change chat color of players and optionally add name prefixes or postfixes for them.  
+Plugin to change chat color of players, add player icons, and optionally add name prefixes or postfixes for them.  
 It is advised to use square brackets for name prefixes/postfixes, since it is not possible to join with them normally.
 
 Please see [this page](../assettoserver-hub/user-groups) for general information on user groups.
@@ -22,7 +22,7 @@ Example configuration (add to bottom of `extra_cfg.yml`)
 Roles:
   # Name of user group
   - UserGroup: default_admins
-    # Color of name in chat and new name tags. Make sure to use "quotes" here!
+    # Color of name in chat and new name tags. Make sure to use "quotes" here! CSP 0.1.79 or higher required
     Color: "#ff0000"
     # Name prefix. Will be added in front of the player name (optional)
     NamePrefix: "[ADM] "
