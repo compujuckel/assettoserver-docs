@@ -48,7 +48,7 @@ To follow along you will need the following things:
 2. Enter the key you received via email into Content Manager.
    ![](./assets/guide/5.png)
 
-### Downloading the Shutoko Revival Project track and AI spline
+### Downloading the Shutoko Revival Project track and AI spline {#downloading-srp}
 
 :::note
 **You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we will use the SRP track as it is one of the most popular tracks.**
@@ -62,7 +62,7 @@ To follow along you will need the following things:
 4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, scroll up until you find the spline made for Shutoko Revival Project and download it by clicking on the `fast_lane.aip` file.
    ![](./assets/guide/7.png)
 
-## Initial Setup {#initial-setup}
+## Initial setup {#initial-setup}
 
 ### Preconfiguration {#preconfiguration}
 
@@ -91,6 +91,13 @@ These can be adjusted at any point, although doing so before packing the server 
 
    ![](./assets/guide/11.png)
 
+   :::caution
+   **Only add as many cars to the entry list as there are pits available for the track and layout you've chosen.**  
+   **The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:** 
+     ![](./assets/guide/caution1.png)  
+     **Ignoring this limit will result in the game crashing when joining the server.**
+   :::
+
 7. Click on the `RULES` tab and configure the page how you see fit.
 
    Some recommendations:
@@ -104,7 +111,8 @@ These can be adjusted at any point, although doing so before packing the server 
 8. Click on the `CONDITIONS` tab and configure the page how you see fit.  
    Don't worry too much about the `Time` slider yet, we will get to that later on.
    :::caution
-   **Do not use the WeatherFX Time, Time Multiplier or Date. They do not work with AssettoServer and could even break things.**
+   **Do not use the WeatherFX Time, Time Multiplier or Date.  
+     They do not work with AssettoServer and could cause problems.**
    :::
 
    I will be using the following settings:
@@ -114,13 +122,13 @@ These can be adjusted at any point, although doing so before packing the server 
 
    - Check `Pickup mode` and `Loop mode` while leaving `Locked entry list in pickup mode` unchecked.
    - Uncheck `Booking`, `Qualifying` and `Race`.
-   - Set `Practice` to something reasonable like 2 hours. You can make sessions longer than that but entering something like 9999999 will break things at some point and is not necessary.
+   - Set `Practice` to something reasonable like 2 hours. You can make sessions longer than that but a length of 999999999 will likely cause problems and is not necessary.
 
    We will be using the following settings:  
    ![](./assets/guide/14.png)
 
-10. At the bottom of the preset, click on `Save`.
-   ![](./assets/guide/15.png)
+10. At the bottom of the preset, click on `Save`.  
+    ![](./assets/guide/15.png)
 
 ### Packing the server preset {#preset-packing}
 
@@ -128,7 +136,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
 
 1. In the same bar that we just saved the server preset, click on `Pack`.
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
-3. Click on `Pack` and save it.
+3. Click on `Pack` and save it.  
    ![](./assets/guide/16.png)
 
 ### Extracting AssettoServer and the packed preset {#server-extraction}
@@ -149,12 +157,12 @@ If you did everything correctly you should see something along the lines of this
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
 2. Open the newly created `extra_cfg.yml` using a text editor of your choice.
-3. Since we've selected a WeatherFX weather earlier and our goal is to have AI traffic we will enable these options:
+3. Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
 
    ```yaml title="extra_cfg.yml"
    # Enable new CSP weather handling. Allows rain and smooth weather transitions. Requires CSP 0.1.76+
    EnableWeatherFx: true
-   ...
+
    # Enable AI traffic
    EnableAi: true
    ```
@@ -182,20 +190,21 @@ If you did everything correctly you should see something along the lines of this
 
 6. Now go back into the main folder of the server and launch `AssettoServer.exe` again.  
    Then open Content Manager and go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
-   The server should now appear in the server list. It may take a few moments to appear, so you might need to refresh the list a few times.
+   The server should now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
    ![](./assets/guide/20.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
 8. Other people should also be able to join the server by searching for it or via the invite link that you can copy from the console.
    :::caution
-   **Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link in the console generated for you instead.**
+   **Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link that is generated in the console instead.**
    :::
 
-## Advanced Server configuration {#advanced-server-config}
+## Advanced server configuration {#advanced-server-config}
 
 ### Time of day {#changing-time}
 
-Earlier we skipped over the `Time` slider inside of Content Manager because it only allows us to set the time inside a range of 08:00 to 18:00 (8AM to 6PM) and it would reset to this range regardless of what we do. So what do we do if we wanted to have a Night only server?
+Earlier we skipped over the `Time` slider inside of Content Manager because it only allows us to set the time inside a range of 08:00 to 18:00 (8AM to 6PM) and it would reset to this range regardless of what we do.  
+So what do we do if we wanted to have a Night only server?
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
 2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
@@ -230,7 +239,7 @@ Skip to the `Without Content Manager` part of the [teleporation](./faq#teleporta
     Changing any surface other than `SURFACE_0` will result in checksum errors for clients!
     :::
 
-5.  Save and close the file and restart the server, if you did everything correctly the server should start without any issues.
+5.  Save and close the file and restart the server, if you did everything correctly the server should start without any errors.
 
 We are now ready to add create a file called `csp_extra_options.ini` inside the `cfg` folder of our server and start adding to it.  
 The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can play around with.  
@@ -299,14 +308,14 @@ For teleportation and color changing there are additional steps for us since we 
 4. Save and close the file and restart the server, you should now have traffic that is randomly colored and be able to teleport / change your car color via the lightbulb in the chat app.  
    ![](./assets/guide/22.png)
 
-### AssettoServer Plugins {#enabling-plugins}
+### AssettoServer plugins {#enabling-plugins}
 
 AssettoServer comes with a few free to use plugins, we will be going over how to enable and configure two of them.  
 Namely the [AutoModerationPlugin](./plugins/AutoModerationPlugin.md) and the [RandomWeatherPlugin](./plugins/RandomWeatherPlugin.md).  
 If you feel like you don't need a step-by-step explanation, read over their respective documentation pages which cover what they do and how to enable and configure them.
 
 :::caution
-**Please make sure to not add or remove any spaces when copy pasting configurations as inproper indentation will result in the server refusing to start because of the way .yml files behave!**
+**Please make sure to not add or remove any spaces when copy pasting configurations as inproper indentation will result in the server refusing to start because of the way yaml files behave!**
 :::
 
 #### AutoModerationPlugin
@@ -474,7 +483,7 @@ You can add as many or as few plugins, just make sure you carefully read the doc
 ### Troubleshooting basics {#troubleshooting}
 
 If at some point something goes wrong and the server no longer starts properly, there a few way to figure out what went wrong and how to fix it.
-We will be looking at one of the more common reasons for a server crash in this example but learning what to look for can help you figure out how to fix any issue.
+We will be looking at one of the more common reasons for a server crash in this example but learning what to look for can help you figure out how to fix any problem.
 
 :::note
 **If the console window just closes when you try to start the server there will always be a log file you can read!**  
@@ -496,9 +505,7 @@ We only really care about the type and actual message, so here is a little cheat
 | `[ERR]`         | Error, an error the server can recover from and keep running.                       |
 | `[FTL]`         | Fatal, an error causing the server to terminate.                                    |
 
-`[ERR]` and `[FTL]` are the two things we are looking for.
-
-While `[INF]`, `[DBG]` and `[WRN]` might have hints for other issues, in our example we will focus on the `[ERR]`or rather `[FTL]` messages.
+While `[INF]`, `[DBG]` and `[WRN]` might have hints for other problems, in our example we will focus on the `[ERR]` and `[FTL]` messages.
 
 #### Example #1 {#example-one}
 
@@ -534,12 +541,53 @@ But, as explained earlier yaml is really strict on indentations so looking at it
 Removing this space and saving the file will get rid of this error and should let the server start without problems.  
 If this is the only mistake you made obviously.
 
-## Closing Words {#closing-words}
+This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further. 
 
-This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further.  
-Make sure to read the [Introduction](./intro.mdx), [FAQ](./faq.md) and [Common configuration errors](./common-configuration-errors.md) pages as those should answer a lot of basic questions.
-If you have questions or run into a issue that you can't figure out yourself, you can join the AssettoServer Discord and ask for help.  
-:::note
+## How to ask for help {#asking-for-help}
+
+If you have a question or run into a problem that you can't figure out yourself, feel free to join the AssettoServer Discord and ask for help.  
+Before that though, please make sure to read the [Introduction](./intro.mdx), [FAQ](./faq.md) and [Common configuration errors](./common-configuration-errors.md) pages as they answer a lot of common questions.
+
+:::caution
 **If you need help with setting up your server please use #server-troubleshooting.  
-Posting your logs in #bug-reports or #general will ususally result in the message being ignored or deleted.**
+Posting your problem in #bug-reports or #general will ususally result in the message being ignored or deleted.**
 :::
+
+### Help Us Help You {#help-us-help-you}
+
+- **Use the Search function.** 
+
+  It's more than likely that whatever problem you're having, someone else did too and already asked how to fix it.  
+  While Discords search is not known for being good, it should still give you something you can read through to see if your problem can be resolved the same way.  
+
+  Pressing `CTRL + F` while in the `#server-troubleshooting` channel will narrow down results to only from this channel.  
+  After that type in something short, like the beginning sentence of a error message for example.  
+  Then look over the results and see if anything matches what you are looking for.  
+  If you found a message you want to take a closer look at, hover over the message and click on the `Jump` button.  
+  ![](./assets/guide/30.png)  
+
+  You will be moved to when the message was sent so you can read over the full chat history.  
+  If there are no results, or if nothing mentioned in the conversations helped to fix your problem, you can also try jumping to another message or removing the `in:#server-troubleshooting` to search the entire Discord.  
+  If all of that is unsuccessful you can then move on to formulating your own message.
+
+- **Don't ask to ask.**  
+   > Hey, anyone here that can help me?
+
+   These messages usually result in nobody responding to them because it can also be read as:
+   > I have a question but I'm too lazy to actually formalize it into words unless there's someone in the channel who wants to spend time answering it.
+
+    The solution is not to ask to ask, but just to ask. Someone who is idling in the channel and only every now and then glances at what's going on is unlikely to answer to your "asking to ask" question, but if you actually describe your problem it may pique their interest and get them to respond because you (hopefully) already provided all the information they needed to help you.
+
+- **Provide as Information as you can, and format it so that it easily readable.**
+   > Server crashing, help what do?
+
+   This is just as bad as asking to ask because it requires people to ask you for more details in order to narrow down the problem.  
+   Try explaning the problem and what you have already tried to fix the problem.  
+   If needed include a server log file by uploading the `log-XXXXXXXX.txt` into the Discord channel directly.  
+   Screenshots of files can leave out important information and are generally harder to read.  
+   If you just want to copy a few lines, use Discord's markdown feature to put it into a codeblock for easier readablitiy.  
+   This can be done by surrounding it with ` ``` ` like this: ` ```Text``` `
+   
+   Some examples messages that are easy to read:
+   ![](./assets/guide/31.png)
+   ![](./assets/guide/32.png)
