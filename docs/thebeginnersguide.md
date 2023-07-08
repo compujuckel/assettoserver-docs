@@ -120,7 +120,7 @@ These can be adjusted at any point, although doing so before packing the server 
    ![](./assets/guide/14.png)
 
 10. At the bottom of the preset, click on `Save`.
-    ![](./assets/guide/15.png)
+   ![](./assets/guide/15.png)
 
 ### Packing the server preset {#preset-packing}
 
@@ -129,7 +129,6 @@ Now that we're done configuring the server, we can use the packing feature to ex
 1. In the same bar that we just saved the server preset, click on `Pack`.
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
 3. Click on `Pack` and save it.
-
    ![](./assets/guide/16.png)
 
 ### Extracting AssettoServer and the packed preset {#server-extraction}
@@ -155,7 +154,7 @@ If you did everything correctly you should see something along the lines of this
    ```yaml title="extra_cfg.yml"
    # Enable new CSP weather handling. Allows rain and smooth weather transitions. Requires CSP 0.1.76+
    EnableWeatherFx: true
-   ---
+   ...
    # Enable AI traffic
    EnableAi: true
    ```
@@ -202,7 +201,6 @@ Earlier we skipped over the `Time` slider inside of Content Manager because it o
 2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
 3. Since we already set the time multiplier to 0 we don't need to change it. If you wanted to, this would be the `TIME_OF_DAY_MULT` parameter. `1` would result in time progressing as fast as in real life, `2` would be twice as fast as in real life and so on.
 4. Save and restart the server to apply the changes.
-
    :::note
    **If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.**
    :::
@@ -323,7 +321,7 @@ If you feel like you don't need a step-by-step explanation, read over their resp
    ```
 4. Go back to the documentation page and copy the codeblock for the configuration.  
    To make sure you copied everything you can use the copy button on the right of the codeblock.  
-    ![](./assets/guide/23.png)
+   ![](./assets/guide/23.png)
 
 5. Paste the configuration **at the bottom** of the `extra_cfg.yml` like so:
    ```yaml title="extra_cfg.yml"
@@ -495,18 +493,21 @@ We only really care about the type and actual message, so here is a little cheat
 | `[INF]`         | Information, can be ignored                                                         |
 | `[DBG]`         | Debug, can also be ignored                                                          |
 | `[WRN]`         | Warning, might be important but can usually be ignore as well                       |
-| `[ERR]` `[FTL]` | Error and Failed to launch? Need to ask Compu, **these are what we're looking for** |
+| `[ERR]`         | Error, an error the server can recover from and keep running.                       |
+| `[FTL]`         | Fatal, an error causing the server to terminate.                                    |
+
+`[ERR]` and `[FTL]` are the two things we are looking for.
 
 While `[INF]`, `[DBG]` and `[WRN]` might have hints for other issues, in our example we will focus on the `[ERR]`or rather `[FTL]` messages.
 
 #### Example #1 {#example-one}
 
 Now, I want you to look at the log in the image below and try to read the log until you find something that might give you a idea about what is causing the server to crash.  
- ![](./assets/guide/25.png)
+![](./assets/guide/25.png)
 
 At first this might seem like a lot of scary text and that doesn't really change we narrow it down the the `[FTL]` message.  
 But if we actually try and read a few lines we can spot something we should be able to understand:  
- ![](./assets/guide/26.png)
+![](./assets/guide/26.png)
 This line tells us everything we need to know, so we can ignore the rest of the message.
 
 `No ai folder found. Please put at least one AI spline fast_lane.ai(p) into \content\tracks\csp\shuto_revival_project_beta\ai\`
@@ -518,7 +519,7 @@ If this is the only mistake you made obviously.
 #### Example #2 {#example-two}
 
 Since we enabled and configured some plugins earlier on, let's look at a example that has something to do with that.  
- ![](./assets/guide/27.png)
+![](./assets/guide/27.png)
 
 While this looks a lot different and it doesn't provide a helpful message telling us what to do as before, it is actually easy to understand.
 `(Line: 179, Col: 2, Idx: 9574) - (Line: 179, Col: 5, Idx: 9577): While parsing a block mapping, did not find expected key.`  
@@ -528,7 +529,7 @@ So lets open the `extra_cfg.yml` and take a look at Line `179`
 
 At first glance, and especially if you don't use a text editor that has syntax highlighting, it might look like there is nothing wrong here.  
 But, as explained earlier yaml is really strict on indentations so looking at it more closely and comparing it to the plugin configuration documentation page, we will spot a extra space infront of the `---`.  
- ![](./assets/guide/29.png)
+![](./assets/guide/29.png)
 
 Removing this space and saving the file will get rid of this error and should let the server start without problems.  
 If this is the only mistake you made obviously.
