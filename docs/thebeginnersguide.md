@@ -614,7 +614,7 @@ Posting your problem in #bug-reports or #general will ususally result in the mes
 
     The solution is not to ask to ask, but just to ask. Someone who is idling in the channel and only every now and then glances at what's going on is unlikely to answer to your "asking to ask" question, but if you actually describe your problem it may pique their interest and get them to respond because you (hopefully) already provided all the information they needed to help you.
 
-- **Provide as much information as you can, and format it so that it easily readable.**
+- **Provide as much information as you can, and format it so that it is easily readable.**
    > Server crashing, help what do?
 
    This is just as bad as asking to ask because it requires people to ask you for more details in order to narrow down the problem.  
