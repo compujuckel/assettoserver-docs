@@ -11,73 +11,83 @@ We will be setting up our server in a dedicated folder outside of Content Manage
 
 To follow along you will need the following things:
 
-- The `Hosting Bundle` version of the .NET Runtime required for the latest version of AssettoServer.
-- The `Latest` version of AssettoServer.
-- The `Full Version` of Content Manager.
-- The `Shutoko Revival Project` track and `fast_lane.ai(p)`.
+- The **Hosting Bundle** version of the .NET Runtime required for the latest version of AssettoServer.
+- The **latest** version of AssettoServer.
+- The **full version** of Content Manager.
+- The **Shutoko Revival Project** track and `fast_lane.ai(p)`.
 - Basic understanding of how text editors work.
 
 ### Finding the correct .NET version {#dotnet-version}
 
 :::caution
-**If you are trying to use a preview or outdated version of AssettoServer please make sure to double-check the required .NET Runtime version as different AssettoServer versions might require different .NET Runtime versions!**
+If you are trying to use a preview or outdated version of AssettoServer please make sure to double-check the required .NET Runtime version as different AssettoServer versions might require different .NET Runtime versions!
 :::
 
 1. Head over to the [installation section of the introduction page](./intro#installation) and follow the **.NET X Runtime** link.
+   
    ![](./assets/guide/1.png)
 
 2. Download and install the **Windows Hosting Bundle** of the .NET Runtime.
+   
    ![](./assets/guide/2.png)
 
 ### Finding the latest version of AssettoServer {#latest-assettoserver-version}
 
 1. On the [installation section of the introduction page](./intro#installation) follow the **latest stable release** link.
+   
    ![](./assets/guide/3.png)
 
 2. Click on the **assetto-server-win-x64.zip** in the Assets section of the release to download the file.
+   
    ![](./assets/guide/4.png)
 
 ### Purchasing the Full Version of Content Manager {#content-manager-fullversion}
 
 :::note
-**You can host, configure, and play on the server without the full version of Content Manager. However, for the sake of simplicity, we will be using features of the Full Version.**
+You can host, configure, and play on the server without the full version of Content Manager. However, for the sake of simplicity, we will be using features of the full version.
 :::
 
-1. Purchase the Full Version of Content Manager via the [official website](https://assettocorsa.club/content-manager.html) or by being a patron of [x4Fabs Patreon](https://www.patreon.com/user?u=11605034).
+1. Purchase the full version of Content Manager via the [official website](https://assettocorsa.club/content-manager.html) or by being a patron of [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
 
 2. Enter the key you received via email into Content Manager.
+   
    ![](./assets/guide/5.png)
 
 ### Downloading the Shutoko Revival Project track and AI spline {#downloading-srp}
 
 :::note
-**You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we will use the SRP track as it is one of the most popular tracks.**
+You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we will use the SRP track as it is one of the most popular tracks.
 :::
 
 1. Join the [Shutoko Revival Project Discord](https://discord.com/invite/shutokorevivalproject)
 2. Follow their download and installation instructions. **If you need help with that, please use the [#help](https://discord.com/channels/500246817833877505/504100944846520321) channel**
 3. Join the AssettoServer Discord by clicking on the Discord logo in the navbar of this page.  
+   
    ![](./assets/guide/6.png)
 
 4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, scroll up until you find the spline made for Shutoko Revival Project and download it by clicking on the `fast_lane.aip` file.
+   
    ![](./assets/guide/7.png)
 
-## Initial setup {#initial-setup}
+## Initial Setup {#initial-setup}
 
 ### Preconfiguration {#preconfiguration}
 
 For now, we will be using the minimum amount of cars needed for the default traffic settings of AssettoServer.  
-**If we wanted to have more player and/or traffic cars we would adjust steps 4. and 6. accordingly.**  
+**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 6 accordingly.**  
 These can be adjusted at any point, although doing so before packing the server the first time, means we don't have to edit files ourself, move checksum data or even repack the server and potentially overwrite work we've done.
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:
+   
    ![](./assets/guide/8.png)
 
 2. Click on `SERVER_00` in the list on the left and then on the `SERVER_00` text field to change the name of the server.
+   
    ![](./assets/guide/9.png)
 
 3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Tatsumi PA.
+   
    ![](./assets/guide/10.png)
 
 4. Move the `Capacity` slider to 11.
@@ -92,10 +102,12 @@ These can be adjusted at any point, although doing so before packing the server 
    ![](./assets/guide/11.png)
 
    :::caution
-   **Only add as many cars to the entry list as there are pits available for the track and layout you've chosen.**  
-   **The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:** 
-     ![](./assets/guide/caution1.png)  
-     **Ignoring this limit will result in the game crashing when joining the server.**
+   Only add as many cars to the entry list as there are pits available for the track and layout you've chosen.  
+   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:  
+
+   ![](./assets/guide/caution1.png)
+
+   Ignoring this limit will result in the game crashing when joining the server.
    :::
 
 7. Click on the `RULES` tab and configure the page how you see fit.
@@ -106,16 +118,19 @@ These can be adjusted at any point, although doing so before packing the server 
    - Move the `Allowed tyres out` slider to the left into the `Any` position.
 
    I will be using the following settings:
+   
    ![](./assets/guide/12.png)
 
 8. Click on the `CONDITIONS` tab and configure the page how you see fit.  
    Don't worry too much about the `Time` slider yet, we will get to that later on.
+
    :::caution
-   **Do not use the WeatherFX Time, Time Multiplier or Date.  
-     They do not work with AssettoServer and could cause problems.**
+   Do not use the WeatherFX Time, Time Multiplier or Date.  
+   They do not work with AssettoServer and could cause problems.
    :::
 
    I will be using the following settings:
+   
    ![](./assets/guide/13.png)
 
 9. Click on the `SESSIONS` tab and configure it as follows:
@@ -125,9 +140,11 @@ These can be adjusted at any point, although doing so before packing the server 
    - Set `Practice` to something reasonable like 2 hours. You can make sessions longer than that but a length of 999999999 will likely cause problems and is not necessary.
 
    We will be using the following settings:  
+
    ![](./assets/guide/14.png)
 
 10. At the bottom of the preset, click on `Save`.  
+    
     ![](./assets/guide/15.png)
 
 ### Packing the server preset {#preset-packing}
@@ -137,6 +154,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
 1. In the same bar that we just saved the server preset, click on `Pack`.
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
 3. Click on `Pack` and save it.  
+   
    ![](./assets/guide/16.png)
 
 ### Extracting AssettoServer and the packed preset {#server-extraction}
@@ -147,12 +165,14 @@ You should now have the following .zip files somewhere:
 - The .zip file of the server we just packed
 
 Create a new folder and extract both of these two .zip files into it.
+
 ![](./assets/guide/17.png)
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
 Double-click `AssettoServer.exe` to launch the server.  
 If you did everything correctly you should see something along the lines of this:
+
 ![](./assets/guide/18.png)
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
@@ -186,22 +206,25 @@ If you did everything correctly you should see something along the lines of this
    For the remaining cars we will add the line `AI=fixed` instead.
 
 5. After saving and closing the file, navigate to the content folder of the track, which is `\content\tracks\shuto_revival_project_beta`. Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
+   
    ![](./assets/guide/19.png)
 
 6. Now go back into the main folder of the server and launch `AssettoServer.exe` again.  
    Then open Content Manager and go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
    The server should now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
+   
    ![](./assets/guide/20.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
 8. Other people should also be able to join the server by searching for it or via the invite link that you can copy from the console.
+   
    :::caution
-   **Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link that is generated in the console instead.**
+   Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link that is generated in the console instead.
    :::
 
-## Advanced server configuration {#advanced-server-config}
+## Advanced Server Configuration {#advanced-server-config}
 
-### Time of day {#changing-time}
+### Time of Day {#changing-time}
 
 Earlier we skipped over the `Time` slider inside of Content Manager because it only allows us to set the time inside a range of 08:00 to 18:00 (8AM to 6PM) and it would reset to this range regardless of what we do.  
 So what do we do if we wanted to have a Night only server?
@@ -210,21 +233,23 @@ So what do we do if we wanted to have a Night only server?
 2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
 3. Since we already set the time multiplier to 0 we don't need to change it. If you wanted to, this would be the `TIME_OF_DAY_MULT` parameter. `1` would result in time progressing as fast as in real life, `2` would be twice as fast as in real life and so on.
 4. Save and restart the server to apply the changes.
+   
    :::note
-   **If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.**
+   If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.
    :::
 
-### CSP extra server options {#csp-server-options}
+### CSP Extra Server Options {#csp-server-options}
 
 If we want to take advantage of some of the features that CSP provides for servers, we will need to make some changes and create a file inside our `cfg` folder.
 
 If you feel like you don't need a step-by-step explanation, read over the [FAQ section](./faq.md#csp-extra-options) that covers how to use them.  
-Skip to the `Without Content Manager` part of the [teleporation](./faq#teleportation) section if you do not want to repack the server and overwrite files you might have edited while following this guide.
+Skip to the `Without Content Manager` part of the [teleportation](./faq.md#teleportation) section if you do not want to repack the server and overwrite files you might have edited while following this guide.
 
-#### Forcing a CSP version {#forcing-csp-version}
+#### Forcing a CSP Version {#forcing-csp-version}
 
 1.  Navigate to the `content/tracks` of the server and create a new folder called `csp`.
 2.  Take and move the `shuto_revival_project_beta` folder inside of the `csp` folder we just created.
+    
     ![](./assets/guide/21.png)
 
 3.  Go back into the `cfg` folder and open the `server_cfg.ini` the `TRACK=` parameter line as follows:  
@@ -235,13 +260,14 @@ Skip to the `Without Content Manager` part of the [teleporation](./faq#teleporta
 
 4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\tatsumi_pa\data` folder of the server and open the `surfaces.ini`.  
     Change the name of the first surface from `SURFACE_0` to `CSPFACE_0`
+    
     :::caution
     Changing any surface other than `SURFACE_0` will result in checksum errors for clients!
     :::
 
 5.  Save and close the file and restart the server, if you did everything correctly the server should start without any errors.
 
-We are now ready to add create a file called `csp_extra_options.ini` inside the `cfg` folder of our server and start adding to it.  
+We are now ready to create a file called `csp_extra_options.ini` inside the `cfg` folder of our server and start adding to it.  
 The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can play around with.  
 Two of the more useful options for Freeroam servers are listed below.
 
@@ -306,16 +332,17 @@ For teleportation and color changing there are additional steps for us since we 
    You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq#srp-teleports)
 
 4. Save and close the file and restart the server, you should now have traffic that is randomly colored and be able to teleport / change your car color via the lightbulb in the chat app.  
+   
    ![](./assets/guide/22.png)
 
-### AssettoServer plugins {#enabling-plugins}
+### AssettoServer Plugins {#enabling-plugins}
 
 AssettoServer comes with a few free to use plugins, we will be going over how to enable and configure two of them.  
 Namely the [AutoModerationPlugin](./plugins/AutoModerationPlugin.md) and the [RandomWeatherPlugin](./plugins/RandomWeatherPlugin.md).  
 If you feel like you don't need a step-by-step explanation, read over their respective documentation pages which cover what they do and how to enable and configure them.
 
 :::caution
-**Please make sure to not add or remove any spaces when copy pasting configurations as inproper indentation will result in the server refusing to start because of the way yaml files behave!**
+Please make sure to not add or remove any spaces when copy pasting configurations as improper indentation will result in the server refusing to start!
 :::
 
 #### AutoModerationPlugin
@@ -330,6 +357,7 @@ If you feel like you don't need a step-by-step explanation, read over their resp
    ```
 4. Go back to the documentation page and copy the codeblock for the configuration.  
    To make sure you copied everything you can use the copy button on the right of the codeblock.  
+
    ![](./assets/guide/23.png)
 
 5. Paste the configuration **at the bottom** of the `extra_cfg.yml` like so:
@@ -475,22 +503,23 @@ If you feel like you don't need a step-by-step explanation, read over their resp
    ```
 7. Save and close the file and restart the server.  
    If you did everything correctly you should see two new lines at the beginning of the server log:  
+
    ![](./assets/guide/24.png)
 
 This covers how to enable and configure plugins.  
 You can add as many or as few plugins, just make sure you carefully read the documentation pages as some of them might conflict with each other.
 
-### Troubleshooting basics {#troubleshooting}
+### Troubleshooting Basics {#troubleshooting}
 
 If at some point something goes wrong and the server no longer starts properly, there a few way to figure out what went wrong and how to fix it.
 We will be looking at one of the more common reasons for a server crash in this example but learning what to look for can help you figure out how to fix any problem.
 
 :::note
-**If the console window just closes when you try to start the server there will always be a log file you can read!**  
-**And if there is no log generated you have more than likely installed a wrong version or bundle of the .NET Runtime.**
+If the console window just closes when you try to start the server there will always be a log file you can read!  
+And if there is no log generated you have more than likely installed a wrong version or bundle of the .NET Runtime.
 :::
 
-Logs will generated in the `logs` folder of the server.
+Logs will be generated in the `logs` folder of the server.
 To open the log file, it should be called something like `log-20230706.txt` with the part after `log-` being the date the log was written.
 
 Before I continue I want to explain a few thing that can be useful to cut down on how much you have to read in order to understand.  
@@ -499,9 +528,9 @@ We only really care about the type and actual message, so here is a little cheat
 
 | Message Type    | Meaning                                                                             |
 | --------------- | ----------------------------------------------------------------------------------- |
-| `[INF]`         | Information, can be ignored                                                         |
-| `[DBG]`         | Debug, can also be ignored                                                          |
-| `[WRN]`         | Warning, might be important but can usually be ignore as well                       |
+| `[DBG]`         | Debug, can be ignored                                                               |
+| `[INF]`         | Information, can also be ignored                                                    |
+| `[WRN]`         | Warning, might be important but can usually be ignored as well                      |
 | `[ERR]`         | Error, an error the server can recover from and keep running.                       |
 | `[FTL]`         | Fatal, an error causing the server to terminate.                                    |
 
@@ -510,11 +539,14 @@ While `[INF]`, `[DBG]` and `[WRN]` might have hints for other problems, in our e
 #### Example #1 {#example-one}
 
 Now, I want you to look at the log in the image below and try to read the log until you find something that might give you a idea about what is causing the server to crash.  
+
 ![](./assets/guide/25.png)
 
-At first this might seem like a lot of scary text and that doesn't really change we narrow it down the the `[FTL]` message.  
+At first this might seem like a lot of scary text and that doesn't really change even if we narrow it down the the `[FTL]` message.  
 But if we actually try and read a few lines we can spot something we should be able to understand:  
+
 ![](./assets/guide/26.png)
+
 This line tells us everything we need to know, so we can ignore the rest of the message.
 
 `No ai folder found. Please put at least one AI spline fast_lane.ai(p) into \content\tracks\csp\shuto_revival_project_beta\ai\`
@@ -525,17 +557,20 @@ If this is the only mistake you made obviously.
 
 #### Example #2 {#example-two}
 
-Since we enabled and configured some plugins earlier on, let's look at a example that has something to do with that.  
+Since we enabled and configured some plugins earlier on, let's look at an example that has something to do with that.  
+
 ![](./assets/guide/27.png)
 
 While this looks a lot different and it doesn't provide a helpful message telling us what to do as before, it is actually easy to understand.
 `(Line: 179, Col: 2, Idx: 9574) - (Line: 179, Col: 5, Idx: 9577): While parsing a block mapping, did not find expected key.`  
 From this line we can tell that something went wrong parsing the file, and on what line and position.  
 So lets open the `extra_cfg.yml` and take a look at Line `179`
+
 ![](./assets/guide/28.png)
 
 At first glance, and especially if you don't use a text editor that has syntax highlighting, it might look like there is nothing wrong here.  
-But, as explained earlier yaml is really strict on indentations so looking at it more closely and comparing it to the plugin configuration documentation page, we will spot a extra space infront of the `---`.  
+But, as explained earlier yaml is really strict on indentations so looking at it more closely and comparing it to the plugin configuration documentation page, we will spot an extra space infront of the `---`.  
+
 ![](./assets/guide/29.png)
 
 Removing this space and saving the file will get rid of this error and should let the server start without problems.  
@@ -543,14 +578,14 @@ If this is the only mistake you made obviously.
 
 This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further. 
 
-## How to ask for help {#asking-for-help}
+## How to Ask for Help {#asking-for-help}
 
 If you have a question or run into a problem that you can't figure out yourself, feel free to join the AssettoServer Discord and ask for help.  
 Before that though, please make sure to read the [Introduction](./intro.mdx), [FAQ](./faq.md) and [Common configuration errors](./common-configuration-errors.md) pages as they answer a lot of common questions.
 
 :::caution
-**If you need help with setting up your server please use #server-troubleshooting.  
-Posting your problem in #bug-reports or #general will ususally result in the message being ignored or deleted.**
+If you need help with setting up your server please use #server-troubleshooting.  
+Posting your problem in #bug-reports or #general will ususally result in the message being ignored or deleted.
 :::
 
 ### Help Us Help You {#help-us-help-you}
@@ -560,10 +595,11 @@ Posting your problem in #bug-reports or #general will ususally result in the mes
   It's more than likely that whatever problem you're having, someone else did too and already asked how to fix it.  
   While Discords search is not known for being good, it should still give you something you can read through to see if your problem can be resolved the same way.  
 
-  Pressing `CTRL + F` while in the `#server-troubleshooting` channel will narrow down results to only from this channel.  
+  Pressing `CTRL + F` while in the `#server-troubleshooting` channel will narrow down results to only this channel.  
   After that type in something short, like the beginning sentence of a error message for example.  
   Then look over the results and see if anything matches what you are looking for.  
   If you found a message you want to take a closer look at, hover over the message and click on the `Jump` button.  
+
   ![](./assets/guide/30.png)  
 
   You will be moved to when the message was sent so you can read over the full chat history.  
@@ -578,7 +614,7 @@ Posting your problem in #bug-reports or #general will ususally result in the mes
 
     The solution is not to ask to ask, but just to ask. Someone who is idling in the channel and only every now and then glances at what's going on is unlikely to answer to your "asking to ask" question, but if you actually describe your problem it may pique their interest and get them to respond because you (hopefully) already provided all the information they needed to help you.
 
-- **Provide as Information as you can, and format it so that it easily readable.**
+- **Provide as much information as you can, and format it so that it easily readable.**
    > Server crashing, help what do?
 
    This is just as bad as asking to ask because it requires people to ask you for more details in order to narrow down the problem.  
@@ -588,6 +624,8 @@ Posting your problem in #bug-reports or #general will ususally result in the mes
    If you just want to copy a few lines, use Discord's markdown feature to put it into a codeblock for easier readablitiy.  
    This can be done by surrounding it with ` ``` ` like this: ` ```Text``` `
    
-   Some examples messages that are easy to read:
+   Some example messages that are easy to read:
+   
    ![](./assets/guide/31.png)
+   
    ![](./assets/guide/32.png)
