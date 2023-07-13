@@ -298,3 +298,17 @@ Output of the template:
 
 </p>
 </details>
+
+## Leaderboards
+
+### Timing Points Leaderboard
+
+Use the `/timing-points-leaderboard` command to create a leaderboard in the current channel.
+
+![](./assets/timing-points-leaderboard.png)
+
+### Race Challenge Leaderboard
+
+Use the `/race-challenge-leaderboard` command to create a leaderboard in the current channel.
+
+![](./assets/race-challenge-leaderboard.png)

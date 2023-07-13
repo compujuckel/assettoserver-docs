@@ -5,10 +5,6 @@ title: Changelog
 
 ### v0.0.36
 
-#### PatreonDynamicSkinsPlugin (new!)
-
-#### PatreonChatRolesPlugin (new!)
-
 #### PatreonRaceChallengePlugin
 
 * Fix chat commands not working
@@ -68,15 +64,18 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 ### v0.0.6
 
 #### Timing Leaderboard
-* Add filter for current month
+* Add filter for current month / monthly leaderboards
 * Add API
-* Do not show tracks with no lap times set
+* Hide tracks from a leaderboard when no lap times are set for that track + leaderboard combination
+* Add point-based timing leaderboard
 
 #### Discord
 * Add Discord Bot
 * Add ability to link Steam account to Discord account
 * Add Discord role mappings
 * Add server status embeds
+* Add Discord timing leaderboards
+* Add Discord race challenge leaderboards
 
 ### v0.0.5
 
