@@ -393,6 +393,13 @@ Please make sure to not add or remove any spaces when copy pasting configuration
      # Players driving faster than this speed will not be kicked
      MaximumSpeedKph: 5
    ```
+
+6. We will also set `EnableClientMessages` to true because if enabled, a wrong way / no parking / no lights sign will be shown to the player.
+   ```yaml title=extra_cfg.yml
+   # Enable CSP client messages feature. Requires CSP 0.1.77+
+   EnableClientMessages: true
+   ```
+
    If we wanted to we could now adjust the plugin config, we will be leaving it as is for now.
 
 #### RandomWeatherPlugin
