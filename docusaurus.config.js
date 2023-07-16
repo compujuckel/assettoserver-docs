@@ -62,6 +62,11 @@ const config = {
         routeBasePath: 'patreon-docs',
         sidebarPath: require.resolve('./sidebars.js'),
         showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: "Unreleased",
+          },
+        },
       },
     ],
   ],
