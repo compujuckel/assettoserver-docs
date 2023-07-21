@@ -176,8 +176,8 @@ If you did everything correctly you should see something along the lines of this
 ![](./assets/guide/18.png)
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
-2. Open the newly created `extra_cfg.yml` using a text editor of your choice.
-3. Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
+2. Open the newly created `extra_cfg.yml` using a text editor of your choice.  
+   Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
 
    ```yaml title="extra_cfg.yml"
    # Enable new CSP weather handling. Allows rain and smooth weather transitions. Requires CSP 0.1.76+
@@ -187,8 +187,8 @@ If you did everything correctly you should see something along the lines of this
    EnableAi: true
    ```
 
-4. Save and close the file and then open the `entry_list.ini` that is also in the `cfg` folder.  
-   For the first car, which should be the RUF that we want to drive, we will add a line below `RESTRICTOR=0` as follows:
+3. Save and close the file and then open the `entry_list.ini`.  
+   For the first car, which should be the RUF that we want to drive, we will add a line below `RESTRICTOR=0`.
 
    ```ini title="entry_list.ini"
    [CAR_0]
@@ -204,6 +204,20 @@ If you did everything correctly you should see something along the lines of this
    ```
 
    For the remaining cars we will add the line `AI=fixed` instead.
+
+4. Save and close the file and then open the `server_cfg.ini`.  
+   Find the `[PRACTICE]` session and add a line with `INFINITE=1` to it.
+
+   ```ini title="server_cfg.ini"
+   [PRACTICE]
+   NAME=Practice
+   TIME=120
+   IS_OPEN=1
+   INFINITE=1
+   ``` 
+
+   This will make the session infinitely long without resetting the session and sending everyone to pits when the 2 hours are up.  
+   Keep in mind that Content Manager and apps will show a `time left`, which is normal and doesn't mean that it's not working.
 
 5. After saving and closing the file, navigate to the content folder of the track, which is `\content\tracks\shuto_revival_project_beta`. Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
    
