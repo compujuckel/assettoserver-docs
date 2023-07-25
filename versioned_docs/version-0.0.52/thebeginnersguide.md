@@ -175,6 +175,17 @@ If you did everything correctly you should see something along the lines of this
 
 ![](./assets/guide/18.png)
 
+:::caution
+  You might also have the following error message inside of your log:  
+  `Error during Kunos lobby registation: ERROR, INVALID SERVER, CHECK YOUR PORT FORWARDING SETTINGS`  
+
+  This means that you need to forward the ports that AssettoServer uses inside your router and possibly make a  exception for the `AssettoServer.exe` inside your firewall.  
+  By default the ports you need to forward are TCP+UDP `9600` and TCP `8081`.  
+
+  Because there are an infinite amount of routers / ISP combinations we will not explain how to do this here.  
+  Refer to the user manual of your router or google for "how to port forward" with the name of your router and ISP.
+:::
+
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
 2. Open the newly created `extra_cfg.yml` using a text editor of your choice.  
    Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
@@ -598,6 +609,20 @@ Removing this space and saving the file will get rid of this error and should le
 If this is the only mistake you made obviously.
 
 This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further. 
+
+## Updating the Server {#updating-the-server}
+
+In general, it is recommended to start fresh when updating AssettoServer.  
+
+1. Make a backup of your current `extra_cfg.yml`.
+2. Redo the extraction and combination of packed server and AssettoServer files as explained [in this section](./thebeginnersguide.md#server-extraction) inside of a new folder.
+3. Run the `AssettoServer.exe` of the new server once to generate a updated `extra_cfg.yml`.
+4. Use the backup of your `extra_cfg.yml` to reconfigure the `extra_cfg.yml` of the updated server.
+
+:::note
+Parameters inside of the `extra_cfg.yml` could have been renamed, rearranged or removed between versions.  
+Adding back / renaming parameters will result in the server crashing.
+:::
 
 ## How to Ask for Help {#asking-for-help}
 
