@@ -23,7 +23,7 @@ To follow along you will need the following things:
 If you are trying to use a preview or outdated version of AssettoServer please make sure to double-check the required .NET Runtime version as different AssettoServer versions might require different .NET Runtime versions!
 :::
 
-1. Head over to the [installation section of the introduction page](./intro#installation) and follow the **.NET X Runtime** link.
+1. Head over to the [installation section of the introduction page](./intro.mdx#installation) and follow the **.NET X Runtime** link.
    
    ![](./assets/guide/1.png)
 
@@ -33,7 +33,7 @@ If you are trying to use a preview or outdated version of AssettoServer please m
 
 ### Finding the latest version of AssettoServer {#latest-assettoserver-version}
 
-1. On the [installation section of the introduction page](./intro#installation) follow the **latest stable release** link.
+1. On the [installation section of the introduction page](./intro.mdx#installation) follow the **latest stable release** link.
    
    ![](./assets/guide/3.png)
 
@@ -354,7 +354,7 @@ For teleportation and color changing there are additional steps for us since we 
    ...
    ```
 
-   You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq#srp-teleports)
+   You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
 4. Save and close the file and restart the server, you should now have traffic that is randomly colored and be able to teleport / change your car color via the lightbulb in the chat app.  
    
