@@ -45,3 +45,8 @@ If you want to ignore this error set this in `extra_cfg.yml`:
 IgnoreConfigurationErrors:
   UnsafeAdminWhitelist: true
 ```
+
+## CSP extra options missing from chat
+If you added parameters to the `csp_extra_options.ini` without forcing a CSP version, features like teleportation won't show up in the chat menu but will allow players to teleport via apps like comfy map if their installed CSP version supports it.  
+
+To make them selectable in the chat app follow [the instructions on how to force a CSP version.](./thebeginnersguide.md#forcing-csp-version)

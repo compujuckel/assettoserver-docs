@@ -23,7 +23,7 @@ To follow along you will need the following things:
 If you are trying to use a preview or outdated version of AssettoServer please make sure to double-check the required .NET Runtime version as different AssettoServer versions might require different .NET Runtime versions!
 :::
 
-1. Head over to the [installation section of the introduction page](./intro#installation) and follow the **.NET X Runtime** link.
+1. Head over to the [installation section of the introduction page](./intro.mdx#installation) and follow the **.NET X Runtime** link.
    
    ![](./assets/guide/1.png)
 
@@ -33,7 +33,7 @@ If you are trying to use a preview or outdated version of AssettoServer please m
 
 ### Finding the latest version of AssettoServer {#latest-assettoserver-version}
 
-1. On the [installation section of the introduction page](./intro#installation) follow the **latest stable release** link.
+1. On the [installation section of the introduction page](./intro.mdx#installation) follow the **latest stable release** link.
    
    ![](./assets/guide/3.png)
 
@@ -175,9 +175,20 @@ If you did everything correctly you should see something along the lines of this
 
 ![](./assets/guide/18.png)
 
+:::caution
+  You might also have the following error message inside of your log:  
+  `Error during Kunos lobby registation: ERROR, INVALID SERVER, CHECK YOUR PORT FORWARDING SETTINGS`  
+
+  This means that you need to forward the ports that AssettoServer uses inside your router and possibly make a  exception for the `AssettoServer.exe` inside your firewall.  
+  By default the ports you need to forward are TCP+UDP `9600` and TCP `8081`.  
+
+  Because there are an infinite amount of routers / ISP combinations we will not explain how to do this here.  
+  Refer to the user manual of your router or google for "how to port forward" with the name of your router and ISP.
+:::
+
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
-2. Open the newly created `extra_cfg.yml` using a text editor of your choice.
-3. Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
+2. Open the newly created `extra_cfg.yml` using a text editor of your choice.  
+   Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
 
    ```yaml title="extra_cfg.yml"
    # Enable new CSP weather handling. Allows rain and smooth weather transitions. Requires CSP 0.1.76+
@@ -187,8 +198,8 @@ If you did everything correctly you should see something along the lines of this
    EnableAi: true
    ```
 
-4. Save and close the file and then open the `entry_list.ini` that is also in the `cfg` folder.  
-   For the first car, which should be the RUF that we want to drive, we will add a line below `RESTRICTOR=0` as follows:
+3. Save and close the file and then open the `entry_list.ini`.  
+   For the first car, which should be the RUF that we want to drive, we will add a line below `RESTRICTOR=0`.
 
    ```ini title="entry_list.ini"
    [CAR_0]
@@ -204,6 +215,20 @@ If you did everything correctly you should see something along the lines of this
    ```
 
    For the remaining cars we will add the line `AI=fixed` instead.
+
+4. Save and close the file and then open the `server_cfg.ini`.  
+   Find the `[PRACTICE]` session and add a line with `INFINITE=1` to it.
+
+   ```ini title="server_cfg.ini"
+   [PRACTICE]
+   NAME=Practice
+   TIME=120
+   IS_OPEN=1
+   INFINITE=1
+   ``` 
+
+   This will make the session infinitely long without resetting the session and sending everyone to pits when the 2 hours are up.  
+   Keep in mind that Content Manager and apps will show a `time left`, which is normal and doesn't mean that it's not working.
 
 5. After saving and closing the file, navigate to the content folder of the track, which is `\content\tracks\shuto_revival_project_beta`. Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
    
@@ -329,7 +354,7 @@ For teleportation and color changing there are additional steps for us since we 
    ...
    ```
 
-   You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq#srp-teleports)
+   You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
 4. Save and close the file and restart the server, you should now have traffic that is randomly colored and be able to teleport / change your car color via the lightbulb in the chat app.  
    
@@ -584,6 +609,20 @@ Removing this space and saving the file will get rid of this error and should le
 If this is the only mistake you made obviously.
 
 This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further. 
+
+## Updating the Server {#updating-the-server}
+
+In general, it is recommended to start fresh when updating AssettoServer.  
+
+1. Make a backup of your current `extra_cfg.yml`.
+2. Redo the extraction and combination of packed server and AssettoServer files as explained [in this section](./thebeginnersguide.md#server-extraction) inside of a new folder.
+3. Run the `AssettoServer.exe` of the new server once to generate a updated `extra_cfg.yml`.
+4. Use the backup of your `extra_cfg.yml` to reconfigure the `extra_cfg.yml` of the updated server.
+
+:::note
+Parameters inside of the `extra_cfg.yml` could have been renamed, rearranged or removed between versions.  
+Adding back / renaming parameters will result in the server crashing.
+:::
 
 ## How to Ask for Help {#asking-for-help}
 

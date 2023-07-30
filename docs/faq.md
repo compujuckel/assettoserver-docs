@@ -540,10 +540,12 @@ To add images use `[img=<link>]img1[/img]`
 Keep in mind that some functions of BBcode are not supported by Content Manager.
 
 **Example Description**
-```yaml
+```yaml title="extra_cfg.yml"
 ServerDescription: |-
-  [img=https://i.imgur.com/MCkI3Eh.png]SRP Logo[/img]
-  [size=16]                   UNOFFICIAL AI TRAFFIC TEST SERVER
+  [img=https://cdn.discordapp.com/attachments/665701010160877598/1130233890280308838/srp-logo-cm.png]SRP Logo[/img]
+
+  [size=16]                   [b]UNOFFICIAL AI TRAFFIC TEST SERVER[/b]
+
                 Car and track downloads, installation help:
                           [url=https://discord.com/invite/shutokorevivalproject]Shutoko Revival Project Discord[/url]
                               Server news and feedback:
