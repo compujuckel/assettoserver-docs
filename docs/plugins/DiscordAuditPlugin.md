@@ -26,4 +26,8 @@ AuditUrl: https://discord.com/api/webhooks/...
 ChatUrl: https://discord.com/api/webhooks/...
 # Set this to true if the Discord username of the bot should be the AC server name
 ChatMessageIncludeServerName: false
+# Optional list of SteamIDs whose chat messages should not be forwarded to Discord
+# ChatIgnoreGuids:
+# - 1234
+# - 5678
 ```
