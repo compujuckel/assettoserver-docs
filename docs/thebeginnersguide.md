@@ -568,7 +568,7 @@ We only really care about the type and actual message, so here is a little cheat
 
 While `[INF]`, `[DBG]` and `[WRN]` might have hints for other problems, in our example we will focus on the `[ERR]` and `[FTL]` messages.
 
-#### Example #1 {#example-one}
+#### Example #1 - Missing AI spline {#missing-aispline}
 
 Now, I want you to look at the log in the image below and try to read the log until you find something that might give you a idea about what is causing the server to crash.  
 
@@ -587,7 +587,7 @@ Apparently we failed to place a AI spline in the correct folder.
 Moving a `fast_lane.aip` into the pathing that is shown in the log message, will get rid of this error and should let the server start without problems.  
 If this is the only mistake you made obviously.
 
-#### Example #2 {#example-two}
+#### Example #2 - Syntax error in config file {#syntax-errors}
 
 Since we enabled and configured some plugins earlier on, let's look at an example that has something to do with that.  
 
@@ -609,6 +609,76 @@ Removing this space and saving the file will get rid of this error and should le
 If this is the only mistake you made obviously.
 
 This should cover the setup process to get started, from here it's basically just changing parameters to customize your server further. 
+
+#### Example #3 - Adding missing track params {#adding-trackparams}
+
+Next, we will be looking at something that can come up if you decide to use a different map than Shutoko Revival Project.  
+As a example I will be using the PTB (Publing Testing Build) version of Shutoko Revival Project.
+
+![](./assets/guide/33.png)
+
+`No track params found for csp/2144/../H/../shuto_revival_project_beta_ptb. More info: https://assettoserver.org/docs/common-configuration-errors#missing-track-params`
+
+This log message links us to the [Missing Track Params section on the Common Configuration Errors page](./common-configuration-errors.md#missing-track-params).  
+It explains that we can either add the paramaters manually or ignore this error by settings `MissingTrackParams` to `true` in `extra_cfg.yml`.  
+While the server would start when ignored, keep in mind that doing so could result in time not being syncronized between players. 
+
+Because we know that Shutoko Revival Project already has track params available for the normal version, we could reuse the data for the PTB version to save some time.  
+Since there are tracks were you can't copy paste available data, we will go over how to aquire the data manually.  
+If you just want to know how to reuse data skip to [here](#trackparams-reuse).
+
+#### Manually {#trackparams-manual}
+1. Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.
+2. Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
+   ```ini title="data_track_params.ini"
+   [shuto_revival_project_ptb]
+   NAME=Shutoko Revival Project PTB
+   LATITUDE=
+   LONGITUDE=
+   TIMEZONE=
+   ```
+   If you don't remember the name of the track folder use the error message as a reminder.
+
+3. Open [Google Maps](https://www.google.com/maps/) and find the location of the track.  
+   Right click onto the map and click the the Longitute and Latitute values that will be shown as the first option to copy them.  
+   ![](./assets/guide/34.png)  
+   Paste them after the `LATITUDE=` and `LONGITUDE=` keys.
+
+4. Open a [TZ timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) and look for the timezone that the track is in, then copy the `TZ Identifier`.
+   ![](./assets/guide/35.png)  
+   Paste it after the `TIMEZONE=` key.
+
+   You should now have something along the lines of this:
+   ```ini title="data_track_params.ini"
+   [shuto_revival_project_ptb]
+   NAME=Shutoko Revival Project PTB
+   LATITUDE=35.67040
+   LONGITUDE=139.74085
+   TIMEZONE=Asia/Tokyo
+   ```
+
+5. Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true` then save it.
+   ```yaml title="extra_cfg.yml"
+   # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
+   ForceServerTrackParams: true
+   ```
+
+If you did everything correctly you should now be able to start the server and the time should be synced between all players.
+
+#### Reuse {#trackparams-reuse}
+1. Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.
+2. Find and copy the entry for the track you want to resue, in this case `[shuto_revival_project]`.
+3. In the copied section, change the header to the folder name your current track, in this case `[shuto_revival_project_ptb]`  
+   ![](./assets/guide/36.png)  
+   If you don't remember the name of the track folder use the error message as a reminder.
+
+5. Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true` and save it.
+   ```yaml title="extra_cfg.yml"
+   # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
+   ForceServerTrackParams: true
+   ```
+
+If you did everything correctly you should now be able to start the server and the time should be synced between all players.
 
 ## Updating the Server {#updating-the-server}
 
