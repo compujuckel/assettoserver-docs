@@ -14,11 +14,7 @@ IgnoreConfigurationErrors:
 
 ## Missing track params
 AssettoServer uses track coordinates and time zone for some features like live weather. At first server startup a list of known track params will be downloaded from here: https://github.com/ac-custom-shaders-patch/acc-extension-config/blob/master/config/data_track_params.ini  
-When there is no entry in this file for your map this error will be shown. This should be fixed by creating a Pull Request on the above repository and then forcing AssettoServer to redownload this file by deleting `cfg/data_track_params.ini`.
-
-As of CSP version 0.1.78 you can also specify timezone, as well as latitude and longitude in the `csp_extra_options.ini` directly to ensure all clients will be in the same lighting conditions. Read the CSP Wiki for more info: https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#timezone
-
-Additionally you can manually add an entry for your track in `cfg/data_track_params.ini`, **but if you enable WeatherFX in `extra_cfg.yml`, time will not be in sync between server and client, unless you also enable ForceServerTrackParams.**
+When there is no entry in this file for your track this error will be shown. This should be fixed by creating a Pull Request on the above repository and then forcing AssettoServer to redownload this file by deleting `cfg/data_track_params.ini`. If you want to create a local entry without creating a Pull Request instead, read [this FAQ section](./faq.md#adding-trackparams).
 
 If you want to ignore this error set this in `extra_cfg.yml`:
 ```yaml
