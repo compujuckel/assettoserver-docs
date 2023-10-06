@@ -568,7 +568,7 @@ We only really care about the type and actual message, so here is a little cheat
 
 While `[INF]`, `[DBG]` and `[WRN]` might have hints for other problems, in our example we will focus on the `[ERR]` and `[FTL]` messages.
 
-#### Example #1 {#example-one}
+#### Example #1 - Missing AI spline {#missing-aispline}
 
 Now, I want you to look at the log in the image below and try to read the log until you find something that might give you a idea about what is causing the server to crash.  
 
@@ -587,7 +587,7 @@ Apparently we failed to place a AI spline in the correct folder.
 Moving a `fast_lane.aip` into the pathing that is shown in the log message, will get rid of this error and should let the server start without problems.  
 If this is the only mistake you made obviously.
 
-#### Example #2 {#example-two}
+#### Example #2 - Syntax error in config file {#syntax-errors}
 
 Since we enabled and configured some plugins earlier on, let's look at an example that has something to do with that.  
 

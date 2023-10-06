@@ -35,6 +35,71 @@ Checksums are required to prevent people from cheating by modifying their car an
 </TabItem>
 </Tabs>
 
+## How do I add missing track params? {#adding-trackparams}
+
+You can either add the parameters locally or ignore this error by setting `MissingTrackParams` to `true` in `extra_cfg.yml`.  
+Keep in mind that setting `MissingTrackParams` to `true` can result in time not being synchronized between players and the server.  
+
+#### Manually {#trackparams-manual}
+Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
+Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
+```ini title="data_track_params.ini"
+[shuto_revival_project_ptb]
+NAME=SRP PTB
+LATITUDE=
+LONGITUDE=
+TIMEZONE=
+```
+
+Open [Google Maps](https://www.google.com/maps/) and find the location of the track.  
+Right click onto the map and click the Longitute and Latitute values that will be shown as the first option to copy them.  
+![](./assets/SrjDw4f.png)  
+Paste them after the `LATITUDE=` and `LONGITUDE=` keys.
+
+Open a [TZ timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) and look for the time zone that the track is in, then copy the `TZ Identifier`.
+![](./assets/LfFsktI.png)  
+Paste it after the `TIMEZONE=` key.
+
+You should now have something along the lines of this:
+```ini title="data_track_params.ini"
+[shuto_revival_project_ptb]
+NAME=SRP PTB
+LATITUDE=35.67040
+LONGITUDE=139.74085
+TIMEZONE=Asia/Tokyo
+```
+
+Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
+```yaml title="extra_cfg.yml"
+# Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
+ForceServerTrackParams: true
+```
+
+#### Reuse {#trackparams-reuse}
+Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
+Find and copy the entry for the track you want to reuse.  
+Change the header of the copied section to the folder name your current track.  
+```ini title="data_track_params.ini"
+; Original
+[shuto_revival_project]
+NAME=SRP
+LATITUDE=35.670479
+LONGITUDE=139.740921
+TIMEZONE=Asia/Tokyo
+; Copied
+[shuto_revival_project_ptb]
+NAME=SRP PTB
+LATITUDE=35.670479
+LONGITUDE=139.740921
+TIMEZONE=Asia/Tokyo
+```
+
+Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
+```yaml title="extra_cfg.yml"
+# Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
+ForceServerTrackParams: true
+```
+
 ## How do I use CSP extra server options? {#csp-extra-options}
 
 Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
