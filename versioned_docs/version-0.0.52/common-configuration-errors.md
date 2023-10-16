@@ -14,13 +14,18 @@ IgnoreConfigurationErrors:
 
 ## Missing track params
 AssettoServer uses track coordinates and time zone for some features like live weather. At first server startup a list of known track params will be downloaded from here: https://github.com/ac-custom-shaders-patch/acc-extension-config/blob/master/config/data_track_params.ini  
-When there is no entry in this file for your track this error will be shown. This should be fixed by creating a Pull Request on the above repository and then forcing AssettoServer to redownload this file by deleting `cfg/data_track_params.ini`. If you want to create a local entry without creating a Pull Request instead, read [this FAQ section](./faq.md#adding-trackparams).
+When there is no entry in this file for your track this error will be shown. This should be fixed by creating a Pull Request on the above repository and then forcing AssettoServer to redownload this file by deleting `cfg/data_track_params.ini`.  
+To create local track param data for your track without creating a Pull Request, read [this FAQ section](./faq.md#adding-trackparams).
 
 If you want to ignore this error set this in `extra_cfg.yml`:
 ```yaml
 IgnoreConfigurationErrors:
   MissingTrackParams: true
 ```
+
+:::caution
+If WeatherFX is enabled while track params are missing, time will not be in sync between players and the server.
+:::
 
 ## Wrong server details
 In Content Manager `Server > Details > Mode to provide extra details` you selected `Via ID in name (recommended)`. For AssettoServer this is **NOT** recommended because AssettoServer has its own way to ensure server details are always up to date.
