@@ -11,25 +11,10 @@ We will be setting up our server in a dedicated folder outside of Content Manage
 
 To follow along you will need the following things:
 
-- The **Hosting Bundle** version of the .NET Runtime required for the latest version of AssettoServer.
 - The **latest** version of AssettoServer.
 - The **full version** of Content Manager.
 - The **Shutoko Revival Project** track and `fast_lane.ai(p)`.
 - Basic understanding of how text editors work.
-
-### Finding the correct .NET version {#dotnet-version}
-
-:::caution
-If you are trying to use a preview or outdated version of AssettoServer please make sure to double-check the required .NET Runtime version as different AssettoServer versions might require different .NET Runtime versions!
-:::
-
-1. Head over to the [installation section of the introduction page](./intro.mdx#installation) and follow the **.NET X Runtime** link.
-   
-   ![](./assets/guide/1.png)
-
-2. Download and install the **Windows Hosting Bundle** of the .NET Runtime.
-   
-   ![](./assets/guide/2.png)
 
 ### Finding the latest version of AssettoServer {#latest-assettoserver-version}
 
