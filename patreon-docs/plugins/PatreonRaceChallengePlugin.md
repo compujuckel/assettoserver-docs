@@ -34,6 +34,8 @@ EnableLeaderboard: true
 # For example if you don't want traffic- and non-traffic servers to show on the same leaderboard, just use different
 # leaderboard names for them.
 LeaderboardName: Default
+# Optional: Make leader lose points when the follower is closer than x meters
+LeaderDistanceOffsetMeters: 0
 ```
 ## How it works
 You can drive behind another player controlled car and flash either your headlights or high beams three times to initiate a race challenge.
