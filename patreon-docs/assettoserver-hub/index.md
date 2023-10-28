@@ -40,5 +40,17 @@ FileBasedUserGroups:
 After starting the hub, keys will be automatically generated for each entry without a key. You can then enter the generated key
 in your AssettoServer configuration.
 
+## How to use friendly car/track names for leaderboards
+
+On a game server with [PatreonHubPlugin](../plugins/PatreonHubPlugin.md) loaded, log in as administrator and select `AssettoServer Hub` via the hammer icon in chat:
+
+![](./assets/ashub1.png)
+
+Click on `Upload car/track names`.
+
+![](./assets/ashub2.png)
+
+After that, proper names will be used on the leaderboards (e.g. `Nissan Skyline GT-R R34 V-SPEC Performance` instead of `nissan_skyline_r34_v-specperformance`)
+
 ## How it works
 AssettoServerHub and AssettoServer are using gRPC to communicate. Data is stored in an SQLite database called `Hub.db`.
