@@ -40,7 +40,7 @@ FileBasedUserGroups:
 After starting the hub, keys will be automatically generated for each entry without a key. You can then enter the generated key
 in your AssettoServer configuration.
 
-## How to use friendly car/track names for leaderboards
+## How to use friendly car/track names for leaderboards {#friendly-names}
 
 On a game server with [PatreonHubPlugin](../plugins/PatreonHubPlugin.md) loaded, log in as administrator and select `AssettoServer Hub` via the hammer icon in chat:
 

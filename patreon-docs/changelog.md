@@ -3,6 +3,40 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.37
+
+#### PatreonChatRolesPlugin (new!)
+
+This plugin allows yout to change the chat name colors of players and assign icons to groups, e.g. for admins, VIP, etc.
+
+#### PatreonAnalyticsPlugin (new!)
+
+This plugin allows you to record various metrics about your servers and your players.
+
+* Client metrics
+  * General info: Resolution, MSAA, World Detail, Fullscreen, Vsync, VR, Triplescreen, Shifter, FPS cap
+  * Reported continously: FPS, CPU occupancy
+* Server metrics
+  * For each car: Time spent empty / in loading screen / idle / driving, number of collisions
+
+#### PatreonRaceChallengePlugin
+
+* New parameter `LeaderDistanceOffsetMeters` to make leader lose points when follower is close
+
+#### PatreonReservedSlotsPlugin
+
+* Add support for multiple groups
+
+:::caution Breaking Changes!
+
+Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
+
+:::
+
+#### PatreonTimingPlugin
+
+* Record more useful info for lap times: Input method, shifter, tyre choice, car checksum, sector times, weather, track grip, track/ambient temperature, in-game time
+
 ### v0.0.36
 
 #### PatreonRaceChallengePlugin
@@ -60,6 +94,18 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 :::
 
 ## AssettoServer Hub
+
+### v0.0.7
+
+#### Timing Leaderboard
+
+* Do not require `Default` leaderboard to be present, the first leaderboard will be used instead
+* New parameter `TimingLeaderboardExtraColumns` to control which columns are shown on the leaderboards
+* Use friendly car/track names instead of folder names ([more info](./assettoserver-hub/index.md#friendly-names))
+
+#### Discord
+
+* Synchronization of user groups should be more reliable
 
 ### v0.0.6
 

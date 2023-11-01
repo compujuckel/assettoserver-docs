@@ -3,7 +3,7 @@ description: Connect a server to AssettoServer Hub
 ---
 
 # PatreonHubPlugin
-Connects this server to an AssettoServerHub instance. Required for leaderboards of other plugins to work.
+Connects this server to an AssettoServer Hub instance. Required for leaderboards of other plugins to work.
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
