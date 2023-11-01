@@ -98,14 +98,16 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 ### v0.0.7
 
 #### Timing Leaderboard
-
 * Do not require `Default` leaderboard to be present, the first leaderboard will be used instead
 * New parameter `TimingLeaderboardExtraColumns` to control which columns are shown on the leaderboards
 * Use friendly car/track names instead of folder names ([more info](./assettoserver-hub/index.md#friendly-names))
 
 #### Discord
-
 * Synchronization of user groups should be more reliable
+
+#### Other
+* Slight improvements to mobile UI for leaderboards
+* Prometheus metrics for daily/weekly/monthly active/new users (available via `/metrics` endpoint)
 
 ### v0.0.6
 
