@@ -7,7 +7,9 @@ title: Changelog
 
 #### PatreonChatRolesPlugin (new!)
 
-This plugin allows yout to change the chat name colors of players and assign icons to groups, e.g. for admins, VIP, etc.
+This plugin allows you to change the chat name colors of players and assign icons to groups, e.g. for admins, VIP, etc.
+
+Thanks to **No Hesi** for commissioning this plugin!
 
 #### PatreonAnalyticsPlugin (new!)
 
@@ -16,7 +18,7 @@ This plugin allows you to record various metrics about your servers and your pla
 * Client metrics
   * General info: Resolution, MSAA, World Detail, Fullscreen, Vsync, VR, Triplescreen, Shifter, FPS cap
   * Reported continously: FPS, CPU occupancy
-* Server metrics
+* Server metrics (commissioned by **No Hesi**)
   * For each car: Time spent empty / in loading screen / idle / driving, number of collisions
 
 #### PatreonRaceChallengePlugin
@@ -25,7 +27,7 @@ This plugin allows you to record various metrics about your servers and your pla
 
 #### PatreonReservedSlotsPlugin
 
-* Add support for multiple groups
+* Add support for multiple groups (commissioned by **No Hesi**)
 
 :::caution Breaking Changes!
 
@@ -107,7 +109,7 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 #### Other
 * Slight improvements to mobile UI for leaderboards
-* Prometheus metrics for daily/weekly/monthly active/new users (available via `/metrics` endpoint)
+* Prometheus metrics for daily/weekly/monthly active/new users (available via `/metrics` endpoint, commissioned by **No Hesi**)
 
 ### v0.0.6
 
