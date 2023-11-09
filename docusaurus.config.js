@@ -42,7 +42,7 @@ const config = {
           showLastUpdateTime: true,
           versions: {
             current: {
-              label: "0.0.53",
+              label: "0.0.54",
             },
           },
         },

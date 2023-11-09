@@ -3,6 +3,14 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.38
+
+Small hotfix for the race challenge plugin, all other plugins are identical to v0.0.37.
+
+#### PatreonRaceChallengePlugin
+* Fix health bars not showing up
+* Fix points being deducted while countdown hasn't finished yet
+
 ### v0.0.37
 
 #### PatreonChatRolesPlugin (new!)
