@@ -248,6 +248,49 @@ So what do we do if we wanted to have a Night only server?
    If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.
    :::
 
+### Weather {#changing-weather}
+
+We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and re-extract?  
+What if weathers like Heavy Rain are missing from the WeatherFX selection dropdown?
+
+:::caution if you want to select a weather with rain
+All players will need to have a Custom Shaders Patch preview version installed to see rain.  
+Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
+Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
+:::
+
+1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.  
+2. Find the `[WEATHER_0]` section, it should look something like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=17
+   BASE_TEMPERATURE_AMBIENT=18
+   BASE_TEMPERATURE_ROAD=6
+   VARIATION_AMBIENT=0
+   VARIATION_ROAD=0
+   WIND_BASE_SPEED_MIN=0
+   WIND_BASE_SPEED_MAX=0
+   WIND_BASE_DIRECTION=0
+   WIND_VARIATION_DIRECTION=0
+   ```
+
+3. Under `[WEATHER_0]` find the parameter `GRAPHICS=` and change the WeatherFX ID after `_type=` to the ID of the weather you want.
+   For example, to change the starting weather to be `Heavy Rain` instead of `Scattered Clouds`, it would look like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=8
+   ...
+   ```
+   If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
+   ```ini title="csp_extra_options.ini"
+   [EXTRA_RULES] 
+   DISABLE_RAIN_PHYSICS=1
+   ```
+
+4. Save and restart the server to apply the changes.
+
 ### CSP Extra Server Options {#csp-server-options}
 
 If we want to take advantage of some of the features that CSP provides for servers, we will need to make some changes and create a file inside our `cfg` folder.
