@@ -275,7 +275,8 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    WIND_VARIATION_DIRECTION=0
    ```
 
-3. Under `[WEATHER_0]` find the parameter `GRAPHICS=` and change the WeatherFX ID after `_type=` to the ID of the weather you want.
+3. Under `[WEATHER_0]` find the parameter `GRAPHICS=` and change the WeatherFX ID after `_type=` to the ID of the weather you want.  
+   [Here](./misc/wfx-types.md) you can find a list of available WeatherFX type IDs.  
    For example, to change the starting weather to be `Heavy Rain` instead of `Scattered Clouds`, it would look like this:
 
    ```ini title="server_cfg.ini"
@@ -283,6 +284,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    GRAPHICS=sol_03_scattered_clouds_type=8
    ...
    ```
+
    If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
    ```ini title="csp_extra_options.ini"
    [EXTRA_RULES] 
