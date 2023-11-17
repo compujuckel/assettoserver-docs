@@ -21,7 +21,7 @@ Additionally the image processing is taxing on the server CPU. Don't use this if
 
 ![Example image](./assets/speedtrap-image.png)
 
-[Map of speed trap locations](https://cdn.discordapp.com/attachments/943940311552507934/993845403755741266/Shutoko_speed_camera_map.jpg) (thanks CaptFingerpaint!)
+[Map of speed trap locations](https://i.imgur.com/zLhoEea.jpg) (thanks CaptFingerpaint!)
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
