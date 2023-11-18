@@ -21,7 +21,7 @@ Additionally the image processing is taxing on the server CPU. Don't use this if
 
 ![Example image](./assets/speedtrap-image.png)
 
-[Map of speed trap locations](https://i.imgur.com/zLhoEea.jpg) (thanks CaptFingerpaint!)
+[Map of speed trap locations](./assets/speedtrap-map.jpg) (thanks CaptFingerpaint!)
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
