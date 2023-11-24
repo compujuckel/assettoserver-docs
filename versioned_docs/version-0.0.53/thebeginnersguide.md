@@ -248,6 +248,51 @@ So what do we do if we wanted to have a Night only server?
    If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.
    :::
 
+### Weather {#changing-weather}
+
+We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and re-extract?  
+What if weathers like Heavy Rain are missing from the WeatherFX selection dropdown?
+
+:::caution if you want to select a weather with rain
+All players will need to have a Custom Shaders Patch preview version installed to see rain.  
+Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
+Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
+:::
+
+1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.  
+2. Find the `[WEATHER_0]` section, it should look something like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=17
+   BASE_TEMPERATURE_AMBIENT=18
+   BASE_TEMPERATURE_ROAD=6
+   VARIATION_AMBIENT=0
+   VARIATION_ROAD=0
+   WIND_BASE_SPEED_MIN=0
+   WIND_BASE_SPEED_MAX=0
+   WIND_BASE_DIRECTION=0
+   WIND_VARIATION_DIRECTION=0
+   ```
+
+3. Under `[WEATHER_0]` find the parameter `GRAPHICS=` and change the WeatherFX ID after `_type=` to the ID of the weather you want.  
+   [Here](./misc/wfx-types.md) you can find a list of available WeatherFX type IDs.  
+   For example, to change the starting weather to be `Heavy Rain` instead of `Scattered Clouds`, it would look like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=8
+   ...
+   ```
+
+   If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
+   ```ini title="csp_extra_options.ini"
+   [EXTRA_RULES] 
+   DISABLE_RAIN_PHYSICS=1
+   ```
+
+4. Save and restart the server to apply the changes.
+
 ### CSP Extra Server Options {#csp-server-options}
 
 If we want to take advantage of some of the features that CSP provides for servers, we will need to make some changes and create a file inside our `cfg` folder.
@@ -255,7 +300,7 @@ If we want to take advantage of some of the features that CSP provides for serve
 If you feel like you don't need a step-by-step explanation, read over the [FAQ section](./faq.md#csp-extra-options) that covers how to use them.  
 Skip to the `Without Content Manager` part of the [teleportation](./faq.md#teleportation) section if you do not want to repack the server and overwrite files you might have edited while following this guide.
 
-#### Forcing a CSP Version {#forcing-csp-version}
+#### Requiring a minimum CSP Version {#requiring-csp-version}
 
 1.  Navigate to the `content/tracks` of the server and create a new folder called `csp`.
 2.  Take and move the `shuto_revival_project_beta` folder inside of the `csp` folder we just created.
@@ -266,7 +311,7 @@ Skip to the `Without Content Manager` part of the [teleportation](./faq.md#telep
     `TRACK=csp/<CSPversionID>/../<trackname>`, in this case `TRACK=csp/2144/../shuto_revival_project_beta`.
 
     The version ID `2144` will mean that in order to join the server, players will need to have **at least** CSP version 1.79 installed.  
-    If you want to force a different CSP version and don't know how where to get the ID from, read the [FAQ section](./faq.md#csp-version-ids) that explains it.
+    If you want to require a different CSP version and don't know how where to get the ID from, read the [FAQ section](./faq.md#csp-version-ids) that explains it.
 
 4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\tatsumi_pa\data` folder of the server and open the `surfaces.ini`.  
     Change the name of the first surface from `SURFACE_0` to `CSPFACE_0`
