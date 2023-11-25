@@ -62,7 +62,7 @@ Paste it after the `TIMEZONE=` key.
 
 You should now have something along the lines of this:
 ```ini title="data_track_params.ini"
-[shuto_revival_project_ptb]
+[shuto_revival_project_beta_ptb]
 NAME=SRP PTB
 LATITUDE=35.67040
 LONGITUDE=139.74085
@@ -81,13 +81,13 @@ Find and copy the entry for the track you want to reuse.
 Change the header of the copied section to the folder name your current track.  
 ```ini title="data_track_params.ini"
 ; Original
-[shuto_revival_project]
+[shuto_revival_project_beta]
 NAME=SRP
 LATITUDE=35.670479
 LONGITUDE=139.740921
 TIMEZONE=Asia/Tokyo
 ; Copied
-[shuto_revival_project_ptb]
+[shuto_revival_project_beta_ptb]
 NAME=SRP PTB
 LATITUDE=35.670479
 LONGITUDE=139.740921
