@@ -9,7 +9,9 @@ Plugin to automatically kick players when they violate rules:
 * Driving the wrong way
 * Blocking the road
 
-Admins are exempt from these rules.
+:::note
+Admins are exempt from these rules and will not see flags or get kicked.
+:::
 
 When `EnableClientMessages` is enabled, wrong way / no parking / no lights signs will be shown to the player.  
 Included in the `Flags` folder are Japanese-style signs. You can replace these with custom signs.

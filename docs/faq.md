@@ -45,7 +45,7 @@ Keep in mind that setting `MissingTrackParams` to `true` can result in time not 
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
 ```ini title="data_track_params.ini"
-[shuto_revival_project_ptb]
+[shuto_revival_project_beta_ptb]
 NAME=SRP PTB
 LATITUDE=
 LONGITUDE=
