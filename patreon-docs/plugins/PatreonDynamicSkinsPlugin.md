@@ -1,5 +1,6 @@
 ---
 description: Allow players to change skins dynamically
+draft: true
 ---
 
 # PatreonDynamicSkinsPlugin
@@ -19,7 +20,6 @@ This plugin will not work without a connection to AssettoServer Hub!
 
 ## Limitations
 * Once a car skin is changed, CSP color changing stops working for that car.
-* Currently, only texture changes are implemented, `ext_config.ini` is not applied.
 * Skin .dds filenames are case sensitive and **must** match the case of the texture slot!  
   For example, if a texture slot is called `Metal_Detail.dds` and a skin applies a texture named `metal_detail.dds`, the texture will not be reset properly after the next skin change.
 

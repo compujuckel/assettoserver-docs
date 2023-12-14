@@ -1,0 +1,51 @@
+---
+description: Gain points by overtaking other cars
+draft: true
+---
+
+# PatreonOvertakePlugin
+
+Plugin for overtake runs with a leaderboard. Players gain points by overtaking other cars without crashing.
+The score multiplier increases by 1 for every overtake and 3 for every close overtake and slowly decreases over time.
+
+:::note
+
+PatreonHubPlugin is required for the leaderboard to work.
+
+Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required!
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml
+EnablePlugins:
+  - PatreonOvertakePlugin
+```
+Example configuration (add to bottom of `extra_cfg.yml`)
+```yaml
+---
+!PatreonOVertakeConfiguration
+# Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
+LeaderboardName: Default
+# Minimum speed required for an overtake run to start
+MinimumSpeedKph: 80
+# Number of seconds a player can drive below the minimum speed before the run ends
+TooSlowTimeoutSeconds: 3
+# Maximum distance to another for an overtake to count
+OvertakeDistanceMeters: 7
+# Maximum distance for a close overtake (x3 score multiplier)
+CloseOvertakeDistanceMeters: 4
+# Define wether the overtake UI is enabled by default (it can always be enabled/disabled via the light bulb in chat) 
+EnableUIByDefault: true
+# List of random messages to show on collision
+CollisionMessages:
+  - Collision!
+# List of random messages to show on overtake
+OvertakeMessages:
+  - Overtake
+# List of random messages to show on close overtake
+CloseOvertakeMessages:
+  - Close Overtake!
+  - Near Miss!
+```
