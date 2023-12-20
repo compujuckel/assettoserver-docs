@@ -55,7 +55,7 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 #### PatreonSafetyRatingPlugin
 
-* Fix chat name colors on CSP <0.1.79
+* Fix chat name colors on CSP &lt;0.1.79
 
 #### PatreonSpeedTrapPlugin
 
