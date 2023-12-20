@@ -49,3 +49,7 @@ CloseOvertakeMessages:
   - Close Overtake!
   - Near Miss!
 ```
+
+## UI Customization
+The overtake lua script is located in `plugins/PatreonOvertakePlugin/lua/overtake.lua`. You can edit this file to change the UI, add logos, etc.  
+Note that the score calculation cannot be changed this way because it happens on the server for security reasons.

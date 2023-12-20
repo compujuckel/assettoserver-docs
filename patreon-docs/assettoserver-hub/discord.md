@@ -159,6 +159,37 @@ TimingUserGroups:
 </p>
 </details>
 
+### Example: Assign Role based on Overtake Leaderboard
+
+You can also assign user groups based on the overtake leaderboard. Two examples:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+OvertakeUserGroups:
+  - Name: overtake_top100
+    PostFilter: Rank <= 100
+  - Name: overtake_500k
+    PostFilter: Score >= 500000
+```
+
+This will create two user groups:
+* `overtake_top100` containing the top 100 players
+* `overtake_500k` containing all players with at least 500,000 points
+
+Next, use the `/user-group map` command to map this user group to a Discord role. For example `/user-group map overtake_top100 <your role>`.  
+Now all users with a linked Steam account and a Top 100 leaderboard time will get this role.
+
+<details>
+<summary>Custom Overtake Filters (Advanced)</summary>
+<p>
+
+Filtering works similar to the timing leaderboard filtering above. You can use `PreFilter` to filter scores before ranks are being generated, e.g. to only consider scores of the current month.
+`PostFilter` can then be used to filter by score, rank, etc.  
+
+List of all column names that can be used as a filter: `Name`, `Leaderboard`, `PlayerId`, `CarModel`, `Score`, `Duration`, `CreatedAt`, `DiscordId`, `Rank`
+
+</p>
+</details>
+
 ### Example: Assign Role based on Safety Rating
 
 [PatreonSafetyRatingPlugin](../plugins/PatreonSafetyRatingPlugin) can create a user group for each rank, for example:
@@ -307,8 +338,237 @@ Use the `/timing-points-leaderboard` command to create a leaderboard in the curr
 
 ![](./assets/timing-points-leaderboard.png)
 
+<details>
+<summary>Custom Templates (Advanced)</summary>
+<p>
+
+Embeds are customizable using [Scriban templates](https://github.com/scriban/scriban).
+
+AssettoServer Hub includes the following default template:
+
+```
+{{ 
+func to_emoji(rank)
+    case rank
+        when 1
+            " :first_place:"
+        when 2
+            " :second_place:"
+        when 3
+            " :third_place:"
+    end
+end
+
+func get_mention(entry)
+    if entry.discord_id > 0
+        " — <@"
+        entry.discord_id
+        ">"
+    end
+end
+
+for entry in entries -}}
+**{{ for.index + 1 }}\. {{ entry.name }}{{ get_mention entry }}{{ to_emoji for.index + 1 }}**
+> {{ entry.points | math.format "#,#" }} points
+{{ end }}
+```
+
+You can add custom templates by using the following in your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+DiscordTimingPointsLeaderboardTemplates:
+  TestTemplate: |
+    text of your template
+    can be multiple lines
+```
+
+The `/timing-points-leaderboard` command includes an optional parameter named `template`. You can use it to specify your custom template (`TestTemplate` in the above example).
+
+</p>
+</details>
+
+### Timing Stage Leaderboard
+
+Use the `/timing-stage-leaderboard` command to create a leaderboard in the current channel.
+
+![](./assets/timing-stage-leaderboard.png)
+
+<details>
+<summary>Custom Templates (Advanced)</summary>
+<p>
+
+Embeds are customizable using [Scriban templates](https://github.com/scriban/scriban).
+
+AssettoServer Hub includes the following default template:
+
+```
+{{ 
+func to_emoji(rank)
+    case rank
+        when 1
+            " :first_place:"
+        when 2
+            " :second_place:"
+        when 3
+            " :third_place:"
+    end
+end
+
+func get_mention(entry)
+    if entry.discord_id > 0
+        " — <@"
+        entry.discord_id
+        ">"
+    end
+end
+
+func format_duration(duration)
+    d = timespan.from_milliseconds duration
+    d.minutes | math.format '0'
+    ":"
+    d.seconds | math.format '00'
+    "."
+    d.milliseconds | math.format '000'
+end
+
+for entry in entries -}}
+**{{ for.index + 1 }}\. {{ format_duration entry.lap_time }} — {{ entry.name }}{{ get_mention entry }} {{ to_emoji for.index + 1 }}**
+> <t:{{ entry.created_at | date.to_string '%s' }}> — {{ entry.car_display_name }}
+{{ end }}
+```
+
+You can add custom templates by using the following in your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+DiscordTimingStageLeaderboardTemplates:
+  TestTemplate: |
+    text of your template
+    can be multiple lines
+```
+
+The `/timing-stage-leaderboard` command includes an optional parameter named `template`. You can use it to specify your custom template (`TestTemplate` in the above example).
+
+</p>
+</details>
+
 ### Race Challenge Leaderboard
 
 Use the `/race-challenge-leaderboard` command to create a leaderboard in the current channel.
 
 ![](./assets/race-challenge-leaderboard.png)
+
+<details>
+<summary>Custom Templates (Advanced)</summary>
+<p>
+
+Embeds are customizable using [Scriban templates](https://github.com/scriban/scriban).
+
+AssettoServer Hub includes the following default template:
+
+```
+{{ 
+func to_emoji(rank)
+    case rank
+        when 1
+            " :first_place:"
+        when 2
+            " :second_place:"
+        when 3
+            " :third_place:"
+    end
+end
+
+func get_mention(entry)
+    if entry.discord_id > 0
+        " — <@"
+        entry.discord_id
+        ">"
+    end
+end
+
+for entry in entries -}}
+**{{ for.index + 1 }}\. {{ entry.name }}{{ get_mention entry }}{{ to_emoji for.index + 1 }}**
+> {{ entry.rating | math.format "#,#" }} points
+{{ end }}
+```
+
+You can add custom templates by using the following in your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+DiscordRaceChallengeLeaderboardTemplates:
+  TestTemplate: |
+    text of your template
+    can be multiple lines
+```
+
+The `/race-challenge-leaderboard` command includes an optional parameter named `template`. You can use it to specify your custom template (`TestTemplate` in the above example).
+
+</p>
+</details>
+
+### Overtake Leaderboard
+
+Use the `/overtake-leaderboard` command to create a leaderboard in the current channel.
+
+![](./assets/overtake-leaderboard.png)
+
+<details>
+<summary>Custom Templates (Advanced)</summary>
+<p>
+
+Embeds are customizable using [Scriban templates](https://github.com/scriban/scriban).
+
+AssettoServer Hub includes the following default template:
+
+```
+{{ 
+func to_emoji(rank)
+    case rank
+        when 1
+            " :first_place:"
+        when 2
+            " :second_place:"
+        when 3
+            " :third_place:"
+    end
+end
+
+func get_mention(entry)
+    if entry.discord_id > 0
+        " — <@"
+        entry.discord_id
+        ">"
+    end
+end
+
+func format_duration(duration)
+    d = timespan.from_milliseconds duration
+    d.hours | math.format '0'
+    ":"
+    d.minutes | math.format '00'
+    ":"
+    d.seconds | math.format '00'
+    "."
+    d.milliseconds / 100 | math.round
+end
+
+for entry in entries -}}
+**{{ for.index + 1 }}\. {{ entry.name }}{{ get_mention entry }}{{ to_emoji for.index + 1 }}**
+> {{ entry.score | math.format "#,#" }} points — {{ format_duration entry.duration }}
+> <t:{{ entry.created_at | date.to_string '%s' }}> — {{ entry.car_display_name }}
+{{ end }}
+```
+
+You can add custom templates by using the following in your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+DiscordOvertakeLeaderboardTemplates:
+  TestTemplate: |
+    text of your template
+    can be multiple lines
+```
+
+The `/overtake-leaderboard` command includes an optional parameter named `template`. You can use it to specify your custom template (`TestTemplate` in the above example).
+
+</p>
+</details>

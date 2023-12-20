@@ -3,6 +3,19 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.39
+
+All plugins now support ARM64 architecture.
+
+#### ClientSecurityPlugin (new!)
+This is a **free plugin** that does some additional checks to make it a bit harder to cheat or tamper with game files.
+
+#### PatreonOvertakePlugin (new!)
+Plugin for overtake runs, gain points by overtaking other cars without crashing.
+
+#### PatreonRaceChallengePlugin
+* The Lua server script is no longer baked into the plugin, you can [edit the script](./plugins/PatreonRaceChallengePlugin.md#ui-customization) to change the UI to your liking.
+
 ### v0.0.38
 
 Small hotfix for the race challenge plugin, all other plugins are identical to v0.0.37.
@@ -104,6 +117,12 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 :::
 
 ## AssettoServer Hub
+
+### v0.0.8
+
+* Add Discord overtake leaderboards
+* Add timing leaderboards for single timing stages
+* All Discord leaderboards now support more customization options like title, number of entries and template
 
 ### v0.0.7
 

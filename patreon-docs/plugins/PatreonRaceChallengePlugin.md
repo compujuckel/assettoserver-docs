@@ -37,6 +37,11 @@ LeaderboardName: Default
 # Optional: Make leader lose points when the follower is closer than x meters
 LeaderDistanceOffsetMeters: 0
 ```
+
+## UI Customization
+The race challenge lua script is located in `plugins/PatreonRaceChallengePlugin/lua/racechallenge.lua`. You can edit this file to change the UI, add logos, etc.  
+Note that the race logic cannot be changed this way because it happens on the server for security reasons.
+
 ## How it works
 You can drive behind another player controlled car and flash either your headlights or high beams three times to initiate a race challenge.
 The challenged player can accept the race by turning on their hazard lights or by writing `/accept` into the chat. If the challenged player fails to do this within 10 seconds or the two cars are not close enough to each other the race challenge will be cancelled.
