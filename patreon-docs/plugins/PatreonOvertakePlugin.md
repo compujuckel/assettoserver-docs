@@ -24,7 +24,7 @@ EnablePlugins:
 Example configuration (add to bottom of `extra_cfg.yml`)
 ```yaml
 ---
-!PatreonOVertakeConfiguration
+!PatreonOvertakeConfiguration
 # Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
 LeaderboardName: Default
 # Minimum speed required for an overtake run to start
