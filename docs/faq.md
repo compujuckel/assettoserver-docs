@@ -29,7 +29,7 @@ Checksums are required to prevent people from cheating by modifying their car an
 </TabItem>
 <TabItem value="tracks" label="Track Checksums">
 
-  - Navigate to the `\content\tracks\<track>\<layout>\data` (or `\content\tracks\csp\<track>\<layout>\data` if you're forcing a CSP version.) and `\system` folders on your server.
+  - Navigate to the `\content\tracks\<track>\<layout>\data` (or `\content\tracks\csp\<track>\<layout>\data` if you're requiring a CSP version.) and `\system` folders on your server.
   - Remove both of the `surfaces.ini` files and restart the server.
   - If you've done everything correctly you should see the log message saying `Initialized 0 track checksums`
 
@@ -121,7 +121,7 @@ If you're hosting the server via Content Manager, click the `Folder` button at t
 [EXTRA_RULES]
 ALLOW_WRONG_WAY = 1 
 ```  
-If you get teleported back to pits, you may need to remove the `fast_lane.aip` for the track in your local game files.  
+If you get teleported back to pits, you may need to remove the `fast_lane.ai` for the track in your local game files.  
 By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
 
 ### How do I enable Teleportation? {#teleportation}
