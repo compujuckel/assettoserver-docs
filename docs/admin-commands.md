@@ -79,6 +79,16 @@ lights will however appear turned on for all other players.
 | --------- | ----------------------------------------------------------------------- |
 | id        | The car ID or name of the player                                        |
 
+### Set ballast and restrictor
+
+`/restrict <id> <restrictor> <ballast>`
+
+| Parameter | Description                                                             |
+| --------- | ----------------------------------------------------------------------- |
+| id        | The car ID or name of the player                                        |
+| restrictor| From 0 to 400, cuts the car's engine power.  It limits power in the top range of the power band, will not kill total power |
+| ballast   | Ballast to be added to the car in kg. Excessive ballast can severely affect handling and car behaviour |
+
 ### Change a configuration value
 
 `/set <key> <value>`
