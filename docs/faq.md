@@ -29,7 +29,7 @@ Checksums are required to prevent people from cheating by modifying their car an
 </TabItem>
 <TabItem value="tracks" label="Track Checksums">
 
-  - Navigate to the `\content\tracks\<track>\<layout>\data` (or `\content\tracks\csp\<track>\<layout>\data` if you're requiring a CSP version.) and `\system` folders on your server.
+  - Navigate to the `\content\tracks\<track>\<layout>\data` and `\system` folders on your server.
   - Remove both of the `surfaces.ini` files and restart the server.
   - If you've done everything correctly you should see the log message saying `Initialized 0 track checksums`
 
@@ -70,8 +70,12 @@ LONGITUDE=139.74085
 TIMEZONE=Asia/Tokyo
 ```
 
-Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
+Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.  
+Please also adjust `MinimumCSPVersion` if needed.
 ```yaml title="extra_cfg.yml"
+# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
+MinimumCSPVersion: 2144
+
 # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
 ForceServerTrackParams: true
 ```
@@ -96,7 +100,11 @@ TIMEZONE=Asia/Tokyo
 ```
 
 Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
+Please also adjust `MinimumCSPVersion` if needed.
 ```yaml title="extra_cfg.yml"
+# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
+MinimumCSPVersion: 2144
+
 # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
 ForceServerTrackParams: true
 ```
@@ -126,9 +134,8 @@ By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\
 
 ### How do I enable Teleportation? {#teleportation}
 
-For teleporting, three things have to be done:
+For teleporting, two things have to be done:
 
-- Requiring a minimum CSP version
 - Allowing cars in the entry list to teleport
 - Adding teleport destinations to the `csp_extra_options.ini`
 
@@ -136,9 +143,6 @@ Depending on if you have the full version of Content Manager or not, there are t
 
 <Tabs>
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
-
-  In the `Main` tab of your server check `Require CSP to Join` and enter the desired CSP version ID or click on `Autofill` to insert the version ID of the CSP version you have currently installed:  
-  ![](./assets/HxAVvsd.png)
 
   Check `Allow teleporting` for each car on your entry list:  
   ![](./assets/Il4RrjG.png)
@@ -148,17 +152,6 @@ Depending on if you have the full version of Content Manager or not, there are t
 
 </TabItem>
 <TabItem value="manual" label="Without Content Manager">
-
-  - In `content/tracks` of your server, create a new folder called `csp`
-  - Move your track folder into `content/tracks/csp`
-  - In `server_cfg.ini` change the path of your track like this: `TRACK=csp/<CSPversionID>/../<trackname>`, for example `TRACK=csp/2053/../shuto_revival_project_beta`
-  - In `data/surfaces.ini` of your track, change `SURFACE_0` to `CSPFACE_0`
-
-    :::caution ONLY CHANGE THE FIRST SURFACE IN THE FILE
-
-      Changing more than `SURFACE_0` will result in checksum errors for clients!
-
-    :::
 
   - In your `entry_list.ini` add a option to the end of each skin, for example `SKIN=<skinname>/ADAn`
 
