@@ -110,12 +110,11 @@ These can be adjusted at any point, although doing so before packing the server 
    ![](./assets/guide/cmconfig5.png)
 
 8. Click on the `CONDITIONS` tab and configure the page how you see fit.  
-   Don't worry too much about the `Time` slider yet, we will get to that later on.
-
-   :::caution
-   Do not use the WeatherFX Time, Time Multiplier or Date.  
-   They do not work with AssettoServer and could cause problems.
-   :::
+   Leave the big `Time` and `Time Multiplier` sliders as they are.
+   - In the `Weather` section, flip the switch to `WeatherFX` and select the weather you want.  
+      If the weather you want is not in the list, read [how to change the weather](#changing-weather) after the extracting step.
+   - Click on the 3 little dots next to the weather drop down.
+   - Enable and set the Time/Date/Time multiplier that you want.
 
    We will be using the following settings:
    
@@ -191,7 +190,7 @@ If you did everything correctly you should see something along the lines of this
    ```
 
 3. Save and close the file, then open the `entry_list.ini`.  
-   For the first car, which should be the RUF that we want to drive, we will add a line below `RESTRICTOR=0`.
+   For the first car, which will be the RUF that we want to drive, we will add a line below `RESTRICTOR=0`.
 
    ```ini title="entry_list.ini"
    [CAR_0]
@@ -228,12 +227,12 @@ If you did everything correctly you should see something along the lines of this
 
 6. Now go back into the main folder of the server and launch `AssettoServer.exe` again.  
    Then open Content Manager and go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
-   The server should now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
+   The server will now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
    
    ![](./assets/guide/asconfig3.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
-8. Other people should also be able to join the server by searching for it or via the invite link that you can copy from the console.
+8. Other people will also be able to join the server by searching for it or via the invite link that you can copy from the console.
    
    :::caution
    Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link that is generated in the console instead.
@@ -243,21 +242,58 @@ If you did everything correctly you should see something along the lines of this
 
 ### Time of Day {#changing-time}
 
-Earlier we skipped over the `Time` slider inside of Content Manager because it only allows us to set the time inside a range of 08:00 to 18:00 (8AM to 6PM) and it would reset to this range regardless of what we do.  
-So what do we do if we wanted to have a Night only server?
+We chose the Time during the preconfiguration, but what if we want to change the time/date/time multiplier without having to pack and extract again?  
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
-2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
-3. Since we already set the time multiplier to 0 we don't need to change it. If you wanted to, this would be the `TIME_OF_DAY_MULT` parameter. `1` would result in time progressing as fast as in real life, `2` would be twice as fast as in real life and so on.
-4. Save and restart the server to apply the changes.
-   
-   :::note
-   If you have a specific time you want the server to be on, you might need to use trial and error to get the `SUN_ANGLE` just right.
-   :::
+2. Find the `GRAPHICS=` parameter in the `[WEATHER_0]` section, it should look something like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
+   BASE_TEMPERATURE_AMBIENT=18
+   BASE_TEMPERATURE_ROAD=6
+   VARIATION_AMBIENT=0
+   VARIATION_ROAD=0
+   WIND_BASE_SPEED_MIN=0
+   WIND_BASE_SPEED_MAX=0
+   WIND_BASE_DIRECTION=0
+   WIND_VARIATION_DIRECTION=0
+   ```
+   - To change the Time, change the number after `_time=` to the time you want in seconds from 00:00.  
+      For example to set the time to `18:00` you would do `_time=64800`.
+
+   - To change the Time Multiplier, change the number after `_mult=`.  
+      `_mult=1` would result in time progressing as fast as in real life, `_mult=2` would be twice as fast etc.  
+
+   - To change the Date you'll need to do two things:
+      - Change the number after `_start=` to the date you want in Epoch time.  
+         Use a site like [epochconverter](https://www.epochconverter.com/) to get the Epoch time that you want.  
+         For example: `_start=1719700000` would result in the date being June 30th, 2024.
+      - Open `extra_cfg.yml` and set `LockServerDate` to `false`  
+
+         ```yml title="extra_cfg.yml"
+            # Lock server date to real date. This stops server time "running away" when using a high time multiplier, so that in-game sunrise/sunset times are based on the current date
+            LockServerDate: false
+         ```
+3. After making these adjustments it should look something like this:
+
+   ```ini title="server_cfg.ini"
+   [WEATHER_0]
+   GRAPHICS=sol_03_scattered_clouds_type=17_time=64800_mult=0_start=1719700000
+   BASE_TEMPERATURE_AMBIENT=18
+   BASE_TEMPERATURE_ROAD=6
+   VARIATION_AMBIENT=0
+   VARIATION_ROAD=0
+   WIND_BASE_SPEED_MIN=0
+   WIND_BASE_SPEED_MAX=0
+   WIND_BASE_DIRECTION=0
+   WIND_VARIATION_DIRECTION=0
+   ```
+   With these settings the server will start at 18:00 on the 30 June 2024 and the time will not progress.
 
 ### Weather {#changing-weather}
 
-We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and re-extract?  
+We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and extract again?  
 What if weathers like Heavy Rain are missing from the WeatherFX selection dropdown?
 
 :::caution if you want to select a weather with rain
@@ -271,7 +307,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
-   GRAPHICS=sol_03_scattered_clouds_type=17
+   GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
    VARIATION_AMBIENT=0
@@ -283,12 +319,12 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    ```
 
 3. Under `[WEATHER_0]` find the parameter `GRAPHICS=` and change the WeatherFX ID after `_type=` to the ID of the weather you want.  
-   [Here](./misc/wfx-types.md) you can find a list of available WeatherFX type IDs.  
+   If you're unsure which ID to use, please check the [list of available WeatherFX type IDs](./misc/wfx-types.md).  
    For example, to change the starting weather to be `Heavy Rain` instead of `Scattered Clouds`, it would look like this:
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
-   GRAPHICS=sol_03_scattered_clouds_type=8
+   GRAPHICS=sol_03_scattered_clouds_type=8_time=0_mult=0
    ...
    ```
 
@@ -374,7 +410,7 @@ For teleportation and color changing there are additional steps for us.
 
    You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
-4. Save and close the file and restart the server, you should now have traffic that is randomly colored and be able to teleport / change your car color via the lightbulb in the chat app.  
+4. Save and close the file and restart the server, you're able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
    
    ![](./assets/guide/cspextras1.png)
 
@@ -521,7 +557,7 @@ When editing plugin configurations, be careful to keep the format from the docum
    ```
 5. Save and close the file and restart the server.  
 
-If you did everything correctly you should see two new lines at the beginning of the server log:  
+If you did everything correctly you will see two new lines at the beginning of the server log:  
 
 ![](./assets/guide/asplugins1.png)  
 
@@ -560,7 +596,7 @@ Now, I want you to look at the log in the image below and try to read the log un
 ![](./assets/guide/troubleshooting1.png)
 
 At first this might seem like a lot of scary text and that doesn't really change even if we narrow it down the the `[FTL]` message.  
-But if we actually try and read a few lines we can spot something we should be able to understand:  
+But if we actually try and read a few lines we can spot something we will be able to understand:  
 
 ![](./assets/guide/troubleshooting2.png)
 
