@@ -165,13 +165,21 @@ If you did everything correctly you should see something along the lines of this
 
 :::caution
   You might also have the following error message inside of your log:  
-  `Error during Kunos lobby registation: ERROR, INVALID SERVER, CHECK YOUR PORT FORWARDING SETTINGS`  
+   ```
+   Your ports are not forwarded correctly. The server will continue to run, but players outside of your network won't be able to join.
+   To fix this, you'll need to go into your router settings and create Port Forwards for these ports:
+   Port 9600 UDP
+   Port 9600 TCP
+   Port 8081 TCP
+   Local IP: XXX.XXX.XXX.XXX
+   Router Page: http://XXX.XXX.XXX.X/
+   Since Instructions are different for each router, search in Google for "how to port forward" with the name of your router and/or ISP.
+   ```
 
-  This means that you need to forward the ports that AssettoServer uses inside your router and possibly make a  exception for the `AssettoServer.exe` inside your firewall.  
-  By default the ports you need to forward are TCP+UDP `9600` and TCP `8081`.  
+  This means that you need to forward the ports that AssettoServer uses inside your router and possibly make a exception for the `AssettoServer.exe` inside your firewall.  
 
-  Because there are an infinite amount of routers / ISP combinations we will not explain how to do this here.  
-  Refer to the user manual of your router or google for "how to port forward" with the name of your router and ISP.
+  Because Instructions are different for each router / ISP, we will not explain how to do this here.  
+  Refer to the user manual of your router or search in Google for "how to port forward" with the name of your router and/or ISP.
 :::
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
