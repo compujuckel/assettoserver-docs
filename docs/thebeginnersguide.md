@@ -241,9 +241,9 @@ If you did everything correctly you should see something along the lines of this
 
 ## Advanced Server Configuration {#advanced-server-config}
 
-### Time of Day {#changing-time}
+### Time and Date {#changing-time-date}
 
-We chose the Time during the preconfiguration, but what if we want to change the time/date/time multiplier without having to pack and extract again?  
+We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date without having to pack and extract again?  
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
 2. Find the `GRAPHICS=` parameter in the `[WEATHER_0]` section, it should look something like this:
