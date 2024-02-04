@@ -80,7 +80,8 @@ These can be adjusted at any point, although doing so before packing the server 
 
 4. Move the `Capacity` slider to 11.
 5. Click on the `Admin password` field and enter a password that is at least 8 characters long.
-6. Click on the `ENTRY LIST` tab and click on the (+) to add cars to the list.  
+6. Enable the `Make server public (show on lobby)` checkbox.
+7. Click on the `ENTRY LIST` tab and click on the (+) to add cars to the list.  
    Add the following cars in this order:
 
    - 1 RUF CTR Yellowbird
@@ -98,7 +99,7 @@ These can be adjusted at any point, although doing so before packing the server 
    If you go beyond the limit, which is based on the layout of the track you selected, the game will crash when you try to join the server.
    :::
 
-7. Click on the `RULES` tab and configure the page how you see fit.
+8. Click on the `RULES` tab and configure the page how you see fit.
 
    Some recommendations:
 
@@ -109,7 +110,7 @@ These can be adjusted at any point, although doing so before packing the server 
    
    ![](./assets/guide/cmconfig5.png)
 
-8. Click on the `CONDITIONS` tab and configure the page how you see fit.  
+9. Click on the `CONDITIONS` tab and configure the page how you see fit.  
    Leave the big `Time` and `Time Multiplier` sliders as they are.
    - In the `Weather` section, flip the switch to `WeatherFX` and select the weather you want.  
       If the weather you want is not in the list, read [how to change the weather](#changing-weather) after the extracting step.
@@ -120,7 +121,7 @@ These can be adjusted at any point, although doing so before packing the server 
    
    ![](./assets/guide/cmconfig6.png)
 
-9. Click on the `SESSIONS` tab and configure it as follows:
+10. Click on the `SESSIONS` tab and configure it as follows:
 
    - Check `Pickup mode` and `Loop mode` while leaving `Locked entry list in pickup mode` unchecked.
    - Uncheck `Booking`, `Qualifying` and `Race`.
@@ -130,7 +131,7 @@ These can be adjusted at any point, although doing so before packing the server 
 
    ![](./assets/guide/cmconfig7.png)
 
-10. At the bottom of the preset, click on `Save`.  
+11. At the bottom of the preset, click on `Save`.  
     
     ![](./assets/guide/cmconfig8.png)
 
