@@ -19,7 +19,7 @@ Using SteamCMD, we can grab the libraries and download them to our home folder.
 
 Running this command should do the trick:
 ```shell
-steamcmd +force_install_dir ~/sdk_lin +login anonymous +app_validate 1007 +quit
+steamcmd +force_install_dir ~/sdk_lin +login anonymous +app_update 1007 validate +quit
 ```
 
 ## Step 3. Copy Libraries to Their Proper Locations
@@ -40,9 +40,9 @@ After this is complete, you should be able to enable steam auth via `extra_cfg.y
 ### Bash Script
 ```shell
 #! /bin/bash
-steamcmd +force_install_dir ~/sdk_lin +login anonymous +app_validate 1007 +quit
+steamcmd +force_install_dir ~/sdk_lin +login anonymous +app_update 1007 validate +quit
 mkdir ~/.steam/sdk64
-cp ~/sdk_lin/Linux64/steamclient.so ~/.steam/sdk64/
+cp ~/sdk_lin/linux64/steamclient.so ~/.steam/sdk64/
 ```
 
 ### Common Issues
