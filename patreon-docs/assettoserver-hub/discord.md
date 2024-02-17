@@ -92,7 +92,7 @@ To remove a group simply use the `/user-group remove` command.
 
 Existing AssettoServer user groups can be mapped to a Discord role. This can be used for example with [PatreonTimingPlugin](../plugins/PatreonTimingPlugin) to assign roles based on the Timing leaderboard.
 
-### Example: Assign Role based on Timing Leaderboard
+### Assign Role based on Timing Leaderboard
 
 First, add a new Timing User Group to your `configuration.yml`:
 
@@ -159,7 +159,42 @@ TimingUserGroups:
 </p>
 </details>
 
-### Example: Assign Role based on Overtake Leaderboard
+### Assign Role based on Timing Points Leaderboard
+
+First, add a new Timing Points User Group to your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+TimingPointsUserGroups:
+  - Name: timing_points_top10
+    PostFilter: Rank <= 10
+  - Name: timing_points_traffic_1000
+    PreFilter: Leaderboard = 'Traffic'
+    PostFilter: Points >= 1000
+```
+
+This will create two user groups:
+* `timing_points_top10` will include the top 10 players across all leaderboards.
+* `timing_points_traffic_1000` includes all players with more than 1000 points on the `Traffic` leaderboard.
+
+### Assign Role based on Race Challenge Leaderboard
+
+First, add a new Race Challenge User Group to your `configuration.yml`:
+
+```yaml title="configuration.yml (AssettoServer Hub)"
+RaceChallengeUserGroups:
+  - Name: race_top5
+    Leaderboard: Default
+    Filter: Rank <= 5
+  - Name: race_1200_rating
+    Leaderboard: Traffic
+    Filter: Rating > 1200
+```
+
+This will create two user groups:
+* `race_top5` will include the top 5 players on the `Default` leaderboard.
+* `race_1200_rating` includes all players with a rating higher than 1200 on the `Traffic` leaderboard.
+
+### Assign Role based on Overtake Leaderboard
 
 You can also assign user groups based on the overtake leaderboard. Two examples:
 
@@ -190,7 +225,7 @@ List of all column names that can be used as a filter: `Name`, `Leaderboard`, `P
 </p>
 </details>
 
-### Example: Assign Role based on Safety Rating
+### Assign Role based on Safety Rating
 
 [PatreonSafetyRatingPlugin](../plugins/PatreonSafetyRatingPlugin) can create a user group for each rank, for example:
 
@@ -572,3 +607,11 @@ The `/overtake-leaderboard` command includes an optional parameter named `templa
 
 </p>
 </details>
+
+## RCON (Remote Console)
+
+You can execute commands on connected servers using the `/rcon` command.
+
+![](./assets/rcon_1.png)
+
+![](./assets/rcon_2.png)
