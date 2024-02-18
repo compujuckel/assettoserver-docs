@@ -41,7 +41,9 @@ Checksums are required to prevent people from cheating by modifying their car an
 You can either add the parameters locally or ignore this error by setting `MissingTrackParams` to `true` in `extra_cfg.yml`.  
 Keep in mind that setting `MissingTrackParams` to `true` can result in time not being synchronized between players and the server.  
 
-#### Manually {#trackparams-manual}
+<Tabs>
+<TabItem value="new" label="Create New" default>
+
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
 ```ini title="data_track_params.ini"
@@ -70,13 +72,9 @@ LONGITUDE=139.74085
 TIMEZONE=Asia/Tokyo
 ```
 
-Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
-```yaml title="extra_cfg.yml"
-# Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
-ForceServerTrackParams: true
-```
+</TabItem>
+<TabItem value="reuse" label="Reuse Existing" default>
 
-#### Reuse {#trackparams-reuse}
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Find and copy the entry for the track you want to reuse.  
 Change the header of the copied section to the folder name your current track.  
@@ -95,8 +93,15 @@ LONGITUDE=139.740921
 TIMEZONE=Asia/Tokyo
 ```
 
-Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.
+</TabItem>
+</Tabs>
+
+Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.  
+Please also adjust `MinimumCSPVersion` if needed.
 ```yaml title="extra_cfg.yml"
+# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
+MinimumCSPVersion: 2144
+
 # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
 ForceServerTrackParams: true
 ```
