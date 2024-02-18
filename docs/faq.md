@@ -499,20 +499,13 @@ POINT_0_HEADING = 0          ; heading angle in degrees
 
 ### How do I enable Color Changing? {#color-changing}
 
-:::caution
-
-Pick only one of these two options!
-
-:::
-
 ```ini
 [CUSTOM_COLOR]
-ALLOW_IN_PITS = 1      ; change car colors only in the pits of the track.
-ALLOW_EVERYWHERE = 1   ; change car colors anywhere as long as the car is stopped.
+ALLOW_EVERYWHERE = 1
 ```
 
-If AI cars are allowed to change their colors everywhere they will spawn in random colors if possible.  
-**Keep in mind that you still need to allow cars to change colors via the entry list even if you're using `ALLOW_EVERYWHERE`.**
+If AI cars are allowed to change their colors, they will spawn in random colors if possible.  
+**Keep in mind that you still need to allow cars to change colors via the `entry_list.ini` even if you're using `ALLOW_EVERYWHERE`.**
 
 ### How do I increase the speed in the pits? {#pit-speed-limiter}
 
