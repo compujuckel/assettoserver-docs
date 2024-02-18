@@ -42,7 +42,9 @@ Checksums are required to prevent people from cheating by modifying their car an
 You can either add the parameters locally or ignore this error by setting `MissingTrackParams` to `true` in `extra_cfg.yml`.  
 Keep in mind that setting `MissingTrackParams` to `true` can result in time not being synchronized between players and the server.  
 
-#### Manually {#trackparams-manual}
+<Tabs>
+<TabItem value="new" label="Create New" default>
+
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
 ```ini title="data_track_params.ini"
@@ -71,17 +73,9 @@ LONGITUDE=139.74085
 TIMEZONE=Asia/Tokyo
 ```
 
-Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.  
-Please also adjust `MinimumCSPVersion` if needed.
-```yaml title="extra_cfg.yml"
-# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
-MinimumCSPVersion: 2144
+</TabItem>
+<TabItem value="reuse" label="Reuse Existing" default>
 
-# Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
-ForceServerTrackParams: true
-```
-
-#### Reuse {#trackparams-reuse}
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Find and copy the entry for the track you want to reuse.  
 Change the header of the copied section to the folder name your current track.  
@@ -99,6 +93,9 @@ LATITUDE=35.670479
 LONGITUDE=139.740921
 TIMEZONE=Asia/Tokyo
 ```
+
+</TabItem>
+</Tabs>
 
 Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.  
 Please also adjust `MinimumCSPVersion` if needed.
@@ -502,20 +499,13 @@ POINT_0_HEADING = 0          ; heading angle in degrees
 
 ### How do I enable Color Changing? {#color-changing}
 
-:::caution
-
-Pick only one of these two options!
-
-:::
-
 ```ini
 [CUSTOM_COLOR]
-ALLOW_IN_PITS = 1      ; change car colors only in the pits of the track.
-ALLOW_EVERYWHERE = 1   ; change car colors anywhere as long as the car is stopped.
+ALLOW_EVERYWHERE = 1
 ```
 
-If AI cars are allowed to change their colors everywhere they will spawn in random colors if possible.  
-**Keep in mind that you still need to allow cars to change colors via the entry list even if you're using `ALLOW_EVERYWHERE`.**
+If AI cars are allowed to change their colors, they will spawn in random colors if possible.  
+**Keep in mind that you still need to allow cars to change colors via the `entry_list.ini` even if you're using `ALLOW_EVERYWHERE`.**
 
 ### How do I increase the speed in the pits? {#pit-speed-limiter}
 
