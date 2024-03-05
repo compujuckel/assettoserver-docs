@@ -592,7 +592,7 @@ Keep in mind that some functions of BBcode are not supported by Content Manager.
 **Example Description**
 ```yaml title="extra_cfg.yml"
 ServerDescription: |-
-  [img=https://cdn.discordapp.com/attachments/665701010160877598/1130233890280308838/srp-logo-cm.png]SRP Logo[/img]
+  [img=https://assettoserver.org/img/as-logo-cm.png]AssettoServer Logo[/img]
 
   [size=16]                   [b]UNOFFICIAL AI TRAFFIC TEST SERVER[/b]
 
