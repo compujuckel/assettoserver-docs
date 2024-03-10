@@ -123,7 +123,7 @@ If you're hosting the server via Content Manager, click the `Folder` button at t
 
 ### How do I allow driving the wrong way? {#wrong-way}
 
-```ini
+```ini title="csp_extra_options.ini"
 [EXTRA_RULES]
 ALLOW_WRONG_WAY = 1 
 ```  
@@ -170,7 +170,7 @@ Depending on if you have the full version of Content Manager or not, there are t
 If done correctly you should now have a `Teleport to...` option in the chat apps extras:  
 ![](./assets/kdSQlWZ.png)
 
-### Where can I find teleport locations for SRP? {#srp-teleports}
+#### Where can I find teleport locations for SRP? {#srp-teleports}
 
 Either use the official SRP teleports below or make some yourself.  
 
@@ -178,7 +178,7 @@ Either use the official SRP teleports below or make some yourself.
 <summary>Official Shutoko Revival Project Teleport locations</summary>
 <p>
 
-```ini
+```ini title="csp_extra_options.ini"
 [TELEPORT_DESTINATIONS]
 POINT_1 = Position 1
 POINT_1_GROUP = Shibaura PA
@@ -499,7 +499,7 @@ POINT_0_HEADING = 0          ; heading angle in degrees
 
 ### How do I enable Color Changing? {#color-changing}
 
-```ini
+```ini title="csp_extra_options.ini"
 [CUSTOM_COLOR]
 ALLOW_EVERYWHERE = 1
 ```
@@ -509,13 +509,33 @@ If AI cars are allowed to change their colors, they will spawn in random colors 
 
 ### How do I increase the speed in the pits? {#pit-speed-limiter}
 
-```ini
+```ini title="csp_extra_options.ini"
 [PITS_SPEED_LIMITER]
 KEEP_COLLISIONS = 0    ; will either activate or deactivate collisions between cars in the pits.
 SPEED_KMH = 80         ; the maximum speed allowed, the default is 80.
 ```
 
 [There are more options available here.](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#pit-speed-limiter-settings)
+
+### How do I use Server Scripts? {#csp-server-scripts}
+
+:::note
+
+Keep in mind that Server Scripts are different from AssettoServer Plugins, and we don’t provide support for them on our Discord.
+
+:::
+
+You're going to need to host your script in plaintext somewhere publicly accessible, for example:
+  - Github / Pastebin
+  - Your own media server (like IIS or others)
+  - **DO NOT HOST ON DISCORD**
+
+```ini title="csp_extra_options.ini"
+[SCRIPT_...]
+SCRIPT = "https://pastebin.com/raw/00000000000"    ; change this to the url of your script
+```
+
+[There are more options available here.](https://github.com/CheesyManiac/cheesy-lua/wiki/Extra-CSP-Server-Config-Values#server-scripts)
 
 ## How do I allow players to download missing content? {#download-missing-content}
 
@@ -592,7 +612,7 @@ Keep in mind that some functions of BBcode are not supported by Content Manager.
 **Example Description**
 ```yaml title="extra_cfg.yml"
 ServerDescription: |-
-  [img=https://cdn.discordapp.com/attachments/665701010160877598/1130233890280308838/srp-logo-cm.png]SRP Logo[/img]
+  [img=https://assettoserver.org/img/as-logo-cm.png]AssettoServer Logo[/img]
 
   [size=16]                   [b]UNOFFICIAL AI TRAFFIC TEST SERVER[/b]
 
