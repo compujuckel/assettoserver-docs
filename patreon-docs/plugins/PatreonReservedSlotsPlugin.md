@@ -9,14 +9,12 @@ Please see [this page](../assettoserver-hub/user-groups.md) for general informat
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonReservedSlotsPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonReservedSlotsConfiguration
+Example configuration
+```yaml title="plugin_patreon_reserved_slots_cfg.yml"
 # List of entry list slots that are always reserved
 ReservedEntryListSlots:
     # List of reserved entry list slots (get the number from CAR_? in entry_list.ini)

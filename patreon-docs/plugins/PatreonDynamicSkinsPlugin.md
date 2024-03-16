@@ -25,7 +25,7 @@ This plugin will not work without a connection to AssettoServer Hub!
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonDynamicSkinsPlugin
 ```

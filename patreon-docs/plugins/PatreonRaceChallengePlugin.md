@@ -18,14 +18,12 @@ Do not use RaceChallengePlugin and PatreonRaceChallengePlugin at the same time!
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonRaceChallengePlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonRaceChallengeConfiguration
+Example configuration
+```yaml title="plugin_patreon_race_challenge_cfg.yml"
 # Number of points players start with. Increase this to make races last longer
 MaxPoints: 3000
 # Set to false to disable leaderboard and ratings

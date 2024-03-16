@@ -9,14 +9,12 @@ A Twitch access token can be obtained [here](https://twitchtokengenerator.com/) 
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonTwitchChatPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonTwitchChatConfiguration
+Example configuration
+```yaml title="plugin_patreon_twitch_chat_cfg.yml"
 # Username of the Twitch account you generated the access token for
 TwitchUsername: YourUsername
 # Twitch Access Token

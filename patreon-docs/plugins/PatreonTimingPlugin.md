@@ -31,14 +31,12 @@ Red = Backside of a checkpoint. Checkpoint won't trigger when coming from this d
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonTimingPlugin
 ```
-Example configuration for SRP (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonTimingConfiguration
+Example configuration for SRP
+```yaml title="plugin_patreon_timing_cfg.yml"
 # Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
 # For example if you don't want traffic- and non-traffic servers to show on the same leaderboard, just use different
 # leaderboard names for them.

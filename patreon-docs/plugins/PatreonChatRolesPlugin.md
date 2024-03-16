@@ -26,14 +26,12 @@ Color and custom icons will be shown in the nametag as well when `New driver tag
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonChatRolesPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonChatRolesConfiguration
+Example configuration
+```yaml title="plugin_patreon_chat_roles_cfg.yml"
 # List of roles
 Roles:
   # Name of user group

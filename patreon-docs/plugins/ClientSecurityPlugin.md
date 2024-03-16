@@ -16,4 +16,11 @@ This plugin is experimental, there might be false positives.
 :::
 
 This plugin does some additional checks to make it a bit harder to cheat or tamper with game files.  
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+  - ClientSecurityPlugin
+```
 Set `MandatoryClientSecurityLevel` to 1 in `extra_cfg.yml` to require all players to pass these security checks.

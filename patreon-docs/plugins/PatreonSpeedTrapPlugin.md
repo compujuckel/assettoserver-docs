@@ -25,14 +25,12 @@ Additionally the image processing is taxing on the server CPU. Don't use this if
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonSpeedTrapPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonSpeedTrapConfiguration
+Example configuration
+```yaml title="plugin_patreon_speed_trap_cfg.yml"
 # This number will be added to the picture ID. It can be used to identify different servers by their ID
 NumberOffset: 100
 # Enable evidence picture processing

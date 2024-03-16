@@ -17,14 +17,12 @@ Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in 
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonOvertakePlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonOvertakeConfiguration
+Example configuration
+```yaml title="plugin_patreon_overtake_cfg.yml"
 # Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
 LeaderboardName: Default
 # Minimum speed required for an overtake run to start

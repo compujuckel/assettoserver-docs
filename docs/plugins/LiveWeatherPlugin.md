@@ -18,7 +18,7 @@ Enable the plugin in `extra_cfg.yml`
 EnablePlugins:
 - LiveWeatherPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
+Example configuration
 ```yaml title="plugin_live_weather_cfg.yml"
 OpenWeatherMapApiKey: <your api key here>
 UpdateIntervalMinutes: 10

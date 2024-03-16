@@ -23,14 +23,12 @@ The score has a range of 0 (worst) to 10 (best).
 ## Configuration
 
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonSafetyRatingPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonSafetyRatingConfiguration
+Example configuration
+```yaml title="plugin_patreon_safety_rating_cfg.yml"
 # Only allow admins to view safety ratings
 AdminOnly: false
 # Change driver chat name colors based on safety rating rank
@@ -41,7 +39,7 @@ EnableChatColors: true
 
 Ranks are configured in AssettoServer Hub. Example snippet for `configuration.yml`:
 
-```yaml
+```yaml title="configuration.yml (AssettoServer Hub)"
 # List of ranks for PatreonSafetyRatingPlugin
 SafetyRatingRanks:
 - Name: A

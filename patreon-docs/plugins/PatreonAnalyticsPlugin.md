@@ -39,14 +39,12 @@ For each car:
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonAnalyticsPlugin
 ```
 Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonAnalyticsConfiguration
+```yaml title="plugin_patreon_analytics_cfg.yml"
 # Enable collection of client metrics
 EnableClientMetrics: true
 # Update interval for client metrics (FPS, CPU occupancy)

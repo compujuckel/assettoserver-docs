@@ -7,14 +7,12 @@ Connects this server to an AssettoServer Hub instance. Required for leaderboards
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - PatreonHubPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!PatreonHubConfiguration
+Example configuration
+```yaml title="plugin_patreon_hub_cfg.yml"
 # URL of the hub. This default should work fine if AssettoServerHub is running on the same host
 Address: http://localhost:5085
 # Key as specified in configuration.yml of the hub
