@@ -14,14 +14,12 @@ For smooth weather transitions and rain you need to set `EnableWeatherFx` to `tr
 To get your API key a free account on https://openweathermap.org/ is required.
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
 - LiveWeatherPlugin
 ```
 Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!LiveWeatherConfiguration
+```yaml title="plugin_live_weather_cfg.yml"
 OpenWeatherMapApiKey: <your api key here>
 UpdateIntervalMinutes: 10
 ```

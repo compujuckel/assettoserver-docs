@@ -9,15 +9,14 @@ description: Suppress certain chat message patterns and disallow players with ce
 * Autoban on certain chat messages
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
 - WordFilterPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)  
+
+Example configuration  
 **All patterns are regular expressions. If you don't know what regular expressions are I'd highly recommend reading about them first.**
-```yaml
----
-!WordFilterConfiguration
+```yaml title="plugin_word_filter_cfg.yml"
 # Username patterns it won't be possible to join with
 ProhibitedUsernamePatterns:
   - "^Player$"

@@ -14,15 +14,13 @@ It works like this:
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
 - ReportPlugin
 ```
 
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!ReportConfiguration
+Example configuration
+```yaml title="plugin_report_cfg.yml"
 # Length of replay clips
 ClipDurationSeconds: 60
 # Discord webhook URL to send reports to. Optional, reports will be logged to the server log if you leave this empty

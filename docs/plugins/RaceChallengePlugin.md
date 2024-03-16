@@ -13,7 +13,7 @@ Do not use RaceChallengePlugin and PatreonRaceChallengePlugin at the same time!
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
   - RaceChallengePlugin
 ```

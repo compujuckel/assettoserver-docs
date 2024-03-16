@@ -13,25 +13,23 @@ For smooth weather transitions and rain you need to set `EnableWeatherFx` to `tr
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
 - VotingWeatherPlugin
 ```
 
-Example configuration (add to bottom of `extra_cfg.yml`)  
+Example configuration  
 For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](../misc/wfx-types.md)
-```yaml
----
-!VotingWeatherConfiguration
-# Number of choices players can choose from at each voting interval
-NumChoices: 3
-# How long the vote stays open
-VotingDurationSeconds: 30
-# How often a vote takes place
-VotingIntervalMinutes: 10
-# Weather types that can't be voted on
+```yaml title="plugin_voting_weather_cfg.yml"
+# List of weather types that can't be voted on
 BlacklistedWeathers:
 - Cold
 - Hot
 - Windy
+# Number of choices players can choose from at each voting interval
+NumChoices: 3
+# How often a vote takes place
+VotingIntervalMinutes: 10
+# How long the vote stays open
+VotingDurationSeconds: 30
 ```

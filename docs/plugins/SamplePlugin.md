@@ -29,11 +29,10 @@ Create a new `Class Library` project and make sure to have the following in your
 </ItemGroup>
 ```
 
-Then create a class that implements the `IAssettoServerPlugin` (for plugins without configuration) or `IAssettoServerPlugin<T>` interface (for plugins with configuration).
-You can check the other plugins to see how configuration is handled, but basically you can append sections to `extra_cfg.yml` like this:
+Then create a class that implements the `IAssettoServerPlugin` (for plugins without configuration) or `IAssettoServerPlugin<T>` interface (for plugins with configuration).  
+Every plugin gets an own config file with the filename derived from the name of the configuration type. For example, the type `SampleConfiguration` would be read from the file `plugin_sample_cfg.yml`.
+
 ```yaml
----
-!<type of your configuration class>
 Config1: Value1
 Config2: Value2
 ```

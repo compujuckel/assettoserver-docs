@@ -18,13 +18,11 @@ GeoIP results for {ClientName}: {Country} ({CountryCode}) [{Lat},{Lon}]
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
-```yaml
+```yaml title="extra_cfg.yml"
 EnablePlugins:
 - GeoIPPlugin
 ```
-Example configuration (add to bottom of `extra_cfg.yml`)
-```yaml
----
-!GeoIPConfiguration
+Example configuration
+```yaml title="plugin_geo_ip_cfg.yml"
 DatabasePath: <path to GeoLite2-City.mmdb>
 ```
