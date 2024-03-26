@@ -13,6 +13,27 @@ import TabItem from '@theme/TabItem';
   **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Decrease `MinSpawnDistancePoints` / `MaxSpawnDistancePoints` to spawn cars closer to the player and fill up gaps in traffic.
 
+## Why am I spawning in a different location than expected? {#spawn-locations}
+
+Where you spawns depends on where the pit for each index is located for track and layout that you chose.  
+For example, the Overload Layout of Shutoko Revival Project combines all 170 pits into a single layout.  
+Because of that, it is possible to spawn in different locations depending on the index that each car has in the `entry_list.ini`.  
+Here is a short list of which indices correspond to which spawn location for Shutoko Revival Project - Overload Layout:
+
+| Car Indices                | Spawn Location            |
+| -------------------------- | ------------------------- |
+| `[CAR_0]`   to `[CAR_39]`  | Tatsumi PA                |
+| `[CAR_40]`  to `[CAR_67]`  | Shibaura PA               |
+| `[CAR_68]`  to `[CAR_86]`  | Yoyogi PA                 |
+| `[CAR_87]`  to `[CAR_139]` | Heiwajima PA - Northbound |
+| `[CAR_140]` to `[CAR_155]` | Heiwajima PA - Southbound |
+| `[CAR_156]` to `[CAR_169]` | Daishi PA                 |
+
+:::caution
+It is not possible to skip or have duplicate indices in the `entry_list.ini`.  
+Meaning that you cannot start your entry list with `[CAR_87]` to make everyone spawn at Heiwajima.  
+:::
+
 ## How do I remove checksums? {#remove-checksums}
 
 :::caution ONLY REMOVE CHECKSUMS IF YOU'RE OKAY WITH USERS CHEATING
