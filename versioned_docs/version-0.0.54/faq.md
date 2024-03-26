@@ -118,10 +118,9 @@ TIMEZONE=Asia/Tokyo
 </Tabs>
 
 Save and close the file, open `extra_cfg.yml` and set `ForceServerParams` to `true`.  
-Please also adjust `MinimumCSPVersion` if needed.
+Please also adjust the CSP version you're requiring if needed.
+
 ```yaml title="extra_cfg.yml"
-# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
-MinimumCSPVersion: 2144
 
 # Force clients to use track params (coordinates, time zone) specified on the server. CSP 0.1.79+ required
 ForceServerTrackParams: true
