@@ -2,6 +2,9 @@
 title: The Beginner's Guide
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Introduction {#intro}
 
 This page will guide you through the initial setup process of setting up your own free-roam AssettoServer on a Windows machine.  
@@ -13,14 +16,15 @@ To follow along you will need the following things:
 
 - The **latest** version of AssettoServer.
 - The **full version** of Content Manager.
-- The **Shutoko Revival Project** track and `fast_lane.ai(p)`.
+- The **Shutoko Revival Project** track.
+- A `fast_lane.ai(p)` made for **Shutoko Revival Project**.
 - Basic understanding of how text editors work.
 
-### Finding the latest version of AssettoServer {#latest-assettoserver-version}
+### Downloading the latest version of AssettoServer {#latest-assettoserver-version}
 
 1. Go to [the latest github release of AssettoServer](https://github.com/compujuckel/AssettoServer/releases/latest).
 
-2. Click on the **assetto-server-win-x64.zip** in the Assets section of the release to download the file.
+2. Click on the `assetto-server-win-x64.zip` in the Assets section of the release to download the file.
    
    ![](./assets/guide/asdownload1.png)
 
@@ -39,10 +43,12 @@ You can host, configure, and play on the server without the full version of Cont
 ### Downloading the Shutoko Revival Project track and AI spline {#downloading-srp}
 
 :::note
-You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we will use the SRP track as it is one of the most popular tracks.
+You can use any track that you have a `fast_lane.ai(p)` for.  
+In this guide, we will use the SRP track as it is one of the most popular tracks.
 :::
 
 1. Go to the [Shutoko Revival Project Website](https://shutokorevivalproject.com/)
+
 2. Download and install the latest **stable** release.
 
    ![](./assets/guide/srpdownload1.png)
@@ -62,8 +68,7 @@ You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we w
 ### Preconfiguration {#preconfiguration}
 
 For now, we will be using the minimum amount of cars needed for the default traffic settings of AssettoServer.  
-**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 6 accordingly.**  
-These can be adjusted at any point, although doing so before packing the server the first time, means we don't have to edit files ourself, move checksum data or even repack the server and potentially overwrite work we've done.
+**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 7 accordingly.**  
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:
@@ -79,8 +84,11 @@ These can be adjusted at any point, although doing so before packing the server 
    ![](./assets/guide/cmconfig3.png)
 
 4. Move the `Capacity` slider to 11.
+
 5. Click on the `Admin password` field and enter a password that is at least 8 characters long.
+
 6. Enable the `Make server public (show on lobby)` checkbox.
+
 7. Click on the `ENTRY LIST` tab and click on the (+) to add cars to the list.  
    Add the following cars in this order:
 
@@ -140,7 +148,9 @@ These can be adjusted at any point, although doing so before packing the server 
 Now that we're done configuring the server, we can use the packing feature to export all files we need into a .zip file for us.
 
 1. In the same bar that we just saved the server preset, click on `Pack`.
+
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
+
 3. Click on `Pack` and save it.  
    
    ![](./assets/guide/cmpacking1.png)
@@ -150,7 +160,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
 You should now have the following .zip files somewhere:
 
 - `assetto-server-win-x64.zip`
-- The .zip file of the server we just packed
+- The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract both of these two .zip files into it.
 
@@ -158,8 +168,24 @@ Create a new folder and extract both of these two .zip files into it.
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
-Double-click `AssettoServer.exe` to launch the server.  
-If you did everything correctly you should see something along the lines of this:
+Start the server by double-clicking `AssettoServer.exe`.
+
+You might get the following pop up messages from Windows Firewall or Windows Defender:
+
+<Tabs>
+<TabItem value="firewall" label="Windows Firewall" default>
+
+   ![](./assets/guide/windowsfirewall.png)
+
+</TabItem>
+<TabItem value="defender" label="Windows Defender">
+
+   ![](./assets/guide/windowsdefender.png)
+
+</TabItem>
+</Tabs>
+
+After allowing the `AssettoServer.exe` to launch, you should see something along the lines of this:
 
 ![](./assets/guide/asconfig1.png)
 
@@ -183,7 +209,8 @@ If you did everything correctly you should see something along the lines of this
 :::
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
-2. Open the newly created `extra_cfg.yml` using a text editor of your choice and set `EnableAi` to true.  
+
+2. Open the `extra_cfg.yml` using a text editor of your choice and set `EnableAi: true`.   
 
    ```yaml title="extra_cfg.yml"
    # Enable AI traffic
@@ -233,6 +260,7 @@ If you did everything correctly you should see something along the lines of this
    ![](./assets/guide/asconfig3.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
+
 8. Other people will also be able to join the server by searching for it or via the invite link that you can copy from the console.
    
    :::caution
@@ -246,6 +274,7 @@ If you did everything correctly you should see something along the lines of this
 We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date without having to pack and extract again?  
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
+
 2. Find the `GRAPHICS=` parameter in the `[WEATHER_0]` section, it should look something like this:
 
    ```ini title="server_cfg.ini"
@@ -276,6 +305,7 @@ We selected time and date settings during the preconfiguration, but what if we w
             # Lock server date to real date. This stops server time "running away" when using a high time multiplier, so that in-game sunrise/sunset times are based on the current date
             LockServerDate: false
          ```
+
 3. After making these adjustments it should look something like this:
 
    ```ini title="server_cfg.ini"
@@ -294,9 +324,6 @@ We selected time and date settings during the preconfiguration, but what if we w
 
 ### Weather {#changing-weather}
 
-We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and extract again?  
-What if weathers like Heavy Rain are missing from the WeatherFX selection dropdown?
-
 :::caution if you want to select a weather with rain
 All players will need to have a Custom Shaders Patch preview version installed to see rain.  
 Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
@@ -304,6 +331,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 :::
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.  
+
 2. Find the `[WEATHER_0]` section, it should look something like this:
 
    ```ini title="server_cfg.ini"
@@ -339,15 +367,13 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
 ### CSP Extra Server Options {#csp-server-options}
 
-If we want to take advantage of some of the features that CSP provides for servers, we will need to create a file inside our `cfg` folder and configure a few things.
-
 #### Requiring a minimum CSP Version {#requiring-csp-version}
 
 AssettoServer requires CSP version 0.1.77 (1937) by default.  
 To change this edit `MinimumCSPVersion: 1937` in the `extra_cfg.yml`.  
 If you want to require a different CSP version and don't know how where to get the ID from, read the [FAQ section](./faq.md#csp-version-ids) that explains it.
 
-Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.
+Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
 The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can play around with.  
 Two of the more useful options for Freeroam servers are listed below.
 
@@ -363,9 +389,10 @@ Two of the more useful options for Freeroam servers are listed below.
 
 #### Extra steps for teleportation and color changing {#csp-extra-steps}
 
-For teleportation and color changing there are additional steps for us.
+For teleportation and color changing there are additional steps:
 
 1. Navigate to the `cfg` folder and open the `entry_list.ini`.
+
 2. Each car has a `SKIN=` line that needs to be edited to allow that car to use these features.  
    The following codes need to be added to the skin line:
 
@@ -430,12 +457,14 @@ When editing plugin configurations, be careful to keep the format from the docum
 #### AutoModerationPlugin
 
 1. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
 2. Find `EnablePlugins:` and enable the plugin like so:
    ```yaml title="extra_cfg.yml"
    # List of plugins to enable
    EnablePlugins:
      - AutoModerationPlugin
    ```
+
 3. Save the file, double-click `AssettoServer.exe` to launch the server and generate the plugin config, then close the console and return to the `cfg` folder.
 
 4. Open the `plugin_auto_moderation_cfg.yml` and `Enabled: true` the featues you want and save the file.
@@ -499,6 +528,7 @@ When editing plugin configurations, be careful to keep the format from the docum
 #### RandomWeatherPlugin
 
 1. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
 2. Find `EnablePlugins:` and enable the plugin like so:
    ```yaml title="extra_cfg.yml"
    # List of plugins to enable
@@ -506,6 +536,7 @@ When editing plugin configurations, be careful to keep the format from the docum
      - AutoModerationPlugin
      - RandomWeatherPlugin
    ```
+
 3. Save the file, double-click `AssettoServer.exe` to launch the server and generate the plugin config, then close the console and return to the `cfg` folder.
 
 4. Open the `plugin_random_weather_cfg.yml`. We will edit the `WeatherWeights` to only allow for `Clear`, `FewClouds`, `ScatteredClouds`, `BrokenClouds` and `OvercastClouds` like so:
@@ -629,10 +660,15 @@ But looking closer, we can see that we made a typo when enabling `HighPingKick`,
 In general, it is recommended to start fresh instead of simply overwriting files when updating AssettoServer.  
 
 1. Backup your current server files and download the [latest release](./thebeginnersguide.md#latest-assettoserver-version). (or the version you want to update to)
+
 2. Create a new folder for the updated server and extract the new AssettoServer files as explained [back in this section](./thebeginnersguide.md#server-extraction).
+
 3. From your old server, only copy and re-use files that are not `extra_cfg.yml` or `plugin_<plugin_name>_config.yml`.
+
 4. Run the updated `AssettoServer.exe` once to generate a updated `extra_cfg.yml`.
+
 5. Use the backup of your old `extra_cfg.yml` to reconfigure the `extra_cfg.yml` of the updated server.
+
 6. If you had any plugins enabled, restart the updated server once to generate new plugin config files and then reconfigure them.
 
 :::note
