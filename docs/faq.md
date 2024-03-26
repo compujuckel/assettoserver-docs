@@ -15,10 +15,10 @@ import TabItem from '@theme/TabItem';
 
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 
-Where you spawns depends on where the pit for each index is located for track and layout that you chose.  
+Where you spawn depends on where the pit for each index is located for track and layout that you chose.  
 For example, the Overload Layout of Shutoko Revival Project combines all 170 pits into a single layout.  
 Because of that, it is possible to spawn in different locations depending on the index that each car has in the `entry_list.ini`.  
-Here is a short list of which indices correspond to which spawn location for Shutoko Revival Project - Overload Layout:
+Here is a short list of which indices correspond to which spawn location for the Shutoko Revival Project - Overload Layout:
 
 | Car Indices                | Spawn Location            |
 | -------------------------- | ------------------------- |
@@ -30,8 +30,8 @@ Here is a short list of which indices correspond to which spawn location for Shu
 | `[CAR_156]` to `[CAR_169]` | Daishi PA                 |
 
 :::caution
-It is not possible to skip or have duplicate indices in the `entry_list.ini`.  
-Meaning that you cannot start your entry list with `[CAR_87]` to make everyone spawn at Heiwajima.  
+It is not possible to skip or have duplicate indices in `entry_list.ini`.  
+This means that you cannot start your entry list with `[CAR_87]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
 :::
 
 ## How do I remove checksums? {#remove-checksums}
