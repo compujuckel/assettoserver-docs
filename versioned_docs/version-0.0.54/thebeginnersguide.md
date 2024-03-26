@@ -2,6 +2,9 @@
 title: The Beginner's Guide
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Introduction {#intro}
 
 This page will guide you through the initial setup process of setting up your own free-roam AssettoServer on a Windows machine.  
@@ -13,16 +16,17 @@ To follow along you will need the following things:
 
 - The **latest** version of AssettoServer.
 - The **full version** of Content Manager.
-- The **Shutoko Revival Project** track and `fast_lane.ai(p)`.
+- The **Shutoko Revival Project** track.
+- A `fast_lane.ai(p)` made for **Shutoko Revival Project**.
 - Basic understanding of how text editors work.
 
-### Finding the latest version of AssettoServer {#latest-assettoserver-version}
+### Downloading the latest version of AssettoServer {#latest-assettoserver-version}
 
 1. On the [installation section of the introduction page](./intro.mdx#installation) follow the **latest stable release** link.
    
    ![](./assets/guide/3.png)
 
-2. Click on the **assetto-server-win-x64.zip** in the Assets section of the release to download the file.
+2. Click on the `assetto-server-win-x64.zip` in the Assets section of the release to download the file.
    
    ![](./assets/guide/4.png)
 
@@ -41,11 +45,14 @@ You can host, configure, and play on the server without the full version of Cont
 ### Downloading the Shutoko Revival Project track and AI spline {#downloading-srp}
 
 :::note
-You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we will use the SRP track as it is one of the most popular tracks.
+You can use any track that you have a `fast_lane.ai(p)` for.  
+In this guide, we will use the SRP track as it is one of the most popular tracks.
 :::
 
 1. Join the [Shutoko Revival Project Discord](https://discord.com/invite/shutokorevivalproject)
+
 2. Follow their download and installation instructions. **If you need help with that, please use the [#help](https://discord.com/channels/500246817833877505/504100944846520321) channel**
+
 3. Join the AssettoServer Discord by clicking on the Discord logo in the navbar of this page.  
    
    ![](./assets/guide/6.png)
@@ -59,8 +66,7 @@ You can use any track that you have a `fast_lane.ai(p)` for. In this guide, we w
 ### Preconfiguration {#preconfiguration}
 
 For now, we will be using the minimum amount of cars needed for the default traffic settings of AssettoServer.  
-**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 6 accordingly.**  
-These can be adjusted at any point, although doing so before packing the server the first time, means we don't have to edit files ourself, move checksum data or even repack the server and potentially overwrite work we've done.
+**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 7 accordingly.** 
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:
@@ -76,7 +82,9 @@ These can be adjusted at any point, although doing so before packing the server 
    ![](./assets/guide/10.png)
 
 4. Move the `Capacity` slider to 11.
+
 5. Click on the `Admin password` field and enter a password that is at least 8 characters long.
+
 6. Click on the `ENTRY LIST` tab and click on the (+) to add cars to the list.  
    Add the following cars in this order:
 
@@ -137,7 +145,9 @@ These can be adjusted at any point, although doing so before packing the server 
 Now that we're done configuring the server, we can use the packing feature to export all files we need into a .zip file for us.
 
 1. In the same bar that we just saved the server preset, click on `Pack`.
+
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
+
 3. Click on `Pack` and save it.  
    
    ![](./assets/guide/16.png)
@@ -147,7 +157,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
 You should now have the following .zip files somewhere:
 
 - `assetto-server-win-x64.zip`
-- The .zip file of the server we just packed
+- The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract both of these two .zip files into it.
 
@@ -155,8 +165,25 @@ Create a new folder and extract both of these two .zip files into it.
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
-Double-click `AssettoServer.exe` to launch the server.  
-If you did everything correctly you should see something along the lines of this:
+Start the server by double-clicking `AssettoServer.exe`.
+
+You might get the following pop up messages from Windows Firewall or Windows Defender:
+
+<Tabs>
+<TabItem value="firewall" label="Windows Firewall" default>
+
+   ![](./assets/guide/windowsfirewall.png)
+
+</TabItem>
+<TabItem value="defender" label="Windows Defender">
+
+   ![](./assets/guide/windowsdefender.png)
+
+</TabItem>
+</Tabs>
+
+After allowing the `AssettoServer.exe` to launch, you should see something along the lines of this:
+
 
 ![](./assets/guide/18.png)
 
@@ -172,7 +199,8 @@ If you did everything correctly you should see something along the lines of this
 :::
 
 1. Close the console and navigate to the `cfg` folder inside the server's main folder.
-2. Open the newly created `extra_cfg.yml` using a text editor of your choice.  
+
+2. Open the `extra_cfg.yml` using a text editor of your choice.  
    Because we've selected a WeatherFX weather earlier and our goal is to have AI traffic set these two options to `true`:
 
    ```yaml title="extra_cfg.yml"
@@ -226,6 +254,7 @@ If you did everything correctly you should see something along the lines of this
    ![](./assets/guide/20.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
+
 8. Other people should also be able to join the server by searching for it or via the invite link that you can copy from the console.
    
    :::caution
@@ -240,8 +269,11 @@ Earlier we skipped over the `Time` slider inside of Content Manager because it o
 So what do we do if we wanted to have a Night only server?
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
+
 2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
+
 3. Since we already set the time multiplier to 0 we don't need to change it. If you wanted to, this would be the `TIME_OF_DAY_MULT` parameter. `1` would result in time progressing as fast as in real life, `2` would be twice as fast as in real life and so on.
+
 4. Save and restart the server to apply the changes.
    
    :::note
@@ -250,9 +282,6 @@ So what do we do if we wanted to have a Night only server?
 
 ### Weather {#changing-weather}
 
-We selected a weather during the preconfiguration, but what if we want to change the weather without having to pack and re-extract?  
-What if weathers like Heavy Rain are missing from the WeatherFX selection dropdown?
-
 :::caution if you want to select a weather with rain
 All players will need to have a Custom Shaders Patch preview version installed to see rain.  
 Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
@@ -260,6 +289,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 :::
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.  
+
 2. Find the `[WEATHER_0]` section, it should look something like this:
 
    ```ini title="server_cfg.ini"
@@ -303,6 +333,7 @@ Skip to the `Without Content Manager` part of the [teleportation](./faq.md#telep
 #### Requiring a minimum CSP Version {#requiring-csp-version}
 
 1.  Navigate to the `content/tracks` of the server and create a new folder called `csp`.
+
 2.  Take and move the `shuto_revival_project_beta` folder inside of the `csp` folder we just created.
     
     ![](./assets/guide/21.png)
@@ -338,9 +369,10 @@ Two of the more useful options for Freeroam servers are listed below.
 
 #### Extra steps for teleportation and color changing {#csp-extra-steps}
 
-For teleportation and color changing there are additional steps for us since we no longer use the Content Manager interface.
+For teleportation and color changing there are additional steps:
 
 1. Navigate to the `cfg` folder and open the `entry_list.ini`.
+
 2. Each car has a `SKIN=` line that needs to be edited to allow that car to use these features.  
    The following codes need to be added to the skin line:
 
@@ -403,13 +435,16 @@ Please make sure to not add or remove any spaces when copy pasting configuration
 #### AutoModerationPlugin
 
 1. Go to the AutoModerationPlugin documentation page and scroll down to the [Configuration section](./plugins/AutoModerationPlugin.md#configuration).
+
 2. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
 3. Find `EnablePlugins: []` and enable the plugin as explained on the page like so:
    ```yaml title="extra_cfg.yml"
    # List of plugins to enable
    EnablePlugins:
      - AutoModerationPlugin
    ```
+
 4. Go back to the documentation page and copy the codeblock for the configuration.  
    To make sure you copied everything you can use the copy button on the right of the codeblock.  
 
@@ -460,7 +495,9 @@ Please make sure to not add or remove any spaces when copy pasting configuration
 #### RandomWeatherPlugin
 
 1. Go to the RandomWeatherPlugin documentation page and scroll down to the [Configuration section](./plugins/RandomWeatherPlugin.md#configuration).
+
 2. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
 3. Find `EnablePlugins:` and enable the plugin as explained on the page like so:
    ```yaml title="extra_cfg.yml"
    # List of plugins to enable
@@ -563,6 +600,7 @@ Please make sure to not add or remove any spaces when copy pasting configuration
    # Maximum weather transition duration
    MaxTransitionDurationSeconds: 600
    ```
+
 7. Save and close the file and restart the server.  
    If you did everything correctly you should see two new lines at the beginning of the server log:  
 
@@ -645,8 +683,11 @@ This should cover the setup process to get started, from here it's basically jus
 In general, it is recommended to start fresh when updating AssettoServer.  
 
 1. Make a backup of your current `extra_cfg.yml`.
+
 2. Redo the extraction and combination of packed server and AssettoServer files as explained [in this section](./thebeginnersguide.md#server-extraction) inside of a new folder.
+
 3. Run the `AssettoServer.exe` of the new server once to generate a updated `extra_cfg.yml`.
+
 4. Use the backup of your `extra_cfg.yml` to reconfigure the `extra_cfg.yml` of the updated server.
 
 :::note
