@@ -12,6 +12,12 @@ import TabItem from '@theme/TabItem';
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
+## Why can't I drive certain cars on my server? {#locked-cars}
+
+Certain car mods are designed to function only on servers that are whitelisted by the creators of the car mod.  
+This restriction is built into the car mod itself and cannot be deactivated.  
+Note that this restriction is specific to the individual car mod and has no connection with AssettoServer.
+
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 
 Where you spawn depends on where the pit for each index is located for track and layout that you chose.  
@@ -29,14 +35,20 @@ Here is a short list of which indices correspond to which spawn location for the
 | `[CAR_156]` to `[CAR_169]` | Daishi PA                 |
 
 :::caution
+
 It is not possible to skip or have duplicate indices in `entry_list.ini`.  
 This means that you cannot start your entry list with `[CAR_87]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
+
 :::
 
 ## How do I remove checksums? {#remove-checksums}
 
-:::caution ONLY REMOVE CHECKSUMS IF YOU'RE OKAY WITH USERS CHEATING
-Checksums are required to prevent people from cheating by modifying their car and track data. Remove them at your own risk.
+:::caution
+
+Only remove checksums if you're okay with users cheating.  
+Checksums are required to prevent people from cheating by modifying their car and track data.  
+Remove them at your own risk.
+
 :::
 
 <Tabs>
@@ -56,6 +68,8 @@ Checksums are required to prevent people from cheating by modifying their car an
 
 </TabItem>
 </Tabs>
+
+If you added any other checksums like track kn5's or car colliders, also remove those files.
 
 ## How do I add missing track params? {#adding-trackparams}
 

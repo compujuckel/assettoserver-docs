@@ -13,6 +13,12 @@ import TabItem from '@theme/TabItem';
   **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Decrease `MinSpawnDistancePoints` / `MaxSpawnDistancePoints` to spawn cars closer to the player and fill up gaps in traffic.
 
+## Why can't I drive certain cars on my server? {#locked-cars}
+
+Certain car mods are designed to function only on servers that are whitelisted by the creators of the car mod.  
+This restriction is built into the car mod itself and cannot be deactivated.  
+Note that this restriction is specific to the individual car mod and has no connection with AssettoServer.
+
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 
 Where you spawn depends on where the pit for each index is located for track and layout that you chose.  
@@ -40,8 +46,9 @@ This means that you cannot start your entry list with `[CAR_87]` to have all car
 
 :::caution
 
-Only remove checksums if you're okay with users cheating.
-Checksums are required to prevent people from cheating by modifying their car and track data. Remove them at your own risk.
+Only remove checksums if you're okay with users cheating.  
+Checksums are required to prevent people from cheating by modifying their car and track data.  
+Remove them at your own risk.
 
 :::
 
@@ -62,6 +69,8 @@ Checksums are required to prevent people from cheating by modifying their car an
 
 </TabItem>
 </Tabs>
+
+If you added any other checksums like track kn5's or car colliders, also remove those files.
 
 ## How do I add missing track params? {#adding-trackparams}
 
