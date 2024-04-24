@@ -645,7 +645,7 @@ Please use the download links the authors of the content you're using provide un
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
   - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
     If you used the `Repack` option, the generated archives will also be added to this folder.  
-  **Currently, these file do not get included when using the Pack feature.**
+  **Currently, these files do not get included when using the Pack feature.**
 
   :::caution
 
@@ -689,8 +689,8 @@ Please use the download links the authors of the content you're using provide un
 
   :::note
 
-  You can use `.` to indicate the root of the server.  
-  For example: `"file": "./cfg/cm_content/car_name_here.zip",`
+  Instead of specifying the complete file path, you can just provide the path relative to AssettoServer's root directory.  
+  For example: `"file": "cfg/cm_content/car_name.zip",`
 
   :::
 
