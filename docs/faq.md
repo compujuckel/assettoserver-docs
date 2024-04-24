@@ -13,6 +13,12 @@ import TabItem from '@theme/TabItem';
   **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Decrease `MinSpawnDistancePoints` / `MaxSpawnDistancePoints` to spawn cars closer to the player and fill up gaps in traffic.
 
+## Why can't I drive certain cars on my server? {#locked-cars}
+
+Certain car mods are designed to function only on servers that are whitelisted by the creators of the car mod.  
+This restriction is built into the car mod itself and cannot be deactivated.  
+Note that this restriction is specific to the individual car mod and has no connection with AssettoServer.
+
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 
 Where you spawn depends on where the pit for each index is located for track and layout that you chose.  
@@ -30,14 +36,20 @@ Here is a short list of which indices correspond to which spawn location for the
 | `[CAR_156]` to `[CAR_169]` | Daishi PA                 |
 
 :::caution
+
 It is not possible to skip or have duplicate indices in `entry_list.ini`.  
 This means that you cannot start your entry list with `[CAR_87]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
+
 :::
 
 ## How do I remove checksums? {#remove-checksums}
 
-:::caution ONLY REMOVE CHECKSUMS IF YOU'RE OKAY WITH USERS CHEATING
-Checksums are required to prevent people from cheating by modifying their car and track data. Remove them at your own risk.
+:::caution
+
+Only remove checksums if you're okay with users cheating.  
+Checksums are required to prevent people from cheating by modifying their car and track data.  
+Remove them at your own risk.
+
 :::
 
 <Tabs>
@@ -57,6 +69,8 @@ Checksums are required to prevent people from cheating by modifying their car an
 
 </TabItem>
 </Tabs>
+
+If you added any other checksums like track kn5's or car colliders, also remove those files.
 
 ## How do I add missing track params? {#adding-trackparams}
 
@@ -160,7 +174,7 @@ For teleporting, two things have to be done:
 
 Depending on if you have the full version of Content Manager or not, there are two different ways to accomplish this:
 
-<Tabs>
+<Tabs groupId="content-manager">
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
 
   Check `Allow teleporting` for each car on your entry list:  
@@ -561,8 +575,11 @@ SCRIPT = "https://pastebin.com/raw/00000000000"    ; change this to the url of y
 ## How do I allow players to download missing content? {#download-missing-content}
 
 It's possible to allow players to download missing content like tracks and cars in the Content Manager server browser.
+This can be done by either providing direct download links if the content is stored on a 3rd party file hosting service like GoogleDrive or by hosting the content directly on the server.
 
 ![](./assets/HfLjm64.png)
+
+### Via 3rd party file hosting services
 
 :::caution
 
@@ -570,13 +587,14 @@ Please use the download links the authors of the content you're using provide un
 
 :::
 
-<Tabs>
+<Tabs groupId="content-manager">
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
 
   - Navigate to the `Details` Tab in your Server preset.
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
-  - A `content.json` file will be created in the `cm_content` folder under the directory of the server. Currently, this file does not get included when using the Pack feature.
+  - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
+  **Currently, this file does not get included when using the Pack feature.**
 
   ![](./assets/TN1XGgZ.png)
 
@@ -607,10 +625,74 @@ Please use the download links the authors of the content you're using provide un
   ```
 
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+  
   ![](./assets/eKKVEND.png)
 
 </TabItem>
 </Tabs>
+
+### Via the server directly
+
+<Tabs groupId="content-manager">
+<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
+
+  - Navigate to the `Details` Tab in your Server preset.
+  - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Share from server` field.
+  - Click the 3 little dots on the `Packed archive` line and either select `Select existing archive` if you already have a packed archive or select `Repack` to do so.  
+    
+    ![](./assets/mneB8sx.png)
+
+  - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
+  - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
+    If you used the `Repack` option, the generated archives will also be added to this folder.  
+  **Currently, these files do not get included when using the Pack feature.**
+
+  :::caution
+
+  Content Manager automatically fills in the full path to each archive.  
+  If you plan on moving these files (to a VPS for example), you will need to update the `file:` parameter for each entry in the `content.json` to reflect their new location.
+  
+  :::
+
+</TabItem>
+<TabItem value="manual" label="Without Content Manager">
+
+  - Navigate to the `cfg` folder of your server.
+  - Create a `cm_content` folder and in that folder a file named `content.json`.
+  - In `content.json` you can now configure paths to each archive like so:
+
+  ```json
+  {
+    "cars": {
+      "car_name_here": {
+      "file": "path to archive here",
+        "version": "version here"
+      },
+      "car_name_two": {
+      "file": "path to archive here",
+        "version": "version here"
+      }
+    },
+    "track": {
+      "file": "path to archive here",
+      "version": "version here"
+    }
+  }
+  ```
+
+  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+
+  ![](./assets/eKKVEND.png)
+
+</TabItem>
+</Tabs>
+
+  :::note
+
+  Instead of specifying the complete file path, you can just provide the path relative to AssettoServer's root directory.  
+  For example: `"file": "cfg/cm_content/car_name.zip",`
+
+  :::
 
 ## How can I enable a Custom Steam API Replacement? {#custom-steam-api}
 **AssettoServer does not support piracy and as such there is no way around buying Assetto Corsa and the DLC's required by the content you want to use.**  

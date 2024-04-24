@@ -12,7 +12,7 @@ EnablePlugins:
   - CustomCommandPlugin
 ```
 Example configuration
-```yaml title="plugin_discord_cfg.yml"
+```yaml title="plugin_custom_command_cfg.yml"
 # Configure your custom commands
 Commands:
     alias: some spicy response
