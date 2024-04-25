@@ -230,6 +230,7 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    GUID=
    BALLAST=0
    RESTRICTOR=0
+   // highlight-next-line
    AI=none
    ```
 
@@ -243,6 +244,7 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    NAME=Practice
    TIME=120
    IS_OPEN=1
+   // highlight-next-line
    INFINITE=1
    ``` 
 
@@ -279,6 +281,7 @@ We selected time and date settings during the preconfiguration, but what if we w
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -310,6 +313,7 @@ We selected time and date settings during the preconfiguration, but what if we w
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=64800_mult=0_start=1719700000
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -336,6 +340,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -354,7 +359,6 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    ```ini title="server_cfg.ini"
    [WEATHER_0]
    GRAPHICS=sol_03_scattered_clouds_type=8_time=0_mult=0
-   ...
    ```
 
    If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
@@ -409,6 +413,7 @@ For teleportation and color changing there are additional steps:
    ```ini title="entry_list.ini"
    [CAR_0]
    MODEL=ruf_yellowbird
+   // highlight-next-line
    SKIN=00_yellowbird_black/ADAn
    ```
 
