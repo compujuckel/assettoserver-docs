@@ -234,7 +234,21 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    AI=none
    ```
 
-   For the remaining cars we will add the line `AI=fixed` instead.
+   For the remaining cars we will add the line `AI=fixed` instead since we want to use them as AI traffic.
+
+   ```ini title="entry_list.ini"
+   [CAR_1]
+   MODEL=ks_audi_a1s1
+   SKIN=00_sepang_blue_pearl_effect_br
+   SPECTATOR_MODE=0
+   DRIVERNAME=
+   TEAM=
+   GUID=
+   BALLAST=0
+   RESTRICTOR=0
+   // highlight-next-line
+   AI=fixed
+   ```
 
 4. Save and close the file and then open the `server_cfg.ini`.  
    Find the `[PRACTICE]` session and add a line with `INFINITE=1` to it.
