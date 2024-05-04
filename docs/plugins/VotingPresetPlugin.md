@@ -68,3 +68,49 @@ Example folder structure:
     ├── 📄plugin_example_name_cfg.yml
     └── 📄server_cfg.ini
 ```
+
+## Commands
+Most commands have multiple alias
+
+#### Show current track / preset
+- `/currenttrack`
+- `/presetshow`
+- `/currentpreset`
+
+#### Vote for the next track / preset
+Server will ask users to vote for new map as per configured timeframe.
+- `/votetrack <number>`
+- `/vt <number>`
+- `/votepreset <number>`
+- `/vp <number>`
+- `/presetvote <number>`
+- `/pv <number>`
+
+### Admin commands
+
+#### List available tracks / presets
+- `/presetlist`
+- `/presetget`
+- `/presets`
+
+#### Change track / preset
+Exact usage is shown by track list
+- `/presetset`
+- `/presetchange`
+- `/presetuse`
+- `/presetupdate`
+
+#### Initiate track / preset vote
+- `/presetstartvote`
+- `/presetvotestart`
+
+#### Finish track / preset vote
+- `/presetfinishvote`
+- `/presetvotefinish`
+
+#### Cancel track / preset vote
+- `/presetcancelvote`
+- `/presetvotecancel`
+
+#### Change to random track / preset with equal odds
+- `/presetrandom`
