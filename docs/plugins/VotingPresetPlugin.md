@@ -42,3 +42,75 @@ Meta:
   # Is this preset part of the voting, Admins can still change to this track.
   VotingEnabled: true
 ```
+
+Place your presets in the `presets` folder, they need to include all files that would normally be inside your `cfg` folder.  
+Example folder structure:
+```md
+📁presets
+├── 📁preset_name_1
+│   ├── 📁cm_content
+│   ├── 📁reference
+│   ├── 📁schemas
+│   ├── 📄csp_extra_options.ini
+│   ├── 📄data_track_params.ini
+│   ├── 📄entry_list.ini
+│   ├── 📄extra_cfg.yml
+│   ├── 📄plugin_example_name_cfg.yml
+│   └── 📄server_cfg.ini
+└── 📁preset_name_2
+    ├── 📁cm_content
+    ├── 📁reference
+    ├── 📁schemas
+    ├── 📄csp_extra_options.ini
+    ├── 📄data_track_params.ini
+    ├── 📄entry_list.ini
+    ├── 📄extra_cfg.yml
+    ├── 📄plugin_example_name_cfg.yml
+    └── 📄server_cfg.ini
+```
+
+## Commands
+Most commands have multiple alias
+
+#### Show current track / preset
+- `/currenttrack`
+- `/presetshow`
+- `/currentpreset`
+
+#### Vote for the next track / preset
+Server will ask users to vote for new map as per configured timeframe.
+- `/votetrack <number>`
+- `/vt <number>`
+- `/votepreset <number>`
+- `/vp <number>`
+- `/presetvote <number>`
+- `/pv <number>`
+
+### Admin commands
+
+#### List available tracks / presets
+- `/presetlist`
+- `/presetget`
+- `/presets`
+
+#### Change track / preset
+Exact usage is shown by track list
+- `/presetset`
+- `/presetchange`
+- `/presetuse`
+- `/presetupdate`
+
+#### Initiate track / preset vote
+- `/presetstartvote`
+- `/presetvotestart`
+
+#### Finish track / preset vote
+- `/presetfinishvote`
+- `/presetvotefinish`
+
+#### Cancel track / preset vote
+- `/presetcancelvote`
+- `/presetvotecancel`
+
+#### Change to random track / preset with equal odds
+- `/presetrandom`

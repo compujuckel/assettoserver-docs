@@ -230,10 +230,25 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    GUID=
    BALLAST=0
    RESTRICTOR=0
+   // highlight-next-line
    AI=none
    ```
 
-   For the remaining cars we will add the line `AI=fixed` instead.
+   For the remaining cars we will add the line `AI=fixed` instead since we want to use them as AI traffic.
+
+   ```ini title="entry_list.ini"
+   [CAR_1]
+   MODEL=ks_audi_a1s1
+   SKIN=00_sepang_blue_pearl_effect_br
+   SPECTATOR_MODE=0
+   DRIVERNAME=
+   TEAM=
+   GUID=
+   BALLAST=0
+   RESTRICTOR=0
+   // highlight-next-line
+   AI=fixed
+   ```
 
 4. Save and close the file and then open the `server_cfg.ini`.  
    Find the `[PRACTICE]` session and add a line with `INFINITE=1` to it.
@@ -243,6 +258,7 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    NAME=Practice
    TIME=120
    IS_OPEN=1
+   // highlight-next-line
    INFINITE=1
    ``` 
 
@@ -279,6 +295,7 @@ We selected time and date settings during the preconfiguration, but what if we w
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -310,6 +327,7 @@ We selected time and date settings during the preconfiguration, but what if we w
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=64800_mult=0_start=1719700000
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -336,6 +354,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
    ```ini title="server_cfg.ini"
    [WEATHER_0]
+   // highlight-next-line
    GRAPHICS=sol_03_scattered_clouds_type=17_time=0_mult=0
    BASE_TEMPERATURE_AMBIENT=18
    BASE_TEMPERATURE_ROAD=6
@@ -354,7 +373,6 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    ```ini title="server_cfg.ini"
    [WEATHER_0]
    GRAPHICS=sol_03_scattered_clouds_type=8_time=0_mult=0
-   ...
    ```
 
    If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
@@ -409,6 +427,7 @@ For teleportation and color changing there are additional steps:
    ```ini title="entry_list.ini"
    [CAR_0]
    MODEL=ruf_yellowbird
+   // highlight-next-line
    SKIN=00_yellowbird_black/ADAn
    ```
 

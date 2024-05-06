@@ -2,104 +2,159 @@
 title: Admin Commands
 ---
 
-### Teleport player to pits
+## Get admin privileges
 
-`/pit <id>`
+`/admin <adminPassword>`
 
-| Parameter | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| id        | The car ID or name of the player to be teleported             |
+| Parameter     | Description                                              |
+| ------------- | -------------------------------------------------------- |
+| adminPassword | The admin password that has been set in `server_cfg.ini` |
 
-### Kick player
+## Kick player
 
 `/kick <id> <reason>`  
 `/kick_id <id> <reason>`
 
-| Parameter | Description                                                   |
+| Parameter | Description |
 | --------- | ------------------------------------------------------------- |
-| id        | The car ID or name of the player to be kicked                 |
+| id        | The car ID or name of the player to be kicked.                |
 | reason    | Optional, will display a reason on why the player was kicked. |
 
-### Ban player
+## Ban player
 
-`/ban <ID> <reason>`  
-`/ban_id <ID> <reason>`
+`/ban <id> <reason>`  
+`/ban_id <id> <reason>`
 
 | Parameter | Description                                                   |
 | --------- | ------------------------------------------------------------- |
-| id        | The car ID or name of the player to be banned                 |
+| id         | The car ID or name of the player to be banned                |
 | reason    | Optional, will display a reason on why the player was banned. |
 
-### Set server time
+## Force next session
+
+`/next_session`
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| None      | Forces the server to move to the next session. |
+
+## Restart session
+
+`/restart_session`
+
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| None      | Restarts the current session.                  | 
+
+## Teleport player to pits
+
+`/pit <id>`
+
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| id        | The car ID or name of the player to be teleported.    |
+
+## Set server time
 
 `/settime <time>`
 
-| Parameter | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| time      | Time (HH:mm), for example `/settime 13:45`                    |
+| Parameter | Description                                               |
+| --------- | --------------------------------------------------------- |
+| time      | The time in 24-hour format, for example `/settime 13:45`  |
 
-### Set weather configuration
+## Set weather configuration
 
 `/setweather <weatherId>`
 
-| Parameter | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| weatherId | The ID of the weather specified in the `server_cfg.ini`<br/>For example, if you want to use `WEATHER_0`, type `/setweather 0`       |
+| Parameter | Description                                               |
+| --------- | --------------------------------------------------------- |
+| weatherId | The ID of the weather specified in the `server_cfg.ini`<br/>For example, if you want to use `WEATHER_0`, type `/setweather 0` |
 
-### Get a list of CSP weather types
+## List available CSP WeatherFX types
 
 `/cspweather`
 
-### Set weather type
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| None      | Lists all available CSP WeatherFX types.       | 
+
+## Set CSP weather
 
 `/setcspweather <weatherType> <transitionDuration>`
 
-| Parameter | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| weatherType | WeatherFX type ([list of possible values](./misc/wfx-types.md)) |
-| transitionDuration | How long the weather transition should take (seconds), only functional when `EnableWeatherFx` is set to `true` in `extra_cfg.yml` |
+| Parameter | Description                                    |
+| --------- | ---------------------------------------------- |
+| weatherType | Name of the WeatherFX type, [list of possible values](./misc/wfx-types.md) or use `/cspweather` ingame. |
+| transitionDuration | Weather transition duration in seconds, requires `EnableWeatherFx` set to `true` in `extra_cfg.yml` |
 
-### Force headlights for a player
+## Set rain properties
+
+`/setrain <intensity> <wetness> <water>`
+
+| Parameter | Description                                |
+| --------- | ------------------------------------------ |
+| intensity | The rain intensity.                        |
+| wetness   | The track wetness.                         |
+| water     | The amount of standing water on the track. |
+
+## Set track grip
+
+`/setgrip <gripValue>`
+
+| Parameter | Description           |
+| --------- | --------------------- |
+| gripValue | The track grip value. |
+
+## Calculate distance to player
+
+`/distance <id>`
+
+| Parameter | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| id        | The car ID or name of the player to calculate the distance to. |
+
+## Force player headlights
 
 `/forcelights <on/off> <id>`
 
-| Parameter | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| on/off    | On = Active forcing of headlights, Off = Disable forcing of headlights  |
-| id        | The car ID or name of the player                                        |
+| Parameter | Description                                                            |
+| --------- | ---------------------------------------------------------------------- |
+| on/off    | On = Active forcing of headlights, Off = Disable forcing of headlights |
+| id        | The car ID or name of the player.                                      |
 
-**NOTE**: Forcing headlights for a player will still give him the opportunity to turn on/off his lights locally. His
-lights will however appear turned on for all other players.
+:::note
 
-### Show player information (IP address, Steam profile)
+Forcing headlights for a player will still give him the opportunity to turn on/off their lights locally. Their lights will however appear turned on for all other players.
+
+:::
+
+## Show player information (IP address, Steam profile)
 
 `/whois <id>`
 
-| Parameter | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| id        | The car ID or name of the player                                        |
+| Parameter | Description                       |
+| --------- | --------------------------------- |
+| id        | The car ID or name of the player. |
 
-### Set ballast and restrictor
+## Set restrictor
 
-`/restrict <id> <restrictor> <ballast>`
+`/restrict <id> <value>`
 
-| Parameter | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| id        | The car ID or name of the player                                        |
-| restrictor| From 0 to 400, cuts the car's engine power.  It limits power in the top range of the power band, will not kill total power |
-| ballast   | Ballast to be added to the car in kg. Excessive ballast can severely affect handling and car behaviour |
+| Parameter | Description                       |
+| --------- | --------------------------------- |
+| id        | The car ID or name of the player. |
+| value     | From 0 to 400, cuts the car's engine power. Limits power in the top range of the power band, will not kill total power. <br/> Calculation: `HP_Final = HP_Original * (1 - rpm * (restrictor / 4000000))` |
 
-### Change a configuration value
+## Set ballast
 
-`/set <key> <value>`
+`/ballast <id> <ballast>`
 
-| Parameter | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| key       | Name of the configuration field                                         |
-| value     | New value                                                               |
+| Parameter | Description                       |
+| --------- | --------------------------------- |
+| id        | The car ID or name of the player. |
+| ballast   | Ballast to be added to the car in kg. Excessive ballast can severely affect handling and car behaviour. |
 
-Values in `server_cfg.ini` are prefixed with `Server.`, values in `extra_cfg.yml` with `Extra.`.  
-Not all values can be changed at runtime.
+## Set server configuration parameters
 
 :::caution
 
@@ -107,15 +162,37 @@ Only use this for testing! All changes made with this command will be lost after
 
 :::
 
-#### Examples
+`/set <key> <value>`
+
+| Parameter | Description                                            |
+| --------- | ------------------------------------------------------ |
+| key       | The name of the server configuration parameter to set. |
+| value     | The value to set the parameter to.                     |
+
+:::note
+
+Parameters in `server_cfg.ini` are prefixed with `Server.`, Parameters in `extra_cfg.yml` with `Extra.`.  
+Not all values can be changed at runtime.
+
+**Examples:**  
 `/set Server.Name Start 123` - changes Server name to `Start 123`  
-`/set Extra.AiParams.MinAiSafetyDistanceMeters 100` - set minimum distance between AI cars to 100 meters  
-`/set Extra.AiParams.SplineHeightOffsetMeters 0.2` - set spline height offset to 0.2 meters
+`/set Extra.AiParams.MinAiSafetyDistanceMeters 100` - set minimum distance between AI cars to `100` meters  
+`/set Extra.AiParams.SplineHeightOffsetMeters 0.2` - set spline height offset to `0.2` meters
 
-### Whitelist a SteamID
+:::
 
-`/whitelist <guid>`
+## Whitelist a SteamID
 
-| Parameter | Description                                                             |
-| --------- | ----------------------------------------------------------------------- |
-| guid      | The SteamID of the player                                               |
+`/whitelist <steamId>`
+
+| Parameter | Description                |
+| --------- | -------------------------- |
+| steamId   | The SteamId of the player. |
+
+## Send Chat Message as CONSOLE
+
+`/say <message>`
+
+| Parameter | Description |
+| --------- | ----------- |
+| message   | The message to send to the ingame chat. <br/> Example: `/say Hello World` will result in `CONSOLE: Hello World` ingame. |
