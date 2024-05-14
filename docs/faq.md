@@ -15,9 +15,10 @@ import TabItem from '@theme/TabItem';
 
 ## Why can't I drive certain cars on my server? {#locked-cars}
 
-Certain car mods are designed to function only on servers that are whitelisted by the creators of the car mod.  
-This restriction is built into the car mod itself and cannot be deactivated.  
-Note that this restriction is specific to the individual car mod and has no connection with AssettoServer.
+Certain car mods are designed to only be driven on servers that are whitelisted by the creators of the car mod.  
+Affected cars usually do not respond to the gas pedal input if they are used on other servers.
+This restriction is built into the car mod itself and cannot be deactivated by any means.  
+Please note that these restrictions are not a feature of AssettoServer.
 
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 

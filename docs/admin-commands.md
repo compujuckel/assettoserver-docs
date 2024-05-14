@@ -124,7 +124,7 @@ title: Admin Commands
 
 :::note
 
-Forcing headlights for a player will still give him the opportunity to turn on/off their lights locally. Their lights will however appear turned on for all other players.
+Forcing headlights for a player will still give them the opportunity to turn on/off their lights locally. Their lights will however appear turned on for all other players.
 
 :::
 

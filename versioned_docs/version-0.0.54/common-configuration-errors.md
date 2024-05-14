@@ -12,6 +12,12 @@ IgnoreConfigurationErrors:
   MissingCarChecksums: true
 ```
 
+:::note
+Setting `MissingCarChecksums: true` does not disable checksums, it only allows the server to start if some of them are missing.  
+Checksums that are present will still be loaded by the server.
+If your goal is to remove checksums please read [this FAQ section](./faq.md#remove-checksums)
+:::
+
 ## Missing track params
 AssettoServer uses track coordinates and time zone for some features like live weather. At first server startup a list of known track params will be downloaded from here: https://github.com/ac-custom-shaders-patch/acc-extension-config/blob/master/config/data_track_params.ini  
 When there is no entry in this file for your track this error will be shown. This should be fixed by creating a Pull Request on the above repository and then forcing AssettoServer to redownload this file by deleting `cfg/data_track_params.ini`.  
