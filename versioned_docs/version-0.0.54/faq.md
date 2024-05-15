@@ -591,8 +591,6 @@ KEEP_COLLISIONS = 0   ; Activate collisions between cars in pits
 SPEED_KMH = 80        ; Alter pits speed limiter value; default is 80
 ```
 
-[There are more options available here.](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#pit-speed-limiter-settings)
-
 ### How do I use Server Scripts? {#csp-server-scripts}
 
 :::note
