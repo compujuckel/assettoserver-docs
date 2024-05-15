@@ -143,42 +143,79 @@ ForceServerTrackParams: true
 
 ## How do I use CSP extra server options? {#csp-extra-options}
 
-Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
-If the file doesn't exist yet, create it yourself. For example:
+#### Requiring a minimum CSP Version {#requiring-csp-version}
+<Tabs groupId="content-manager">
+<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
+
+  In the `Main` tab, enable `Require CSP to Join` and enter the desired CSP version ID or click on `Autofill` to insert the version ID of the CSP version you have currently installed:  
+  
+  ![](./assets/HxAVvsd.png)
+
+</TabItem>
+<TabItem value="manual" label="Without Content Manager">
+
+  - In `content/tracks` of your server, create a new folder called `csp`
+  - Move your track folder into `content/tracks/csp`
+  - In `server_cfg.ini` change the path of your track like this: `TRACK=csp/<CSPversionID>/../<trackname>`  
+    For example: `TRACK=csp/2053/../shuto_revival_project_beta`
+  - In `data/surfaces.ini` of your track, change `SURFACE_0` to `CSPFACE_0`
+
+    :::caution ONLY CHANGE THE FIRST SURFACE IN THE FILE
+
+      Changing more than `SURFACE_0` will result in checksum errors for clients!
+
+    :::
+
+</TabItem>
+</Tabs>
+
+<details>
+<summary>**Where can I find CSP version IDs?**</summary>
+<p>
+
+In Content Manager, navigate to `Settings > Custom Shaders Patch > About & Updates` and look for the Currently active Shaders Patch version ID.
+
+![](./assets/lKOfMSR.png)
+
+If you need the ID of a version you currently don't have installed **[the official CSP Website](https://acstuff.ru/patch/)** lists the IDs in the `Other Versions` sections.
+
+![](./assets/Upd4ZJl.png)
+
+</p>
+</details>
+
+#### Adding CSP extra server options to the server {#extra-options-ini}
+Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
+If you are hosting via Content Manager, click the `Folder` button at the bottom of the preset and create the file there instead.  
+
+[This CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options you can use.  
+The options on that page go into the `csp_extra_options.ini`, for example:
 
 ![](./assets/oxp4a21.png)    
-Place the file in the `cfg` folder of your server.  
-
-:::note
-
-If you're hosting the server via Content Manager, click the `Folder` button at the bottom of the preset and place it there instead.
-
-:::
 
 ### How do I allow driving the wrong way? {#wrong-way}
 
+This is also used to remove the incorrectly displayed wrong way indicator on track like Shutoko Revival Project.  
+If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.md)
+
 ```ini title="csp_extra_options.ini"
 [EXTRA_RULES]
-ALLOW_WRONG_WAY = 1 
+ALLOW_WRONG_WAY = 1   ; Allow cars to drive either way, gets rid of the wrong way sign on some tracks
 ```  
 If you get teleported back to pits, you may need to remove the `fast_lane.ai` for the track in your local game files.  
 By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
 
 ### How do I enable Teleportation? {#teleportation}
 
-For teleporting, three things have to be done:
+For teleporting, two things have to be done:
 
-- Requiring a minimum CSP version
 - Allowing cars in the entry list to teleport
 - Adding teleport destinations to the `csp_extra_options.ini`
 
 Depending on if you have the full version of Content Manager or not, there are two different ways to accomplish this:
 
-<Tabs>
+<Tabs groupId="content-manager">
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
-
-  In the `Main` tab of your server check `Require CSP to Join` and enter the desired CSP version ID or click on `Autofill` to insert the version ID of the CSP version you have currently installed:  
-  ![](./assets/HxAVvsd.png)
 
   Check `Allow teleporting` for each car on your entry list:  
   ![](./assets/Il4RrjG.png)
@@ -188,17 +225,6 @@ Depending on if you have the full version of Content Manager or not, there are t
 
 </TabItem>
 <TabItem value="manual" label="Without Content Manager">
-
-  - In `content/tracks` of your server, create a new folder called `csp`
-  - Move your track folder into `content/tracks/csp`
-  - In `server_cfg.ini` change the path of your track like this: `TRACK=csp/<CSPversionID>/../<trackname>`, for example `TRACK=csp/2053/../shuto_revival_project_beta`
-  - In `data/surfaces.ini` of your track, change `SURFACE_0` to `CSPFACE_0`
-
-    :::caution ONLY CHANGE THE FIRST SURFACE IN THE FILE
-
-      Changing more than `SURFACE_0` will result in checksum errors for clients!
-
-    :::
 
   - In your `entry_list.ini` add a option to the end of each skin, for example `SKIN=<skinname>/ADAn`
 
@@ -224,7 +250,7 @@ If done correctly you should now have a `Teleport to...` option in the chat apps
 Either use the teleports used on the official SRP servers below or make some yourself.  
 
 <details>
-<summary>Official Shutoko Revival Project Teleport locations</summary>
+<summary>**Official Shutoko Revival Project Teleport locations**</summary>
 <p>Last updated: 2024-04-24</p>
 <p>
 
@@ -530,30 +556,39 @@ You can use the Objects Inspector or the [comfy map app](https://www.racedepartm
 The formating is as follows:
 
 ```ini
-POINT_0 = Name               ; destination name
-POINT_0_GROUP = Group Name   ; optional group
-POINT_0_POS = X, Y, Z        ; coordinates
-POINT_0_HEADING = 0          ; heading angle in degrees
+POINT_0 = Name               ; Destination name
+POINT_0_GROUP = Group Name   ; Optional group
+POINT_0_POS = X, Y, Z        ; Coordinates
+POINT_0_HEADING = 0          ; Heading angle in degrees
 ```
 
-**Having the comfy map app is not necessary to create points, enable or use teleportation!**
+:::note
+
+The comfy map app is not required to create points, enable or use teleportation!
+
+:::
 
 ### How do I enable Color Changing? {#color-changing}
 
 ```ini title="csp_extra_options.ini"
 [CUSTOM_COLOR]
-ALLOW_EVERYWHERE = 1
+ALLOW_EVERYWHERE = 1   ; Change car colors anywhere as long as the car is stopped.
 ```
 
-If AI cars are allowed to change their colors, they will spawn in random colors if possible.  
-**Keep in mind that you still need to allow cars to change colors via the `entry_list.ini` even if you're using `ALLOW_EVERYWHERE`.**
+If AI cars are allowed to change their colors, they will spawn in random colors if possible. 
+
+:::caution
+
+Every car still needs to be allowed to change colors via the `entry_list.ini`.
+
+:::
 
 ### How do I increase the speed in the pits? {#pit-speed-limiter}
 
 ```ini title="csp_extra_options.ini"
 [PITS_SPEED_LIMITER]
-KEEP_COLLISIONS = 0    ; will either activate or deactivate collisions between cars in the pits.
-SPEED_KMH = 80         ; the maximum speed allowed, the default is 80.
+KEEP_COLLISIONS = 0   ; Activate collisions between cars in pits
+SPEED_KMH = 80        ; Alter pits speed limiter value; default is 80
 ```
 
 [There are more options available here.](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#pit-speed-limiter-settings)
@@ -573,7 +608,7 @@ You're going to need to host your script in plaintext somewhere publicly accessi
 
 ```ini title="csp_extra_options.ini"
 [SCRIPT_...]
-SCRIPT = "https://pastebin.com/raw/00000000000"    ; change this to the url of your script
+SCRIPT = "https://pastebin.com/raw/00000000000"    ; Change this to the url of your script
 ```
 
 [There are more options available here.](https://github.com/CheesyManiac/cheesy-lua/wiki/Extra-CSP-Server-Config-Values#server-scripts)
@@ -679,13 +714,3 @@ ServerDescription: |-
   - If you dont have Sol working, or are otherwise in doubt,
     keep your lights on.
 ```
-
-## Where can I find the CSP version IDs? {#csp-version-ids}
-
-The easiest way to get the ID for the CSP Version you're using is opening Content Manager and navigating to `Settings > Custom Shaders Patch > About & Updates` and then reading the Currently active Shaders Patch version ID.
-
-![](./assets/lKOfMSR.png)
-
-If you need the ID of a version you currently don't have installed [the official CSP Website](https://acstuff.ru/patch/) also has the IDs in the `Other Versions` sections.
-
-![](./assets/Upd4ZJl.png)
