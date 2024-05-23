@@ -389,7 +389,7 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
 AssettoServer requires CSP version 0.1.77 (1937) by default.  
 To change this edit `MinimumCSPVersion: 1937` in the `extra_cfg.yml`.  
-If you want to require a different CSP version and don't know how where to get the ID from, read the [FAQ section](./faq.md#csp-version-ids) that explains it.
+If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
 Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
 The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can play around with.  

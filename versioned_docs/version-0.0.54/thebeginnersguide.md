@@ -344,7 +344,6 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 If we want to take advantage of some of the features that CSP provides for servers, we will need to make some changes and create a file inside our `cfg` folder.
 
 If you feel like you don't need a step-by-step explanation, read over the [FAQ section](./faq.md#csp-extra-options) that covers how to use them.  
-Skip to the `Without Content Manager` part of the [teleportation](./faq.md#teleportation) section if you do not want to repack the server and overwrite files you might have edited while following this guide.
 
 #### Requiring a minimum CSP Version {#requiring-csp-version}
 
@@ -358,7 +357,7 @@ Skip to the `Without Content Manager` part of the [teleportation](./faq.md#telep
     `TRACK=csp/<CSPversionID>/../<trackname>`, in this case `TRACK=csp/2144/../shuto_revival_project_beta`.
 
     The version ID `2144` will mean that in order to join the server, players will need to have **at least** CSP version 1.79 installed.  
-    If you want to require a different CSP version and don't know how where to get the ID from, read the [FAQ section](./faq.md#csp-version-ids) that explains it.
+    If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
 4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\tatsumi_pa\data` folder of the server and open the `surfaces.ini`.  
     Change the name of the first surface from `SURFACE_0` to `CSPFACE_0`

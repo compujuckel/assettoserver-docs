@@ -97,6 +97,12 @@ title: Admin Commands
 | wetness   | The track wetness.                         |
 | water     | The amount of standing water on the track. |
 
+:::note
+
+Parameters range from 0-1 meaning `/setrain 1 1 1` would set all of them to the maximum.
+
+:::
+
 ## Set track grip
 
 `/setgrip <gripValue>`

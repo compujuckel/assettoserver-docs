@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 ## Why can't I drive certain cars on my server? {#locked-cars}
 
 Certain car mods are designed to only be driven on servers that are whitelisted by the creators of the car mod.  
-Affected cars usually do not respond to the gas pedal input if they are used on other servers.
+Affected cars usually do not respond to the gas pedal input if they are used on other servers.  
 This restriction is built into the car mod itself and cannot be deactivated by any means.  
 Please note that these restrictions are not a feature of AssettoServer.
 
@@ -145,19 +145,41 @@ ForceServerTrackParams: true
 
 ## How do I use CSP extra server options? {#csp-extra-options}
 
-Read [this CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) carefully. Everything you want to add goes into `cfg/csp_extra_options.ini`.  
-If the file doesn't exist yet, create it yourself. For example:
+#### Changing the required CSP version {#requiring-csp-version}
 
-![](./assets/oxp4a21.png)    
-Place the file in the `cfg` folder of your server.  
+```yaml title="extra_cfg.yml"
+# Override minimum CSP version required to join this server. Leave this empty to not require CSP.
+MinimumCSPVersion: 1937
+```
 
-:::note
+<details>
+<summary>**Where can I find CSP version IDs?**</summary>
+<p>
 
-If you're hosting the server via Content Manager, click the `Folder` button at the bottom of the preset and place it there instead.
+In Content Manager, navigate to `Settings > Custom Shaders Patch > About & Updates` and look for the Currently active Shaders Patch version ID.
 
-:::
+![](./assets/lKOfMSR.png)
+
+If you need the ID of a version you currently don't have installed **[the official CSP Website](https://acstuff.ru/patch/)** lists the IDs in the `Other Versions` sections.
+
+![](./assets/Upd4ZJl.png)
+
+</p>
+</details>
+
+#### Adding CSP extra server options to the server {#extra-options-ini}
+Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
+If you are hosting via Content Manager, click the `Folder` button at the bottom of the preset and create the file there instead.  
+
+[This CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options you can use.  
+The options on that page go into the `csp_extra_options.ini`, for example:
+
+![](./assets/oxp4a21.png) 
 
 ### How do I allow driving the wrong way? {#wrong-way}
+
+This is also used to remove the incorrectly displayed wrong way indicator on track like Shutoko Revival Project.  
+If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.md)
 
 ```ini title="csp_extra_options.ini"
 [EXTRA_RULES]
@@ -211,7 +233,7 @@ If done correctly you should now have a `Teleport to...` option in the chat apps
 Either use the teleports used on the official SRP servers below or make some yourself.  
 
 <details>
-<summary>Official Shutoko Revival Project Teleport locations</summary>
+<summary>**Official Shutoko Revival Project Teleport locations**</summary>
 <p>Last updated: 2024-04-24</p>
 <p>
 
@@ -517,33 +539,40 @@ You can use the Objects Inspector or the [comfy map app](https://www.racedepartm
 The formating is as follows:
 
 ```ini
-POINT_0 = Name               ; destination name
-POINT_0_GROUP = Group Name   ; optional group
-POINT_0_POS = X, Y, Z        ; coordinates
-POINT_0_HEADING = 0          ; heading angle in degrees
+POINT_0 = Name               ; Destination name
+POINT_0_GROUP = Group Name   ; Optional group
+POINT_0_POS = X, Y, Z        ; Coordinates
+POINT_0_HEADING = 0          ; Heading angle in degrees
 ```
 
-**Having the comfy map app is not necessary to create points, enable or use teleportation!**
+:::note
+
+The comfy map app is not required to create points, enable or use teleportation!
+
+:::
 
 ### How do I enable Color Changing? {#color-changing}
 
 ```ini title="csp_extra_options.ini"
 [CUSTOM_COLOR]
-ALLOW_EVERYWHERE = 1
+ALLOW_EVERYWHERE = 1   ; Change car colors anywhere as long as the car is stopped.
 ```
 
 If AI cars are allowed to change their colors, they will spawn in random colors if possible.  
-**Keep in mind that you still need to allow cars to change colors via the `entry_list.ini` even if you're using `ALLOW_EVERYWHERE`.**
+
+:::caution
+
+Every car still needs to be allowed to change colors via the `entry_list.ini`.
+
+:::
 
 ### How do I increase the speed in the pits? {#pit-speed-limiter}
 
 ```ini title="csp_extra_options.ini"
 [PITS_SPEED_LIMITER]
-KEEP_COLLISIONS = 0    ; will either activate or deactivate collisions between cars in the pits.
-SPEED_KMH = 80         ; the maximum speed allowed, the default is 80.
+KEEP_COLLISIONS = 0   ; Activate collisions between cars in pits
+SPEED_KMH = 80        ; Alter pits speed limiter value; default is 80
 ```
-
-[There are more options available here.](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options#pit-speed-limiter-settings)
 
 ### How do I use Server Scripts? {#csp-server-scripts}
 
@@ -560,7 +589,7 @@ You're going to need to host your script in plaintext somewhere publicly accessi
 
 ```ini title="csp_extra_options.ini"
 [SCRIPT_...]
-SCRIPT = "https://pastebin.com/raw/00000000000"    ; change this to the url of your script
+SCRIPT = "https://pastebin.com/raw/00000000000"    ; Change this to the url of your script
 ```
 
 [There are more options available here.](https://github.com/CheesyManiac/cheesy-lua/wiki/Extra-CSP-Server-Config-Values#server-scripts)
@@ -572,7 +601,7 @@ This can be done by either providing direct download links if the content is sto
 
 ![](./assets/HfLjm64.png)
 
-### Via 3rd party file hosting services
+### Via 3rd party file hosting services {#remote-downloads}
 
 :::caution
 
@@ -624,7 +653,7 @@ Please use the download links the authors of the content you're using provide un
 </TabItem>
 </Tabs>
 
-### Via the server directly
+### Via the server directly {#direct-downloads}
 
 <Tabs groupId="content-manager">
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
@@ -734,13 +763,3 @@ ServerDescription: |-
   - If you dont have Sol working, or are otherwise in doubt,
     keep your lights on.
 ```
-
-## Where can I find the CSP version IDs? {#csp-version-ids}
-
-The easiest way to get the ID for the CSP Version you're using is opening Content Manager and navigating to `Settings > Custom Shaders Patch > About & Updates` and then reading the Currently active Shaders Patch version ID.
-
-![](./assets/lKOfMSR.png)
-
-If you need the ID of a version you currently don't have installed [the official CSP Website](https://acstuff.ru/patch/) also has the IDs in the `Other Versions` sections.
-
-![](./assets/Upd4ZJl.png)
