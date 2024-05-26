@@ -195,7 +195,7 @@ The options on that page go into the `csp_extra_options.ini`, for example:
 
 ### How do I allow driving the wrong way? {#wrong-way}
 
-This is also used to remove the incorrectly displayed wrong way indicator on track like Shutoko Revival Project.  
+This is also used to remove the incorrectly displayed wrong way indicator on tracks like Shutoko Revival Project.  
 If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.md)
 
 ```ini title="csp_extra_options.ini"
