@@ -734,8 +734,9 @@ The description in Content Manager uses BBcode tags, read: https://www.bbcode.or
 To add images use `[img=<link>]img1[/img]`  
 Keep in mind that some functions of BBcode are not supported by Content Manager.
 
-**Example Description**
+**Example Description, do not add this to the bottom of the `extra_cfg.yml`.**
 ```yaml title="extra_cfg.yml"
+# Server description shown in Content Manager. EnableServerDetails must be on
 ServerDescription: |-
   [img=https://assettoserver.org/img/as-logo-cm.png]AssettoServer Logo[/img]
 
