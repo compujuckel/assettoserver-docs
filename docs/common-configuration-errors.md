@@ -56,4 +56,4 @@ IgnoreConfigurationErrors:
 ## CSP extra options missing from chat
 If you added parameters to the `csp_extra_options.ini` without requiring a CSP version, features like teleportation won't show up in the chat menu but will allow players to teleport via apps like comfy map if their installed CSP version supports it.  
 
-To make them selectable in the chat app follow [the instructions on how to reqiure a CSP version.](./thebeginnersguide.md#requiring-csp-version)
+To make them selectable in the chat app follow [the instructions on how to require a CSP version.](./thebeginnersguide.md#requiring-csp-version)

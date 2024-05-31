@@ -178,7 +178,7 @@ The options on that page go into the `csp_extra_options.ini`, for example:
 
 ### How do I allow driving the wrong way? {#wrong-way}
 
-This is also used to remove the incorrectly displayed wrong way indicator on track like Shutoko Revival Project.  
+This is also used to remove the incorrectly displayed wrong way indicator on tracks like Shutoko Revival Project.  
 If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.md)
 
 ```ini title="csp_extra_options.ini"
@@ -734,8 +734,9 @@ The description in Content Manager uses BBcode tags, read: https://www.bbcode.or
 To add images use `[img=<link>]img1[/img]`  
 Keep in mind that some functions of BBcode are not supported by Content Manager.
 
-**Example Description**
+**Example Description, do not add this to the bottom of the `extra_cfg.yml`.**
 ```yaml title="extra_cfg.yml"
+# Server description shown in Content Manager. EnableServerDetails must be on
 ServerDescription: |-
   [img=https://assettoserver.org/img/as-logo-cm.png]AssettoServer Logo[/img]
 

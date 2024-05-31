@@ -4,6 +4,12 @@ description: Let players vote for server configuration presets
 
 # VotingPresetPlugin
 
+:::note
+
+Forced minimum CSP version of 0.1.80preview475 (2635) and `EnableClientMessages: true` in `extra_cfg.yml` required for this plugin!
+
+:::
+
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
 ```yaml title="extra_cfg.yml"
