@@ -8,8 +8,9 @@ import TabItem from '@theme/TabItem';
 
 ## How do I get dense traffic? {#dense-traffic}
 
-- Use more traffic slots
+- Add more cars to the `entry_list.ini` that are used as traffic. This is the most important setting. It is pretty much impossible to achieve high traffic density with just 10 traffic cars, for example.
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
+  **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
 ## Why can't I drive certain cars on my server? {#locked-cars}

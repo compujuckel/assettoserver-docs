@@ -23,7 +23,7 @@ For a list of weather types that can be used with `WeatherWeights` see [WeatherF
 ```yaml title="plugin_random_weather_cfg.yml"
 # Which mode should be used for weather randomization 
 # Available values: 'Default' and 'TransitionTable'
-Mode: TransitionTable
+Mode: Default
 # Minimum duration until next weather change
 MinWeatherDurationMinutes: 15
 # Maximum duration until next weather change
