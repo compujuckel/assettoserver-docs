@@ -17,8 +17,13 @@ Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in 
 ## How it works
 
 The plugin assigns contact points to all collisions of a player and divides the driven distance by that.  
-The number of points for a collisions depends on relative speed and the type of collision (AI/Player/Environment). The score of a player is recalculated after every 25km driven.  
-The score has a range of 0 (worst) to 10 (best).
+The number of points for a collisions depends on relative speed and the type of collision.  
+
+Collision type multipliers are 0.2 for AI, 0.3 for environment and 0.6 for players.  
+The speed multiplier is capped at 100km/h.  
+A 100km/h crash is twice as bad as a 10km/h crash and collisions less than 10km/h are not counted.  
+
+The score has a range of 0 (worst) to 10 (best) and is recalculated after every 25km driven.  
 
 ## Configuration
 
