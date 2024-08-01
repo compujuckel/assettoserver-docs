@@ -6,6 +6,12 @@ description: Dynamically adjust the time multiplier based on the sun position
 
 Plugin to dynamically adjust the time multiplier based on the sun position. It can be used to make time pass faster during daytime and slower during nighttime for example.
 
+:::note
+
+Longitude and latitude of the track are required in the `data_tracks_params.ini`
+
+:::
+
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
 ```yaml
