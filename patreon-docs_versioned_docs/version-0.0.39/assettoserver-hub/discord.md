@@ -82,7 +82,7 @@ After that, the user group will be created:
 ![](./assets/user_group_3.png)
 
 Now you can use this group in your server configuration.  
-For more general info on user groups see [this page](./user-groups).
+For more general info on user groups see [this page](./user-groups.md).
 
 ### Remove User Group
 
@@ -90,7 +90,7 @@ To remove a group simply use the `/user-group remove` command.
 
 ## User Group Mappings
 
-Existing AssettoServer user groups can be mapped to a Discord role. This can be used for example with [PatreonTimingPlugin](../plugins/PatreonTimingPlugin) to assign roles based on the Timing leaderboard.
+Existing AssettoServer user groups can be mapped to a Discord role. This can be used for example with [PatreonTimingPlugin](../plugins/PatreonTimingPlugin.md) to assign roles based on the Timing leaderboard.
 
 ### Example: Assign Role based on Timing Leaderboard
 
@@ -192,7 +192,7 @@ List of all column names that can be used as a filter: `Name`, `Leaderboard`, `P
 
 ### Example: Assign Role based on Safety Rating
 
-[PatreonSafetyRatingPlugin](../plugins/PatreonSafetyRatingPlugin) can create a user group for each rank, for example:
+[PatreonSafetyRatingPlugin](../plugins/PatreonSafetyRatingPlugin.md) can create a user group for each rank, for example:
 
 ```yaml title="configuration.yml (AssettoServer Hub)"
 SafetyRatingRanks:
