@@ -66,7 +66,7 @@ In this guide, we will use the SRP track as it is one of the most popular tracks
 ### Preconfiguration {#preconfiguration}
 
 For now, we will be using the minimum amount of cars needed for the default traffic settings of AssettoServer.  
-**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 7 accordingly.** 
+**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 6 accordingly.** 
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:

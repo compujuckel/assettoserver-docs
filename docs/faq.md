@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 ## How do I get dense traffic? {#dense-traffic}
 
-- Use more traffic slots. This is the most important setting. It is pretty much impossible to achieve high traffic density with just 10 traffic cars, for example.
+- Add more cars to the `entry_list.ini` that are used as traffic. This is the most important setting. It is pretty much impossible to achieve high traffic density with just 10 traffic cars, for example.
 - Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller.  
   **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Decrease `MinSpawnDistancePoints` / `MaxSpawnDistancePoints` to spawn cars closer to the player and fill up gaps in traffic.
