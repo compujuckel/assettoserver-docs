@@ -286,7 +286,9 @@ So what do we do if we wanted to have a Night only server?
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
 
-2. Under `[SERVER]` find the parameter `SUN_ANGLE` and set it to `-180`, in most cases this should result in the time being somewhere in the night.
+2. Under `[SERVER]` find the parameter `SUN_ANGLE`.  
+   Use the following formula: `16*((HOURS*3600)+(MINUTES*60)+SECONDS-46800)/(50400-46800)`  
+   For example, for 00:00 you would do `16*((0*3600)+(0*60)+0-46800)/(50400-46800)` which will result in `SUN_ANGLE=-208`
 
 3. Since we already set the time multiplier to 0 we don't need to change it. If you wanted to, this would be the `TIME_OF_DAY_MULT` parameter. `1` would result in time progressing as fast as in real life, `2` would be twice as fast as in real life and so on.
 
