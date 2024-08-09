@@ -32,7 +32,7 @@ FileBasedUserGroups:
 ```
 
 ### Game Server Setup
-When specifying a user group, prefix the user group name in `extra_cfg.yml` with a `+`, for example `+my_group`. This will cause the [PatreonHubPlugin](../plugins/PatreonHubPlugin) to load this user group from AssettoServer Hub.
+When specifying a user group, prefix the user group name in `extra_cfg.yml` with a `+`, for example `+my_group`. This will cause the [PatreonHubPlugin](../plugins/PatreonHubPlugin.md) to load this user group from AssettoServer Hub.
 
 ### Examples
 

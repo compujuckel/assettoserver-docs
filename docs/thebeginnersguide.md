@@ -68,7 +68,6 @@ In this guide, we will use the SRP track as it is one of the most popular tracks
 ### Preconfiguration {#preconfiguration}
 
 For now, we will be using the minimum amount of cars needed for the default traffic settings of AssettoServer.  
-**If we wanted to have more player and/or traffic cars we would adjust steps 4 and 7 accordingly.**  
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:
@@ -83,11 +82,11 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/cmconfig3.png)
 
-4. Move the `Capacity` slider to 11.
+4. Click on the `Admin password` field and enter a password that is at least 8 characters long.
 
-5. Click on the `Admin password` field and enter a password that is at least 8 characters long.
+5. Enable the `Make server public (show on lobby)` checkbox.
 
-6. Enable the `Make server public (show on lobby)` checkbox.
+6. Move the `Capacity` slider to 11.
 
 7. Click on the `ENTRY LIST` tab and click on the (+) to add cars to the list.  
    Add the following cars in this order:
@@ -99,12 +98,14 @@ For now, we will be using the minimum amount of cars needed for the default traf
    ![](./assets/guide/cmconfig4.png)
 
    :::caution
-   Only add as many cars to the entry list as there are pits available for the track and layout you've chosen.  
-   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Overload Layout looks like this:  
+   When adding more cars, remember to also increase the `Capacity` slider, otherwise only the first 11 cars will get loaded.
+
+   Only add as many cars as there are pits available for the layout of the track you've chosen.  
+   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:  
 
    ![](./assets/guide/caution1.png)
 
-   If you go beyond the limit, which is based on the layout of the track you selected, the game will crash when you try to join the server.
+   Ignoring this limit will result in the game crashing when joining the server.
    :::
 
 8. Click on the `RULES` tab and configure the page how you see fit.

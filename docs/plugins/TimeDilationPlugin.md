@@ -6,6 +6,12 @@ description: Dynamically adjust the time multiplier based on the sun position
 
 Plugin to dynamically adjust the time multiplier based on the sun position or time of day. It can be used to make time pass faster during daytime and slower during nighttime for example.
 
+:::note
+
+Longitude and latitude of the track are required in the `data_tracks_params.ini`
+
+:::
+
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
 ```yaml title="extra_cfg.yml"
@@ -17,7 +23,7 @@ Example configuration
 ```yaml title="plugin_time_dilation_cfg.yml"
 # Which mode should be used for time dilation 
 # Available values: 'SunAngle' and 'Time'
-# SunAngle is preferred because it works independent of seasons and longitude of the track
+# SunAngle is preferred because it works independent of seasons and track latitude
 Mode: SunAngle
 # Table to map sun angles to time multipliers. SunAngle is the altitude of the sun in degrees. 90° = sun directly overhead, -90° = sun directly underneath
 SunAngleLookupTable:

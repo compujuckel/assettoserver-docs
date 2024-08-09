@@ -16,7 +16,7 @@ Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in 
 Plugin to change chat color of players, add player icons, and optionally add name prefixes or postfixes for them.  
 It is advised to use square brackets for name prefixes/postfixes, since it is not possible to join with them normally.
 
-Please see [this page](../assettoserver-hub/user-groups) for general information on user groups.
+Please see [this page](../assettoserver-hub/user-groups.md) for general information on user groups.
 
 Example with custom icon and red name in chat:
 

@@ -27,7 +27,7 @@ title: Admin Commands
 
 | Parameter | Description                                                   |
 | --------- | ------------------------------------------------------------- |
-| id         | The car ID or name of the player to be banned                |
+| id        | The car ID or name of the player to be banned                 |
 | reason    | Optional, will display a reason on why the player was banned. |
 
 ## Force next session
@@ -66,9 +66,9 @@ title: Admin Commands
 
 `/setweather <weatherId>`
 
-| Parameter | Description                                               |
-| --------- | --------------------------------------------------------- |
-| weatherId | The ID of the weather specified in the `server_cfg.ini`<br/>For example, if you want to use `WEATHER_0`, type `/setweather 0` |
+| Parameter | Description                                           |
+| --------- | ----------------------------------------------------- |
+| weatherId | The ID of the weather specified in the `server_cfg.ini` <br/> For example, if you want to use `WEATHER_0`, type `/setweather 0` |
 
 ## List available CSP WeatherFX types
 
@@ -82,34 +82,28 @@ title: Admin Commands
 
 `/setcspweather <weatherType> <transitionDuration>`
 
-| Parameter | Description                                    |
-| --------- | ---------------------------------------------- |
-| weatherType | Name of the WeatherFX type, [list of possible values](./misc/wfx-types.md) or use `/cspweather` ingame. |
-| transitionDuration | Weather transition duration in seconds, requires `EnableWeatherFx` set to `true` in `extra_cfg.yml` |
+| Parameter          | Description                                                                                                  |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ |
+| weatherType        | Name of the WeatherFX type, [list of possible values](./misc/wfx-types.md) or use `/cspweather` ingame.      |
+| transitionDuration | Weather transition duration in seconds, requires `EnableWeatherFx` set to `true` in `extra_cfg.yml`          |
 
 ## Set rain properties
 
 `/setrain <intensity> <wetness> <water>`
 
-| Parameter | Description                                |
-| --------- | ------------------------------------------ |
-| intensity | The rain intensity.                        |
-| wetness   | The track wetness.                         |
-| water     | The amount of standing water on the track. |
-
-:::note
-
-Parameters range from 0-1 meaning `/setrain 1 1 1` would set all of them to the maximum.
-
-:::
+| Parameter | Range   | Description                                |
+| --------- | ------- | ------------------------------------------ |
+| intensity | `0 - 1` | The rain intensity.                        |
+| wetness   | `0 - 1` | The track wetness.                         |
+| water     | `0 - 1` | The amount of standing water on the track. |
 
 ## Set track grip
 
 `/setgrip <gripValue>`
 
-| Parameter | Description           |
-| --------- | --------------------- |
-| gripValue | The track grip value. |
+| Parameter | Range   | Description           |
+| --------- | ------- | --------------------- |
+| gripValue | `0 - 1` | The track grip value. |
 
 ## Calculate distance to player
 
@@ -125,7 +119,7 @@ Parameters range from 0-1 meaning `/setrain 1 1 1` would set all of them to the 
 
 | Parameter | Description                                                            |
 | --------- | ---------------------------------------------------------------------- |
-| on/off    | On = Active forcing of headlights, Off = Disable forcing of headlights |
+| on/off    | On = Enable forcing of headlights, Off = Disable forcing of headlights |
 | id        | The car ID or name of the player.                                      |
 
 :::note
@@ -146,10 +140,10 @@ Forcing headlights for a player will still give them the opportunity to turn on/
 
 `/restrict <id> <value>`
 
-| Parameter | Description                       |
-| --------- | --------------------------------- |
-| id        | The car ID or name of the player. |
-| value     | From 0 to 400, cuts the car's engine power. Limits power in the top range of the power band, will not kill total power. <br/> Calculation: `HP_Final = HP_Original * (1 - rpm * (restrictor / 4000000))` |
+| Parameter | Range     | Description                                                                |
+| --------- | --------- | -------------------------------------------------------------------------- |
+| id        |           | The car ID or name of the player.                                          |
+| value     | `0 - 400` | Limits power in the top range of the power band, will not kill total power. <br/> Calculation: `HP_Final = HP_Original * (1 - rpm * (restrictor / 4000000))` |
 
 ## Set ballast
 
@@ -177,7 +171,7 @@ Only use this for testing! All changes made with this command will be lost after
 
 :::note
 
-Parameters in `server_cfg.ini` are prefixed with `Server.`, Parameters in `extra_cfg.yml` with `Extra.`.  
+Parameters in `server_cfg.ini` are prefixed with `Server.`, Parameters in `extra_cfg.yml` with `Extra.`  
 Not all values can be changed at runtime.
 
 **Examples:**  
@@ -199,6 +193,6 @@ Not all values can be changed at runtime.
 
 `/say <message>`
 
-| Parameter | Description |
-| --------- | ----------- |
-| message   | The message to send to the ingame chat. <br/> Example: `/say Hello World` will result in `CONSOLE: Hello World` ingame. |
+| Parameter | Description                            |
+| --------- | -------------------------------------- |
+| message   | The message to send to the ingame chat. <br/> For example: `/say Hello World` will result in `CONSOLE: Hello World` ingame. |

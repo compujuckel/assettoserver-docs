@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 ## How do I get dense traffic? {#dense-traffic}
 
 - Add more cars to the `entry_list.ini` that are used as traffic. This is the most important setting. It is pretty much impossible to achieve high traffic density with just 10 traffic cars, for example.
-- Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller
+- Decrease `MinAiSafetyDistanceMeters` / `MaxAiSafetyDistanceMeters` to make gaps between AI cars smaller  
   **Don't set it lower than ~12m or you might experience AI cars braking immediately after spawning!**
 - Depending on how many people are on your server you could increase `AiPerPlayerTargetCount` / `MaxAiTargetCount`
 
@@ -40,6 +40,21 @@ Here is a short list of which indices correspond to which spawn location for the
 
 It is not possible to skip or have duplicate indices in `entry_list.ini`.  
 This means that you cannot start your entry list with `[CAR_87]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
+
+:::
+
+## Why am I stuck on "Initialising AI spline" during loading? {#initialising-aispline}
+
+Your game is loading the singleplayer AI spline that is in your local game files, which is not needed for freeroam servers.  
+Rename the `ai` folder from the tracks layout folder in your game files to `ai_off`.    
+By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>\<layoutname>\ai`  
+If the track has no layouts it will be in the track folder instead.
+
+:::note
+
+Renaming the `ai` folder will remove the ability to use AI for that specific layout in singleplayer.  
+It wil also disable some client side penalty systems like track cuts.  
+If you ever want to use AI in singleplayer or these penalties again, simple rename the `ai_off` folder back to `ai`.
 
 :::
 
@@ -83,6 +98,7 @@ Keep in mind that setting `MissingTrackParams` to `true` can result in time not 
 
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Go to the bottom of the file and add a section for your track using the folder name of your track as the header like this:
+
 ```ini title="data_track_params.ini"
 [shuto_revival_project_beta_ptb]
 NAME=SRP PTB
@@ -93,14 +109,19 @@ TIMEZONE=
 
 Open [Google Maps](https://www.google.com/maps/) and find the location of the track.  
 Right click onto the map and click the Longitute and Latitute values that will be shown as the first option to copy them.  
+
 ![](./assets/SrjDw4f.png)  
+
 Paste them after the `LATITUDE=` and `LONGITUDE=` keys.
 
 Open a [TZ timezone list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) and look for the time zone that the track is in, then copy the `TZ Identifier`.
+
 ![](./assets/LfFsktI.png)  
+
 Paste it after the `TIMEZONE=` key.
 
 You should now have something along the lines of this:
+
 ```ini title="data_track_params.ini"
 [shuto_revival_project_beta_ptb]
 NAME=SRP PTB
@@ -115,6 +136,7 @@ TIMEZONE=Asia/Tokyo
 Navigate to the `cfg` folder of the server and open the `data_track_params.ini`.  
 Find and copy the entry for the track you want to reuse.  
 Change the header of the copied section to the folder name your current track.  
+
 ```ini title="data_track_params.ini"
 ; Original
 [shuto_revival_project_beta]
@@ -144,6 +166,7 @@ ForceServerTrackParams: true
 ## How do I use CSP extra server options? {#csp-extra-options}
 
 #### Requiring a minimum CSP Version {#requiring-csp-version}
+
 <Tabs groupId="content-manager">
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
 
@@ -185,6 +208,7 @@ If you need the ID of a version you currently don't have installed **[the offici
 </details>
 
 #### Adding CSP extra server options to the server {#extra-options-ini}
+
 Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
 If you are hosting via Content Manager, click the `Folder` button at the bottom of the preset and create the file there instead.  
 
@@ -202,8 +226,8 @@ If you want to make sure that people drive the correct way after adding this set
 [EXTRA_RULES]
 ALLOW_WRONG_WAY = 1   ; Allow cars to drive either way, gets rid of the wrong way sign on some tracks
 ```  
-If you get teleported back to pits, you may need to remove the `fast_lane.ai` for the track in your local game files.  
-By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>`.  
+If you get teleported back to pits, rename the `ai` folder from the track layout folder in your local game files to `ai_off`.  
+By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>\<layoutname>\ai`  
 
 ### How do I enable Teleportation? {#teleportation}
 
@@ -218,9 +242,11 @@ Depending on if you have the full version of Content Manager or not, there are t
 <TabItem value="content-manager" label="With Content Manager (Full Version)" default>
 
   Check `Allow teleporting` for each car on your entry list:  
+
   ![](./assets/Il4RrjG.png)
 
   Click on the `Folder` button at the bottom of your server, open `csp_extra_options.ini` and add your teleport destinations to it.  
+
   ![](./assets/h9c5e6K.png)
 
 </TabItem>
@@ -243,6 +269,7 @@ Depending on if you have the full version of Content Manager or not, there are t
 </Tabs>  
 
 If done correctly you should now have a `Teleport to...` option in the chat apps extras:  
+
 ![](./assets/kdSQlWZ.png)
 
 #### Where can I find teleport locations for SRP? {#srp-teleports}
@@ -629,7 +656,13 @@ Please use the download links the authors of the content you're using provide un
   - Navigate to the `Details` Tab in your Server preset.
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
-  - A `content.json` file will be created in the `cm_content` folder under the directory of the server. Currently, this file does not get included when using the Pack feature.
+  - A `content.json` file will be created in the `cm_content` folder under the directory of the server. 
+  
+  :::caution
+
+  The `cm_content` folder does not get included when using the packing feature and has to be manually copied.
+
+  :::
 
   ![](./assets/TN1XGgZ.png)
 
@@ -660,6 +693,7 @@ Please use the download links the authors of the content you're using provide un
   ```
 
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+
   ![](./assets/eKKVEND.png)
 
 </TabItem>
@@ -684,6 +718,7 @@ To add images use `[img=<link>]img1[/img]`
 Keep in mind that some functions of BBcode are not supported by Content Manager.
 
 **Example Description, do not add this to the bottom of the `extra_cfg.yml`.**
+
 ```yaml title="extra_cfg.yml"
 # Server description shown in Content Manager. EnableServerDetails must be on
 ServerDescription: |-
