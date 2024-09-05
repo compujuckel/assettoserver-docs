@@ -46,7 +46,10 @@ This means that you cannot start your entry list with `[CAR_87]` to have all car
 ## Why am I stuck on "Initialising AI spline" during loading? {#initialising-aispline}
 
 Your game is loading the singleplayer AI spline that is in your local game files, which is not needed for freeroam servers.  
-Rename the `ai` folder from the tracks layout folder in your game files to `ai_off`.    
+
+If your server is using a singleplayer traffic layout, for example `Shutoko Revival Project - Shibaura PA Traffic`, use the regular version of the layout instead. 
+
+Otherwise rename the `ai` folder from the tracks layout folder in your game files to `ai_off`.    
 By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\tracks\<trackname>\<layoutname>\ai`  
 If the track has no layouts it will be in the track folder instead.
 
@@ -192,13 +195,125 @@ If you need the ID of a version you currently don't have installed **[the offici
 
 #### Adding CSP extra server options to the server {#extra-options-ini}
 
-Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
-If you are hosting via Content Manager, click the `Folder` button at the bottom of the preset and create the file there instead.  
+Depending on if you have the full version of Content Manager or not, there are two different ways to accomplish this:
+
+<Tabs groupId="content-manager">
+<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
+
+  Click the `Folder` button at the bottom of the preset page and create a file called `csp_extra_options.ini`. 
+
+  ![](./assets/h9c5e6K.png)
+
+</TabItem>
+<TabItem value="manual" label="Without Content Manager">
+
+  Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`. 
+
+</TabItem>
+</Tabs> 
 
 [This CSP wiki page](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options you can use.  
 The options on that page go into the `csp_extra_options.ini`, for example:
 
 ![](./assets/oxp4a21.png) 
+
+#### Allowing extra options via the entry list {#allowing-extra-options}
+
+Some features like Teleportation and Color Changing require you to allow cars to use them in the entry list.  
+
+<Tabs groupId="content-manager">
+<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
+
+  Click the `CSP` button and enable the features you want to allow for the car:  
+
+  ![](./assets/Il4RrjG.png)
+
+</TabItem>
+<TabItem value="manual" label="Without Content Manager">
+
+  - In your `entry_list.ini` add a code to the end of each skin, for example:
+  
+  ```ini title="entry_list.ini"
+  [CAR_0]
+  MODEL=carname
+  SKIN=skinname/ADAn
+  ```
+
+  | Code    | Option                                  |
+  | ------- | --------------------------------------- |
+  | `/ACA3` | Allow Teleportation                     |
+  | `/ABAH` | Allow Color Change                      |
+  | `/ADAn` | Allow both Teleportation & Color Change |
+
+<details>
+<summary>All Option Combinations</summary>
+<p>**[How Content Manager generates them.](https://github.com/gro-ove/actools/blob/master/AcManager.Tools/Objects/ServerDriverCspOptions.cs#L123)**</p>
+<p>
+
+| Code    | Options                                                                                         |
+| ------- | ----------------------------------------------------------------------------------------------- |
+|         | None                                                                                            |
+| `/AAEW` | Block Keyboard                                                                                  |
+| `/AAIV` | Block Joystick                                                                                  |
+| `/AAQT` | Block Steering Wheel                                                                            |
+| `/AAgf` | Force Headlights                                                                                |
+| `/ABAH` | Allow Color Change                                                                              |
+| `/ACA3` | Allow Teleportation                                                                             |
+| `/AAMU` | Block Keyboard, Block Joystick                                                                  |
+| `/AAUS` | Block Keyboard, Block Steering Wheel                                                            |
+| `/AAYR` | Block Joystick, Block Steering Wheel                                                            |
+| `/AAke` | Block Keyboard, Force Headlights                                                                |
+| `/AAod` | Block Joystick, Force Headlights                                                                |
+| `/AAwb` | Block Steering Wheel, Force Headlights                                                          |
+| `/ABEG` | Block Keyboard, Allow Color Change                                                              |
+| `/ABIF` | Block Joystick, Allow Color Change                                                              |
+| `/ABQD` | Block Steering Wheel, Allow Color Change                                                        |
+| `/ABgP` | Force Headlights, Allow Color Change                                                            |
+| `/ACE2` | Block Keyboard, Allow Teleportation                                                             |
+| `/ACI1` | Block Joystick, Allow Teleportation                                                             |
+| `/ACQz` | Block Steering Wheel, Allow Teleportation                                                       |
+| `/ACg/` | Force Headlights, Allow Teleportation                                                           |
+| `/ADAn` | Allow Color Change, Allow Teleportation                                                         |
+| `/AAsc` | Block Keyboard, Block Joystick, Force Headlights                                                |
+| `/AA0a` | Block Keyboard, Block Steering Wheel, Force Headlights                                          |
+| `/AA4Z` | Block Joystick, Block Steering Wheel, Force Headlights                                          |
+| `/ABME` | Block Keyboard, Block Joystick, Allow Color Change                                              |
+| `/ABUC` | Block Keyboard, Block Steering Wheel, Allow Color Change                                        |
+| `/ABYB` | Block Joystick, Block Steering Wheel, Allow Color Change                                        |
+| `/ABkO` | Block Keyboard, Force Headlights, Allow Color Change                                            |
+| `/ABoN` | Block Joystick, Force Headlights, Allow Color Change                                            |
+| `/ABwL` | Block Steering Wheel, Force Headlights, Allow Color Change                                      |
+| `/ACM0` | Block Keyboard, Block Joystick, Allow Teleportation                                             |
+| `/ACUy` | Block Keyboard, Block Steering Wheel, Allow Teleportation                                       |
+| `/ACYx` | Block Joystick, Block Steering Wheel, Allow Teleportation                                       |
+| `/ACk+` | Block Keyboard, Force Headlights, Allow Teleportation                                           |
+| `/ACo9` | Block Joystick, Force Headlights, Allow Teleportation                                           |
+| `/ACw7` | Block Steering Wheel, Force Headlights, Allow Teleportation                                     |
+| `/ADEm` | Block Keyboard, Allow Color Change, Allow Teleportation                                         |
+| `/ADIl` | Block Joystick, Allow Color Change, Allow Teleportation                                         |
+| `/ADQj` | Block Steering Wheel, Allow Color Change, Allow Teleportation                                   |
+| `/ADgv` | Force Headlights, Allow Color Change, Allow Teleportation                                       |
+| `/ABsM` | Block Keyboard, Block Joystick, Force Headlights, Allow Color Change                            |
+| `/AB0K` | Block Keyboard, Block Steering Wheel, Force Headlights, Allow Color Change                      |
+| `/AB4J` | Block Joystick, Block Steering Wheel, Force Headlights, Allow Color Change                      |
+| `/ACs8` | Block Keyboard, Block Joystick, Force Headlights, Allow Teleportation                           |
+| `/AC06` | Block Keyboard, Block Steering Wheel, Force Headlights, Allow Teleportation                     |
+| `/AC45` | Block Joystick, Block Steering Wheel, Force Headlights, Allow Teleportation                     |
+| `/ADMk` | Block Keyboard, Block Joystick, Allow Color Change, Allow Teleportation                         |
+| `/ADUi` | Block Keyboard, Block Steering Wheel, Allow Color Change, Allow Teleportation                   |
+| `/ADYh` | Block Joystick, Block Steering Wheel, Allow Color Change, Allow Teleportation                   |
+| `/ADku` | Block Keyboard, Force Headlights, Allow Color Change, Allow Teleportation                       |
+| `/ADot` | Block Joystick, Force Headlights, Allow Color Change, Allow Teleportation                       |
+| `/ADwr` | Block Steering Wheel, Force Headlights, Allow Color Change, Allow Teleportation                 |
+| `/ADss` | Block Keyboard, Block Joystick, Force Headlights, Allow Color Change, Allow Teleportation       |
+| `/AD0q` | Block Keyboard, Block Steering Wheel, Force Headlights, Allow Color Change, Allow Teleportation |
+| `/AD4p` | Block Joystick, Block Steering Wheel, Force Headlights, Allow Color Change, Allow Teleportation |
+
+</p>
+</details>
+
+</TabItem>
+</Tabs>  
 
 ### How do I allow driving the wrong way? {#wrong-way}
 
@@ -217,42 +332,10 @@ By default: `C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\content\
 
 For teleporting, two things have to be done:
 
-- Allowing cars in the entry list to teleport
+- Allowing cars in the entry list to teleport, [explained here.](#allowing-extra-options)
 - Adding teleport destinations to the `csp_extra_options.ini`
 
-Depending on if you have the full version of Content Manager or not, there are two different ways to accomplish this:
-
-<Tabs groupId="content-manager">
-<TabItem value="content-manager" label="With Content Manager (Full Version)" default>
-
-  Check `Allow teleporting` for each car on your entry list:  
-
-  ![](./assets/Il4RrjG.png)
-
-  Click on the `Folder` button at the bottom of your server, open `csp_extra_options.ini` and add your teleport destinations to it.  
-
-  ![](./assets/h9c5e6K.png)
-
-</TabItem>
-<TabItem value="manual" label="Without Content Manager">
-
-  - In your `entry_list.ini` add a option to the end of each skin, for example `SKIN=<skinname>/ADAn`
-
-  | Code    | Option                                  |
-  | ------- | --------------------------------------- |
-  | `/ACA3` | Allow Teleporting                       |
-  | `/ABAH` | Allow Color Changing                    |
-  | `/ADAn` | Allow both Color Changing & Teleporting |
-
-  This is **NOT** a full list of all codes and options available, just some of the most frequently used ones.  
-  [Here is how it’s generated by Content Manager.](https://github.com/gro-ove/actools/blob/master/AcManager.Tools/Objects/ServerDriverCspOptions.cs#L123)
-
-  - In the `cfg` folder of your server, open `csp_extra_options.ini` and add your teleport destinations to it.
-
-</TabItem>
-</Tabs>  
-
-If done correctly you should now have a `Teleport to...` option in the chat apps extras:  
+If done correctly you should have a `Teleport to...` option in the chat app extras:  
 
 ![](./assets/kdSQlWZ.png)
 
@@ -575,22 +658,27 @@ POINT_0_HEADING = 0          ; Heading angle in degrees
 
 :::note
 
-The comfy map app is not required to create points, enable or use teleportation!
+The comfy map app is not required to create points, enable or use teleportation.
 
 :::
 
 ### How do I enable Color Changing? {#color-changing}
+
+For Color Changing, two things have to be done:
+
+- Allowing cars in the entry list to change colors, [explained here](#allowing-extra-options)
+- Adding the following to the `csp_extra_options.ini`
+
+Keep in mind that this only works for cars with regular skins, liveries using textures will not be affected.
 
 ```ini title="csp_extra_options.ini"
 [CUSTOM_COLOR]
 ALLOW_EVERYWHERE = 1   ; Change car colors anywhere as long as the car is stopped.
 ```
 
-If AI cars are allowed to change their colors, they will spawn in random colors if possible.  
+:::note
 
-:::caution
-
-Every car still needs to be allowed to change colors via the `entry_list.ini`.
+If AI cars are allowed to, they will spawn in random colors. 
 
 :::
 
