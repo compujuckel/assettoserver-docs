@@ -49,15 +49,19 @@ You can use any track that you have a `fast_lane.ai(p)` for.
 In this guide, we will use the SRP track as it is one of the most popular tracks.
 :::
 
-1. Join the [Shutoko Revival Project Discord](https://discord.com/invite/shutokorevivalproject)
+1. Go to the [Shutoko Revival Project Website](https://shutokorevivalproject.com/)
 
-2. Follow their download and installation instructions. **If you need help with that, please use the [#help](https://discord.com/channels/500246817833877505/504100944846520321) channel**
+2. Download and install the latest **stable** release.
 
-3. Join the AssettoServer Discord by clicking on the Discord logo in the navbar of this page.  
+   ![](./assets/guide/6-1.png)
+
+   If you need help with installing the track, please use the [#help channel](https://discord.com/channels/500246817833877505/504100944846520321) on the [Shutoko Revival Project Discord](https://discord.gg/shutokorevivalproject)
+
+3. Join the [AssettoServer Discord](https://discord.gg/uXEXRcSkyz) by clicking on the link in this sentence or the Discord logo in the navbar of this page.  
    
-   ![](./assets/guide/6.png)
+   ![](./assets/guide/6-2.png)
 
-4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, scroll up until you find the spline made for Shutoko Revival Project and download it by clicking on the `fast_lane.aip` file.
+4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, open the `Pinned Messages` and download the spline made for Shutoko Revival Project.
    
    ![](./assets/guide/7.png)
 
