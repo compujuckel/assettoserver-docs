@@ -80,7 +80,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/9.png)
 
-3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Tatsumi PA.
+3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Main Layout.
    
    ![](./assets/guide/10.png)
 
@@ -101,7 +101,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    When adding more cars, remember to also increase the `Capacity` slider, otherwise only the first 11 cars will get loaded.
 
    Only add as many cars as there are pits available for the layout of the track you've chosen.  
-   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:  
+   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Main Layout looks like this:  
 
    ![](./assets/guide/caution1.png)
 
@@ -366,7 +366,7 @@ If you feel like you don't need a step-by-step explanation, read over the [FAQ s
     The version ID `2144` will mean that in order to join the server, players will need to have **at least** CSP version 1.79 installed.  
     If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
-4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\tatsumi_pa\data` folder of the server and open the `surfaces.ini`.  
+4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\main_layout\data` folder of the server and open the `surfaces.ini`.  
     Change the name of the first surface from `SURFACE_0` to `CSPFACE_0`
     
     :::caution

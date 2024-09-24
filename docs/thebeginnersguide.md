@@ -78,7 +78,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/cmconfig2.png)
 
-3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Overload Layout.
+3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Main Layout.
    
    ![](./assets/guide/cmconfig3.png)
 
@@ -101,7 +101,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    When adding more cars, remember to also increase the `Capacity` slider, otherwise only the first 11 cars will get loaded.
 
    Only add as many cars as there are pits available for the layout of the track you've chosen.  
-   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:  
+   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Main Layout looks like this:  
 
    ![](./assets/guide/caution1.png)
 
