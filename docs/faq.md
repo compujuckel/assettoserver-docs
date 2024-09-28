@@ -23,25 +23,22 @@ Please note that these restrictions are not a feature of AssettoServer.
 ## Why am I spawning in a different location than expected? {#spawn-locations}
 
 Where you spawn depends on where the pit for each index is located for track and layout that you chose.  
-For example, the Overload Layout of Shutoko Revival Project combines all 170 pits into a single layout.  
+For example, the Main Layout of Shutoko Revival Project combines 170 pits into a single layout.  
 Because of that, it is possible to spawn in different locations depending on the index that each car has in the `entry_list.ini`.  
-Here is a short list of which indices correspond to which spawn location for the Shutoko Revival Project - Overload Layout:
+Here is a short list of which indices correspond to which spawn location for the Shutoko Revival Project - Main Layout.
 
 | Car Indices                | Spawn Location            |
 | -------------------------- | ------------------------- |
 | `[CAR_0]`   to `[CAR_39]`  | Tatsumi PA                |
-| `[CAR_40]`  to `[CAR_67]`  | Shibaura PA               |
-| `[CAR_68]`  to `[CAR_86]`  | Yoyogi PA                 |
-| `[CAR_87]`  to `[CAR_139]` | Heiwajima PA - Northbound |
-| `[CAR_140]` to `[CAR_155]` | Heiwajima PA - Southbound |
-| `[CAR_156]` to `[CAR_169]` | Daishi PA                 |
+| `[CAR_40]`  to `[CAR_61]`  | Yoyogi PA                 |
+| `[CAR_62]`  to `[CAR_81]`  | Heiwajima PA - Northbound |
+| `[CAR_82]`  to `[CAR_157]` | Heiwajima PA - Southbound |
+| `[CAR_158]` to `[CAR_169]` | Daishi PA                 |
 
 :::caution
 
 It is not possible to skip or have duplicate indices in `entry_list.ini`.  
-This means that you cannot start your entry list with `[CAR_87]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
-
-:::
+This means that you cannot start your entry list with `[CAR_82]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
 
 ## Why am I stuck on "Initialising AI spline" during loading? {#initialising-aispline}
 
