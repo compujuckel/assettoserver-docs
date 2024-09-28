@@ -49,15 +49,19 @@ You can use any track that you have a `fast_lane.ai(p)` for.
 In this guide, we will use the SRP track as it is one of the most popular tracks.
 :::
 
-1. Join the [Shutoko Revival Project Discord](https://discord.com/invite/shutokorevivalproject)
+1. Go to the [Shutoko Revival Project Website](https://shutokorevivalproject.com/)
 
-2. Follow their download and installation instructions. **If you need help with that, please use the [#help](https://discord.com/channels/500246817833877505/504100944846520321) channel**
+2. Download and install the latest **stable** release.
 
-3. Join the AssettoServer Discord by clicking on the Discord logo in the navbar of this page.  
+   ![](./assets/guide/6-1.png)
+
+   If you need help with installing the track, please use the [#help channel](https://discord.com/channels/500246817833877505/504100944846520321) on the [Shutoko Revival Project Discord](https://discord.gg/shutokorevivalproject)
+
+3. Join the [AssettoServer Discord](https://discord.gg/uXEXRcSkyz) by clicking on the link in this sentence or the Discord logo in the navbar of this page.  
    
-   ![](./assets/guide/6.png)
+   ![](./assets/guide/6-2.png)
 
-4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, scroll up until you find the spline made for Shutoko Revival Project and download it by clicking on the `fast_lane.aip` file.
+4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, open the `Pinned Messages` and download the spline made for Shutoko Revival Project.
    
    ![](./assets/guide/7.png)
 
@@ -76,7 +80,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/9.png)
 
-3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Tatsumi PA.
+3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Main Layout.
    
    ![](./assets/guide/10.png)
 
@@ -97,7 +101,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    When adding more cars, remember to also increase the `Capacity` slider, otherwise only the first 11 cars will get loaded.
 
    Only add as many cars as there are pits available for the layout of the track you've chosen.  
-   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Tatsumi PA looks like this:  
+   The limit is displayed below the `Capacity` slider and for Shutoko Revival Project - Main Layout looks like this:  
 
    ![](./assets/guide/caution1.png)
 
@@ -362,7 +366,7 @@ If you feel like you don't need a step-by-step explanation, read over the [FAQ s
     The version ID `2144` will mean that in order to join the server, players will need to have **at least** CSP version 1.79 installed.  
     If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
-4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\tatsumi_pa\data` folder of the server and open the `surfaces.ini`.  
+4.  Save and close the file and navigate to the `\content\tracks\csp\shuto_revival_project_beta\main_layout\data` folder of the server and open the `surfaces.ini`.  
     Change the name of the first surface from `SURFACE_0` to `CSPFACE_0`
     
     :::caution
