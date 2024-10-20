@@ -801,7 +801,8 @@ Please use the download links the authors of the content you're using provide un
   }
   ```
 
-  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
+    If the mod has no version, simply remove the `"version": "version here"` line.
 
   ![](./assets/eKKVEND.png)
 
