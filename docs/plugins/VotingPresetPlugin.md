@@ -45,8 +45,8 @@ TransitionDurationSeconds: 5
 Meta:
   # The name that is displayed when a vote is going on or the preset is changing
   Name: <Please change me>
-  # Is this preset part of the voting, Admins can still change to this track.
-  VotingEnabled: true
+  # Whether only admins should be able to change to this preset
+  AdminOnly: false
 ```
 
 Place your presets in the `presets` folder, they need to include all files that would normally be inside your `cfg` folder.  
