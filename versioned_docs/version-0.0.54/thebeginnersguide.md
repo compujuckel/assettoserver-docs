@@ -306,7 +306,7 @@ So what do we do if we wanted to have a Night only server?
 ### Weather {#changing-weather}
 
 :::caution if you want to select a weather with rain
-All players will need to have a Custom Shaders Patch preview version installed to see rain.  
+Players joining without a Custom Shaders Patch preview version installed will not see rain.  
 Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
 Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
 :::
