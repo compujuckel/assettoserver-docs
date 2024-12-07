@@ -163,8 +163,12 @@ You should now have the following .zip files somewhere:
 - `assetto-server-win-x64.zip`
 - The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
 
-Create a new folder and extract both of these two .zip files into it.
+Create a new folder and extract the content of both .zip files into it.  
 
+**You should not have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` or similar in your server folder.  
+If you do, move it's contents into the main folder.**  
+
+Your server folder should look like this:  
 ![](./assets/guide/extract1.png)
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
