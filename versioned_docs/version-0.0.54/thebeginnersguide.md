@@ -167,7 +167,7 @@ You should now have the following .zip files somewhere:
 Create a new folder and extract the content of both .zip files into it.  
 
 **You should not have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` or similar in your server folder.  
-If you do, move it's contents into the main folder.**  
+If you do, move its contents into the main folder.**  
 
 Your server folder should look like this: 
 ![](./assets/guide/17.png)

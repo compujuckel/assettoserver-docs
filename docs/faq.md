@@ -75,7 +75,7 @@ Remove them at your own risk.
 
   - Navigate to the `\content\cars` folder on your server.
   - Remove the `data.acd` in the folder of every car that you want to use without checksums.
-  - Enable MissingCarChecksums in `extra_cfg.yml` and restart the server.
+  - Set `MissingCarChecksums: true` in `extra_cfg.yml` and restart the server.
   - If you've done everything correctly you should no longer see a `Added checksum for car_name` log message for the car you removed. If you've removed the checksum of all cars it should also log `Initialized 0 car checksums`.
 
 </TabItem>
