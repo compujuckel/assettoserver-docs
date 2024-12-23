@@ -75,7 +75,7 @@ Remove them at your own risk.
 
   - Navigate to the `\content\cars` folder on your server.
   - Remove the `data.acd` in the folder of every car that you want to use without checksums.
-  - Enable MissingCarChecksums in `extra_cfg.yml` and restart the server.
+  - Set `MissingCarChecksums: true` in `extra_cfg.yml` and restart the server.
   - If you've done everything correctly you should no longer see a `Added checksum for car_name` log message for the car you removed. If you've removed the checksum of all cars it should also log `Initialized 0 car checksums`.
 
 </TabItem>
@@ -801,7 +801,8 @@ Please use the download links the authors of the content you're using provide un
   }
   ```
 
-  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
+    If the mod has no version, simply remove the `"version": "version here"` line.
 
   ![](./assets/eKKVEND.png)
 

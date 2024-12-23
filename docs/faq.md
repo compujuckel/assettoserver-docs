@@ -40,6 +40,8 @@ Here is a short list of which indices correspond to which spawn location for the
 It is not possible to skip or have duplicate indices in `entry_list.ini`.  
 This means that you cannot start your entry list with `[CAR_82]` to have all cars spawn in Heiwajima, or have multiple `[CAR_0]` entries to have more than 40 cars spawn in Tatsumi.  
 
+:::
+
 ## Why am I stuck on "Initialising AI spline" during loading? {#initialising-aispline}
 
 Your game is loading the singleplayer AI spline that is in your local game files, which is not needed for freeroam servers.  
@@ -73,7 +75,7 @@ Remove them at your own risk.
 
   - Navigate to the `\content\cars` folder on your server.
   - Remove the `data.acd` in the folder of every car that you want to use without checksums.
-  - Enable MissingCarChecksums in `extra_cfg.yml` and restart the server.
+  - Set `MissingCarChecksums: true` in `extra_cfg.yml` and restart the server.
   - If you've done everything correctly you should no longer see a `Added checksum for car_name` log message for the car you removed. If you've removed the checksum of all cars it should also log `Initialized 0 car checksums`.
 
 </TabItem>
@@ -785,7 +787,8 @@ Please use the download links the authors of the content you're using provide un
   }
   ```
 
-  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
+    If the mod has no version, simply remove the `"version": "version here"` line.
   
   ![](./assets/eKKVEND.png)
 
@@ -842,7 +845,8 @@ Please use the download links the authors of the content you're using provide un
   }
   ```
 
-  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.
+  - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
+    If the mod has no version, simply remove the `"version": "version here"` line.
 
   ![](./assets/eKKVEND.png)
 
