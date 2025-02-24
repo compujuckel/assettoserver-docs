@@ -165,11 +165,13 @@ You should now have the following .zip files somewhere:
 
 Create a new folder and extract the content of both .zip files into it.  
 
-**You should not have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` or similar in your server folder.  
-If you do, move its contents into the main folder.**  
+:::caution
+You should **NOT** have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` in your server folder.  
+If you do, move the folders inside of it into the main folder.  
 
 Your server folder should look like this:  
 ![](./assets/guide/extract1.png)
+:::
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
