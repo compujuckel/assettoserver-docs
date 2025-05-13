@@ -164,6 +164,7 @@ You should now have the following .zip files somewhere:
 - The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract the content of both .zip files into it.  
+![](./assets/guide/extract2.png)
 
 :::caution
 You should **NOT** have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` in your server folder.  
