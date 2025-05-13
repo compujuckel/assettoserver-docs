@@ -477,7 +477,7 @@ You can enabled and configured several plugins at once to cut down on the number
 However setting them up one by one like we will, makes it easier to find issues if something goes wrong.  
 
 :::caution
-When editing plugin configurations, be careful to keep the format from the documentation. The indentation of each line matters, and the server will crash if it is wrong.
+When editing plugin configurations, be careful to keep the formating intact. The indentation of each line matters, and the server will crash if it is wrong.
 :::
 
 #### AutoModerationPlugin
