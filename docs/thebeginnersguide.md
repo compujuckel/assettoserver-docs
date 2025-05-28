@@ -164,12 +164,15 @@ You should now have the following .zip files somewhere:
 - The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract the content of both .zip files into it.  
+![](./assets/guide/extract2.png)
 
-**You should not have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` or similar in your server folder.  
-If you do, move its contents into the main folder.**  
+:::caution
+You should **NOT** have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` in your server folder.  
+If you do, move the folders inside of it into the main folder.  
 
 Your server folder should look like this:  
 ![](./assets/guide/extract1.png)
+:::
 
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
@@ -475,7 +478,7 @@ You can enabled and configured several plugins at once to cut down on the number
 However setting them up one by one like we will, makes it easier to find issues if something goes wrong.  
 
 :::caution
-When editing plugin configurations, be careful to keep the format from the documentation. The indentation of each line matters, and the server will crash if it is wrong.
+When editing plugin configurations, be careful to keep the formating intact. The indentation of each line matters, and the server will crash if it is wrong.
 :::
 
 #### AutoModerationPlugin
