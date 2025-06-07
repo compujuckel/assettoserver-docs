@@ -196,3 +196,18 @@ Not all values can be changed at runtime.
 | Parameter | Description                            |
 | --------- | -------------------------------------- |
 | message   | The message to send to the ingame chat. <br/> For example: `/say Hello World` will result in `CONSOLE: Hello World` ingame. |
+
+## Turn on noclip
+
+`/noclip <boolean>`
+
+| Parameter | Description                           |
+| --------- | ------------------------------------- |
+| boolean   | `true` to enable, `false` to disable. |
+
+:::note
+
+This command only disables vehicle-to-vehicle collisions, it **does not** allow you to drive through track geometry.
+Requires a minimum required CSP version of 0.2.8 (3424) or higher to be set in extra_cfg.yml.
+
+:::
