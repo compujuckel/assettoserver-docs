@@ -2,6 +2,9 @@
 description: Let players vote for server configuration presets
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # VotingPresetPlugin
 
 :::note
@@ -17,37 +20,88 @@ EnablePlugins:
 - VotingPresetPlugin
 ```
 
-Example configuration  
+Example configurations
+<Tabs groupId="votingpresetplugin">
+<TabItem value="default" label="Default Configuration" default>
+
 ```yaml title="plugin_voting_preset_cfg.yml"
 # Reconnect clients instead of kicking when restart is initiated. 
-# Please disable reconnect with varying entry lists in the presets
-ReconnectEnabled: true
-# Enable Voting
-VoteEnabled: true
-# Number of choices players can choose from at each voting interval
+# It's recommended to set it to false with varying entry lists between the presets
+EnableReconnect: true
+# Enable Preset voting. Set this to false to enable automatic preset cycling
+EnableVote: true
+# Number of choices available to players in a vote
 VoteChoices: 3
+# If set to true, current preset/track will be included in the randomized cycling 
+# and will always be added to a vote as the first choice
+EnableStayOnTrack: true
 # Will preset/track change randomly with equal odds if no vote has been counted
 ChangePresetWithoutVotes: false
-# Whether the current preset/track should be part of the next vote.
-IncludeStayOnTrackVote: true
 # Whether to skip the comparison of the starting entry list to the presets entry lists.
 SkipEntryListCheck: false
-# How often a cycle/vote takes place. Minimum 5, Default 90
-VotingIntervalMinutes: 90
-# How long the vote stays open. Minimum 10, Default 300
+# Time between votes or automatic preset cycles. 
+# Minimum 5, Default 90
+IntervalMinutes: 90
+# How long a vote stays open. 
+# Minimum 10, Default 300
 VotingDurationSeconds: 300
-# How long it takes before notifying. Minimum 0, Default 10
-DelayTransitionDurationSeconds: 0
-# How long it takes to change the preset/track after notifying. Minimum 2, Default 5
+# Time between end of vote and restart notification. 
+# Minimum 0, Default 10
+TransitionDelaySeconds: 0
+# Time between restart notification and restart. 
+# Minimum 2, Default 5
 TransitionDurationSeconds: 5
 # Preset specific settings 
 # The cfg/ directory is always ignored for the presets pool.
 Meta:
   # The name that is displayed when a vote is going on or the preset is changing
   Name: <Please change me>
-  # Whether only admins should be able to change to this preset
+  # Set to true too make this preset only available for admins. 
+  # Set to false to add this preset into the preset pool for voting
   AdminOnly: false
 ```
+
+</TabItem>
+<TabItem value="votingoff" label="Voting Turned off">
+
+```yaml title="plugin_voting_preset_cfg.yml"
+# Reconnect clients instead of kicking when restart is initiated. 
+# It's recommended to set it to false with varying entry lists between the presets
+EnableReconnect: true
+# Enable Preset voting. Set this to false to enable automatic preset cycling
+EnableVote: false
+# Number of choices available to players in a vote
+VoteChoices: 3
+# If set to true, current preset/track will be included in the randomized cycling 
+# and will always be added to a vote as the first choice
+EnableStayOnTrack: false
+# Will preset/track change randomly with equal odds if no vote has been counted
+ChangePresetWithoutVotes: false
+# Whether to skip the comparison of the starting entry list to the presets entry lists.
+SkipEntryListCheck: false
+# Time between votes or automatic preset cycles. 
+# Minimum 5, Default 90
+IntervalMinutes: 60
+# How long a vote stays open. 
+# Minimum 10, Default 300
+VotingDurationSeconds: 300
+# Time between end of vote and restart notification. 
+# Minimum 0, Default 10
+TransitionDelaySeconds: 30
+# Time between restart notification and restart. 
+# Minimum 2, Default 5
+TransitionDurationSeconds: 10
+# Preset specific settings 
+# The cfg/ directory is always ignored for the presets pool.
+Meta:
+  # The name that is displayed when a vote is going on or the preset is changing
+  Name: SRP
+  # Set to true too make this preset only available for admins. 
+  # Set to false to add this preset into the preset pool for voting
+  AdminOnly: false
+```
+</TabItem>
+</Tabs>
 
 Place your presets in the `presets` folder, they need to include all files that would normally be inside your `cfg` folder.  
 Example folder structure:
