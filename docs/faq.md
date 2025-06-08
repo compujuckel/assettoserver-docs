@@ -343,7 +343,7 @@ If done correctly you should have a `Teleport to...` option in the chat app extr
 Either use the teleports used on the official SRP servers below or make some yourself.  
 
 <details>
-<summary>**Official Shutoko Revival Project Teleport locations**</summary>
+<summary>**Official Shutoko Revival Project teleport locations**</summary>
 <p>Last updated: 2024-09-14</p>
 <p>
 

@@ -207,7 +207,7 @@ Not all values can be changed at runtime.
 
 :::note
 
-This command only disables vehicle-to-vehicle collisions, it **does not** allow you to drive through track geometry.
+This command only disables vehicle-to-vehicle collisions, it **does not** allow you to drive through track geometry.  
 Requires a minimum required CSP version of 0.2.8 (3424) or higher to be set in extra_cfg.yml.
 
 :::

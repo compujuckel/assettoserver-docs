@@ -324,12 +324,6 @@ We selected time and date settings during the preconfiguration, but what if we w
       - Change the number after `_start=` to the date you want in Epoch time.  
          Use a site like [epochconverter](https://www.epochconverter.com/) to get the Epoch time that you want.  
          For example: `_start=1719700000` would result in the date being June 30th, 2024.
-      - Open `extra_cfg.yml` and set `LockServerDate` to `false`  
-
-         ```yml title="extra_cfg.yml"
-            # Lock server date to real date. This stops server time "running away" when using a high time multiplier, so that in-game sunrise/sunset times are based on the current date
-            LockServerDate: false
-         ```
 
 3. After making these adjustments it should look something like this:
 
