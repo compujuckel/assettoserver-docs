@@ -2,6 +2,9 @@
 description: Allows players to teleport to specified points or anywhere on the track.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # FastTravelPlugin
 
 :::note
@@ -23,6 +26,9 @@ EnablePlugins:
 ```
 
 Example configuration  
+<Tabs groupId="fasttravelplugin">
+<TabItem value="default" label="Default Configuration" default>
+
 ```yaml title="plugin_fast_travel_cfg.yml"
 # Available zoom levels. Last one should show the full track.
 # If map image is shown, prioritize matching the track to the map image.
@@ -55,6 +61,44 @@ MapFixedTargetPosition:
 RequireCollisionDisable: true
 ```
 
+</TabItem>
+<TabItem value="imola" label="Imola Example">
+
+```yaml title="plugin_fast_travel_cfg.yml"
+# Available zoom levels. Last one should show the full track.
+# If map image is shown, prioritize matching the track to the map image.
+# Don't change the values if using Shutoko Revival Project
+MapZoomValues:
+- 100
+- 200
+- 400
+- 600
+# Mouse move speeds of the respective zoom levels.
+# Last value needs to be zero.
+# Don't change the values if using Shutoko Revival Project
+MapMoveSpeeds:
+- 1
+- 2
+- 3
+- 0
+# Show the map.png of the track layout when in the last zoom level.
+# Don't change if using Shutoko Revival Project
+ShowMapImage: false
+# Last zoom level has a fixed position, the track should be aligned to the center of the screen.
+# If map image is shown, prioritize aligning the track with the map image.
+# Don't change the values if using Shutoko Revival Project
+MapFixedTargetPosition:
+- 0
+- 0
+- 0
+# Requires CSP version 0.2.8 (3424) which fixed disabling collisions online. 
+# Setting this to false will lower the version requirement to 0.2.0 (2651) but clients on versions below 0.2.3-preview211 will not have disabled collisions
+RequireCollisionDisable: true
+```
+
+</TabItem>
+</Tabs>
+
 ## Teleport Destination Configuration  
 You can also configure your `csp_extra_option.ini` teleport destinations to be selectable.  
 **If you do not have such a file and want to add points please read [this FAQ section](../faq.md#csp-extra-options).**
@@ -74,10 +118,12 @@ For example:
   [TELEPORT_DESTINATIONS]
   POINT_1 = Position 1
   POINT_1_GROUP = Shibaura PA
+  // highlight-next-line
   POINT_1_TYPE = PA
 
   POINT_2 = Position 1
   POINT_2_GROUP = Shinjuku Station
+  // highlight-next-line
   POINT_2_TYPE = ST
 ```
 
@@ -87,6 +133,7 @@ Points that are in the same group also "inherit" the type of the point that came
 [TELEPORT_DESTINATIONS]
 POINT_0 = Position 1
 POINT_0_GROUP = Shibaura PA
+// highlight-next-line
 POINT_0_TYPE = PA
 
 POINT_1 = Position 2

@@ -47,7 +47,7 @@ IntervalMinutes: 90
 VotingDurationSeconds: 300
 # Time between end of vote and restart notification. 
 # Minimum 0, Default 10
-TransitionDelaySeconds: 0
+TransitionDelaySeconds: 10
 # Time between restart notification and restart. 
 # Minimum 2, Default 5
 TransitionDurationSeconds: 5
@@ -81,25 +81,26 @@ ChangePresetWithoutVotes: false
 SkipEntryListCheck: false
 # Time between votes or automatic preset cycles. 
 # Minimum 5, Default 90
-IntervalMinutes: 60
+IntervalMinutes: 90
 # How long a vote stays open. 
 # Minimum 10, Default 300
 VotingDurationSeconds: 300
 # Time between end of vote and restart notification. 
 # Minimum 0, Default 10
-TransitionDelaySeconds: 30
+TransitionDelaySeconds: 10
 # Time between restart notification and restart. 
 # Minimum 2, Default 5
-TransitionDurationSeconds: 10
+TransitionDurationSeconds: 5
 # Preset specific settings 
 # The cfg/ directory is always ignored for the presets pool.
 Meta:
   # The name that is displayed when a vote is going on or the preset is changing
-  Name: SRP
+  Name: <Please change me>
   # Set to true too make this preset only available for admins. 
   # Set to false to add this preset into the preset pool for voting
   AdminOnly: false
 ```
+
 </TabItem>
 </Tabs>
 
