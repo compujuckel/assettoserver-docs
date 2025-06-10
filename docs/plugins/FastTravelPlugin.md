@@ -103,7 +103,7 @@ RequireCollisionDisable: true
 You can also configure your `csp_extra_option.ini` teleport destinations to be selectable.  
 **If you do not have such a file and want to add points please read [this FAQ section](../faq.md#csp-extra-options).**
 
-There are 3 "types" of points:
+By default, there are 3 "types" of points:
   - `SP`, the default, only visible on closer zoom levels  
      ![](../assets/smeeZH9.png)
   - `PA`, can be assigned to points (or groups, more on that in a bit), is visible even when fully zoomed out.  
@@ -111,7 +111,14 @@ There are 3 "types" of points:
   - `ST`, same as `PA`, just has a different Icon  
     ![](../assets/rBCC9xs.png)  
 
-All points are treated as `SP` by default, but you can add `POINT_<NUM>_TYPE = <SP/PA/ST>` to your teleports to change their type.  
+  :::note 
+
+  More types and icons can be added by placing additional `mapicon_<TYPE>.png` images into the `\plugins\FastTravelPlugin\wwwroot\` folder.  
+  For example adding `mapicon_gs.png` would allow you to use `POINT_<NUM>_TYPE = GS` after restarting the server.   
+
+  :::
+
+All points are treated as `SP` by default, but you can add `POINT_<NUM>_TYPE = <TYPE>` to your teleports to change their type.  
     
 For example:
 ```ini title="csp_extra_options.ini"
