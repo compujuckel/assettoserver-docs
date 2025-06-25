@@ -752,6 +752,11 @@ Please use the download links the authors of the content you're using provide un
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
   - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
+  - Click the `Folder` button at the bottom of the preset page, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
   :::caution
 
@@ -790,7 +795,13 @@ Please use the download links the authors of the content you're using provide un
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
     If the mod has no version, simply remove the `"version": "version here"` line.
   
-  ![](./assets/eKKVEND.png)
+    ![](./assets/eKKVEND.png)
+
+  - Navigate into the `cfg` folder of your server, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
 </TabItem>
 </Tabs>
@@ -809,6 +820,11 @@ Please use the download links the authors of the content you're using provide un
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
   - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
     If you used the `Repack` option, the generated archives will also be added to this folder.  
+  - Click the `Folder` button at the bottom of the preset page, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
   :::caution
   
@@ -848,7 +864,13 @@ Please use the download links the authors of the content you're using provide un
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
     If the mod has no version, simply remove the `"version": "version here"` line.
 
-  ![](./assets/eKKVEND.png)
+    ![](./assets/eKKVEND.png)
+
+  - Navigate into the `cfg` folder of your server, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
 </TabItem>
 </Tabs>
