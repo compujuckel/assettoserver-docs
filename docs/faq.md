@@ -714,19 +714,39 @@ SPEED_KMH = 80        ; Alter pits speed limiter value; default is 80
 
 :::note
 
-Keep in mind that Server Scripts are different from AssettoServer Plugins, and we don’t provide support for them on our Discord.
+Keep in mind that Server Scripts are different from AssettoServer Plugins, and we don't provide support for them on our Discord.
 
 :::
 
-You're going to need to host your script in plaintext somewhere publicly accessible, for example:
-  - Github / Pastebin
-  - Your own media server (like IIS or others)
-  - **DO NOT HOST ON DISCORD**
+<Tabs groupId="server-scripts">
+<TabItem value="remote" label="From a remote URL" default>
+
+When your script is hosted on an external service such as:
+
+- Github / Pastebin
+- Your own server (IIS or similar)
+
+Navigate into the `cfg` folder of your server, open `csp_extra_options.ini` and add the following:
 
 ```ini title="csp_extra_options.ini"
 [SCRIPT_...]
 SCRIPT = "https://pastebin.com/raw/00000000000"    ; Change this to the url of your script
 ```
+
+</TabItem>
+<TabItem value="wwwroot" label="Using AssettoServer's HTTP server" default>
+
+Instead of hosting the script externally, you can use AssettoServer's HTTP server to serve the script directly.  
+
+- Place the script file in the `wwwroot` folder of your server.
+- Navigate into the `cfg` folder of your server, open `csp_extra_options.ini` and add the following:  
+  ```ini title="csp_extra_options.ini"
+  [SCRIPT_...]
+  SCRIPT = "http://<public ip>:<http port>/static/<filename.lua>"    ; Replace the `<placeholders>`
+  ```
+
+</TabItem>
+</Tabs> 
 
 [There are more options available here.](https://github.com/CheesyManiac/cheesy-lua/wiki/Extra-CSP-Server-Config-Values#server-scripts)
 
