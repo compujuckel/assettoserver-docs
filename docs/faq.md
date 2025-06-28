@@ -714,19 +714,39 @@ SPEED_KMH = 80        ; Alter pits speed limiter value; default is 80
 
 :::note
 
-Keep in mind that Server Scripts are different from AssettoServer Plugins, and we don’t provide support for them on our Discord.
+Keep in mind that Server Scripts are different from AssettoServer Plugins, and we don't provide support for them on our Discord.
 
 :::
 
-You're going to need to host your script in plaintext somewhere publicly accessible, for example:
-  - Github / Pastebin
-  - Your own media server (like IIS or others)
-  - **DO NOT HOST ON DISCORD**
+<Tabs groupId="server-scripts">
+<TabItem value="remote" label="From a remote URL" default>
+
+When your script is hosted on an external service such as:
+
+- Github / Pastebin
+- Your own server (IIS or similar)
+
+Navigate into the `cfg` folder of your server, open `csp_extra_options.ini` and add the following:
 
 ```ini title="csp_extra_options.ini"
 [SCRIPT_...]
 SCRIPT = "https://pastebin.com/raw/00000000000"    ; Change this to the url of your script
 ```
+
+</TabItem>
+<TabItem value="wwwroot" label="Using AssettoServer's HTTP server" default>
+
+Instead of hosting the script externally, you can use AssettoServer's HTTP server to serve the script directly.  
+
+- Place the script file in the `wwwroot` folder of your server.
+- Navigate into the `cfg` folder of your server, open `csp_extra_options.ini` and add the following:  
+  ```ini title="csp_extra_options.ini"
+  [SCRIPT_...]
+  SCRIPT = "http://<public ip>:<http port>/static/<filename.lua>"    ; Replace the `<placeholders>`
+  ```
+
+</TabItem>
+</Tabs> 
 
 [There are more options available here.](https://github.com/CheesyManiac/cheesy-lua/wiki/Extra-CSP-Server-Config-Values#server-scripts)
 
@@ -752,6 +772,11 @@ Please use the download links the authors of the content you're using provide un
   - In the `Share Mode` tab select "Download URL" and paste the direct download link into the `Download from` field.
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
   - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
+  - Click the `Folder` button at the bottom of the preset page, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
   :::caution
 
@@ -790,7 +815,13 @@ Please use the download links the authors of the content you're using provide un
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
     If the mod has no version, simply remove the `"version": "version here"` line.
   
-  ![](./assets/eKKVEND.png)
+    ![](./assets/eKKVEND.png)
+
+  - Navigate into the `cfg` folder of your server, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
 </TabItem>
 </Tabs>
@@ -809,6 +840,11 @@ Please use the download links the authors of the content you're using provide un
   - Leave `Version Required` as it is since CM will autofill these for you, then save the preset.
   - A `content.json` file will be created in the `cm_content` folder under the directory of the server.  
     If you used the `Repack` option, the generated archives will also be added to this folder.  
+  - Click the `Folder` button at the bottom of the preset page, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
   :::caution
   
@@ -848,7 +884,13 @@ Please use the download links the authors of the content you're using provide un
   - The `version` has to match the version shown in the `Author` field in the content tab of the car/track.  
     If the mod has no version, simply remove the `"version": "version here"` line.
 
-  ![](./assets/eKKVEND.png)
+    ![](./assets/eKKVEND.png)
+
+  - Navigate into the `cfg` folder of your server, open `extra_cfg.yml` and set `EnableServerDetails` to `true`.  
+    ```yaml title="extra_cfg.yml"
+    # Enable server details in CM. Required for server description
+    EnableServerDetails: true
+    ```
 
 </TabItem>
 </Tabs>
