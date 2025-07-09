@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 ## Introduction {#intro}
 
 This page will guide you through the initial setup process of setting up your own free-roam AssettoServer on a Windows machine.  
-We will be setting up our server in a dedicated folder outside of Content Manager, going over how to configure AI traffic, how to use a few settings to customize the server and learning how to troubleshoot some of the more common causes of server crashes.
+We will be setting up our server using the full version of Content Manager, going over how to configure AI traffic, how to use a few settings to customize the server and learning how to troubleshoot some of the more common causes of server crashes.
 
 ## Prerequisites {#prerequisites}
 
@@ -119,10 +119,10 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/cmconfig5.png)
 
-9. Click on the `CONDITIONS` tab and configure the page how you see fit.  
+9. Open the `CONDITIONS` tab and configure the page how you see fit.  
    Leave the big `Time` and `Time Multiplier` sliders as they are.
    - In the `Weather` section, flip the switch to `WeatherFX` and select the weather you want.  
-      If the weather you want is not in the list, read [how to change the weather](#changing-weather) after the extracting step.
+      If the weather you want is not in the list, read the `Dedicated Folder` version of [how to change the weather](#changing-weather) after the extracting step.
    - Click on the 3 little dots next to the weather drop down.
    - Enable and set the Time/Date/Time multiplier that you want.
 
@@ -130,7 +130,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    
    ![](./assets/guide/cmconfig6.png)
 
-10. Click on the `SESSIONS` tab and configure it as follows:
+10. Open the `SESSIONS` tab and configure it as follows:
 
    - Check `Pickup mode` and `Loop mode` while leaving `Locked entry list in pickup mode` unchecked.
    - Uncheck `Booking`, `Qualifying` and `Race`.
@@ -144,7 +144,16 @@ For now, we will be using the minimum amount of cars needed for the default traf
     
     ![](./assets/guide/cmconfig8.png)
 
-### Packing the server preset {#preset-packing}
+### Selecting where to run the server {#where-to-run}
+
+You can run the server in two ways: inside Content Manager or from a dedicated folder.  
+Running it inside Content Manager is the quickest way to get started, while using a dedicated folder offers better portability and flexibility for advanced setups.  
+Also, keep in mind that not all features of the original server are supported yet, so some of the server settings in CM will either have no effect or the features will just not work.
+
+<Tabs groupId="install-method" >
+  <TabItem value="folder" label="Dedicated Folder">
+
+#### Packing the server preset {#preset-packing}
 
 Now that we're done configuring the server, we can use the packing feature to export all files we need into a .zip file for us.
 
@@ -156,7 +165,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
    
    ![](./assets/guide/cmpacking1.png)
 
-### Extracting AssettoServer and the packed preset {#server-extraction}
+#### Extracting AssettoServer and the packed preset {#server-extraction}
 
 You should now have the following .zip files somewhere:
 
@@ -174,28 +183,70 @@ Your server folder should look like this:
 ![](./assets/guide/extract1.png)
 :::
 
+</TabItem>
+<TabItem value="cm" label="Inside Content Manager">
+
+#### Extracting AssettoServer and replacing acserver.exe {#acserver-replacement}
+
+Navigate to the `\server` folder inside your Assetto Corsa installation.  
+By default, this folder is located in `C:\Steam\steamapps\common\assettocorsa\server`.
+
+1. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
+
+2. Extract `assetto-server-win-x64.zip` into this directory
+
+3. Rename `AssettoServer.exe` to `acServer.exe`
+
+</TabItem>
+</Tabs>
+
 ### First launch and basic AssettoServer traffic configuration {#first-launch-traffic-basics}
 
+<Tabs groupId="install-method">
+  <TabItem value="folder" label="Dedicated Folder">
+
 Start the server by double-clicking `AssettoServer.exe`.
+
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+In Content Manager, click on the `Run` button of the preset.
+
+  </TabItem>
+</Tabs>
 
 You might get the following pop up messages from Windows Firewall or Windows Defender:
 
 <Tabs>
 <TabItem value="firewall" label="Windows Firewall" default>
 
-   ![](./assets/guide/windowsfirewall.png)
+![](./assets/guide/windowsfirewall.png)
 
 </TabItem>
 <TabItem value="defender" label="Windows Defender">
 
-   ![](./assets/guide/windowsdefender.png)
+![](./assets/guide/windowsdefender.png)
 
 </TabItem>
 </Tabs>
 
-After allowing the `AssettoServer.exe` to launch, you should see something along the lines of this:
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
 
-![](./assets/guide/asconfig1.png)
+After allowing AssettoServer to launch, you should see something along the lines of this:
+
+![](./assets/guide/asconfig1-1.png)
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you should see something along the lines of this:
+
+![](./assets/guide/asconfig1-2.png)
+
+  </TabItem>
+</Tabs>
 
 :::caution
   You might also have the following error message inside of your log:  
@@ -210,13 +261,25 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    Since Instructions are different for each router, search in Google for "how to port forward" with the name of your router and/or ISP.
    ```
 
-  This means that you need to forward the ports that AssettoServer uses inside your router and possibly make a exception for the `AssettoServer.exe` inside your firewall.  
+  This means that you need to open the ports that AssettoServer uses inside your router and possibly make a exception for AssettoServer inside your firewall.  
 
-  Because Instructions are different for each router / ISP, we will not explain how to do this here.  
-  Refer to the user manual of your router or search in Google for "how to port forward" with the name of your router and/or ISP.
+  Because Instructions are different for every router / ISP, we will not explain how to do this here or on our Discord.  
+  Refer to the user manual of your router or Google "how to port forward" with the name of your router and/or ISP.
 :::
 
-1. Close the console and navigate to the `cfg` folder inside the server's main folder.
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
+
+1. Close the terminal and navigate to the `cfg` folder inside the server's main folder.
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+1. Click on the `Stop` button, then click `Folder` button at the bottom of the preset page.
+
+  </TabItem>
+</Tabs>
+
 
 2. Open the `extra_cfg.yml` using a text editor of your choice and set `EnableAi: true`.   
 
@@ -277,23 +340,40 @@ After allowing the `AssettoServer.exe` to launch, you should see something along
    
    ![](./assets/guide/asconfig2.png)
 
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
+
 6. Now go back into the main folder of the server and launch `AssettoServer.exe` again.  
    Then open Content Manager and go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
    The server will now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
-   
-   ![](./assets/guide/asconfig3.png)
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+6. Now go back to the preset and click on the `Run` button again.  
+   Then go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
+   The server will now appear in the server list. It may take a few moments, so you might need to refresh the list a few times.
+
+  </TabItem>
+</Tabs>
+
+![](./assets/guide/asconfig3.png)
 
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
 
-8. Other people will also be able to join the server by searching for it or via the invite link that you can copy from the console.
+8. Other people will also be able to join the server by searching for it or via the invite link that you can copy from the server log.
    
    :::caution
-   Do not click the Invite button to copy the invite link, it will copy your local IP which is useless to people outside of your local network. Use the link that is generated in the console instead.
+   Do not click on the `Invite` button to copy the invite link, it will copy your local IP which will only work on your local network.  
+   Use the invite link that is generated in the terminal instead.
    :::
 
 ## Advanced Server Configuration {#advanced-server-config}
 
 ### Time and Date {#changing-time-date}
+
+<Tabs groupId="install-method">
+  <TabItem value="folder" label="Dedicated Folder">
 
 We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date without having to pack and extract again?  
 
@@ -342,6 +422,18 @@ We selected time and date settings during the preconfiguration, but what if we w
    ```
    With these settings the server will start at 18:00 on the 30 June 2024 and the time will not progress.
 
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date?  
+
+   1. Open the `Conditions` tab of your preset.
+   2. Click on the 3 little dots next to the weather drop down and change the time and date to your liking.  
+   A Example is shown in Step 9 of the [Preconfiguration](thebeginnersguide.md#preconfiguration) section.
+   3. Click on the `Save` button and then on the `Restart` button.
+
+  </TabItem>
+</Tabs>
+
 ### Weather {#changing-weather}
 
 :::caution if you want to select a weather with rain
@@ -349,6 +441,9 @@ Players joining without a Custom Shaders Patch preview version installed will no
 Rain does not come with Sol or Pure. Rain is part of the paid preview versions of Custom Shaders Patch.  
 Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
 :::
+
+<Tabs groupId="install-method">
+  <TabItem value="folder" label="Dedicated Folder">
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.  
 
@@ -385,16 +480,51 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
 4. Save and restart the server to apply the changes.
 
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+   1. Open the `Conditions` tab of your preset.
+   2. Click on the weather drop down and change the weather to your liking.  
+   A Example is shown in Step 9 of the [Preconfiguration](thebeginnersguide.md#preconfiguration) section.
+   3. Click on the `Save` button and then on the `Restart` button.
+
+  </TabItem>
+</Tabs>
+
 ### CSP Extra Server Options {#csp-server-options}
 
 #### Requiring a minimum CSP Version {#requiring-csp-version}
 
 AssettoServer requires CSP version 0.1.77 (1937) by default.  
-To change this edit `MinimumCSPVersion: 1937` in the `extra_cfg.yml`.  
+
+<Tabs groupId="install-method">
+  <TabItem value="folder" label="Dedicated Folder">
+  
+To change this, edit `MinimumCSPVersion: 1937` in the `extra_cfg.yml`.  
 If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
 Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
-The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can play around with.  
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+To change this, enable `Require CSP to join` in the `Main` tab of the preset, then change the ID inside the `Minimum version` field.
+
+![](./assets/guide/asconfig4-2.png)
+
+If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).  
+If you want to disable the requirement, make sure `Require CSP to join` is disabled, then click on the `Folder` button and open the `extra_cfg.yml` to remove the default version:
+   ```yaml title="extra_cfg.yml"
+   # Override minimum CSP version required to join this server. Leave this empty to not require CSP.
+   MinimumCSPVersion: 
+   ```
+
+Click on the `Extra Options` button and paste the CSP Extra Options that you want to use.
+
+  </TabItem>
+</Tabs>
+
+The [CSP Wiki](https://github.com/ac-custom-shaders-patch/acc-extension-config/wiki/Misc-%E2%80%93-Server-extra-options) has a long list of options and settings you can use.  
 Two of the more useful options for Freeroam servers are listed below.
 
 ```ini title="csp_extra_options.ini"
@@ -410,6 +540,9 @@ Two of the more useful options for Freeroam servers are listed below.
 #### Extra steps for teleportation and color changing {#csp-extra-steps}
 
 For teleportation and color changing there are additional steps:
+
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
 
 1. Navigate to the `cfg` folder and open the `entry_list.ini`.
 
@@ -459,9 +592,47 @@ For teleportation and color changing there are additional steps:
 
    You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
-4. Save and close the file and restart the server, you're able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
+4. Save and close the file and restart the server. Now you will be able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
    
    ![](./assets/guide/cspextras1.png)
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+1. Open the `ENTRY LIST` tab of your preset.
+
+2. Click on the `CSP` button and enable the features you want to allow for the car:  
+
+   ![](./assets/Il4RrjG.png)
+
+3. Now we are ready to add CSP Extra Options to the `Extra Options`.
+
+   So, with color changing and teleportation the pop up will look like this:
+
+   ```ini title="Extra Options"
+   [EXTRA_RULES]
+   ALLOW_WRONG_WAY = 1   ; Allow cars to drive either way, gets rid of the wrong way sign on some tracks
+
+   [PITS_SPEED_LIMITER]
+   DISABLE_FORCED = 0    ; Disable forced pits speed limiter
+   KEEP_COLLISIONS = 0   ; Activate collisions between cars in pits
+   SPEED_KMH = 120       ; Alter pits speed limiter value; default is 80
+
+   [CUSTOM_COLOR]
+   ALLOW_EVERYWHERE = 1   ; change car colors anywhere as long as the car is stopped.
+
+   [TELEPORT_DESTINATIONS]
+   POINT_1 = Position 1
+   POINT_1_GROUP = Shibaura PA
+   ...
+   ```
+
+   You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
+
+4. Close the popup, click `Save` and `Restart` on your preset. Now you will be able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
+   
+   ![](./assets/guide/cspextras1.png)
+  </TabItem>
+</Tabs>
 
 ### AssettoServer Plugins {#enabling-plugins}
 
@@ -475,9 +646,34 @@ However setting them up one by one like we will, makes it easier to find issues 
 When editing plugin configurations, be careful to keep the formating intact. The indentation of each line matters, and the server will crash if it is wrong.
 :::
 
+<Tabs groupId="install-method">
+  <TabItem value="folder" label="Dedicated Folder">
+
+{/*EMPTY SECTION*/}
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+{/*EMPTY SECTION*/}
+
+  </TabItem>
+</Tabs>
+
 #### AutoModerationPlugin
 
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
+
 1. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+1. Click on the `Folder` button and open the `extra_cfg.yml`.
+
+  </TabItem>
+</Tabs>
+
 
 2. Find `EnablePlugins:` and enable the plugin like so:
    ```yaml title="extra_cfg.yml"
@@ -486,10 +682,10 @@ When editing plugin configurations, be careful to keep the formating intact. The
      - AutoModerationPlugin
    ```
 
-3. Save the file, double-click `AssettoServer.exe` to launch the server and generate the plugin config, then close the console and return to the `cfg` folder.
+3. Save the file and launch the server once to generate the plugin configuration file.
 
-4. Open the `plugin_auto_moderation_cfg.yml` and `Enabled: true` the featues you want and save the file.
-   It should look something like this: 
+4. Open the `plugin_auto_moderation_cfg.yml` that should now be next to the `extra_cfg.yml`.  
+   Set `Enabled: true` for the features you want and save the file, it should look something like this: 
    ```yml title="plugin_auto_moderation_cfg.yml"
    # yaml-language-server: $schema=schemas\plugin_auto_moderation_cfg.schema.json
    
@@ -548,7 +744,18 @@ When editing plugin configurations, be careful to keep the formating intact. The
 
 #### RandomWeatherPlugin
 
+<Tabs groupId="install-method" className="hidden-tab-labels">
+  <TabItem value="folder" label="Dedicated Folder">
+
 1. Navigate to the `cfg` folder of the server and open the `extra_cfg.yml`.
+
+  </TabItem>
+  <TabItem value="cm" label="Inside Content Manager">
+
+1. Click on the `Folder` button and open the `extra_cfg.yml`.
+
+  </TabItem>
+</Tabs>
 
 2. Find `EnablePlugins:` and enable the plugin like so:
    ```yaml title="extra_cfg.yml"
@@ -558,9 +765,10 @@ When editing plugin configurations, be careful to keep the formating intact. The
      - RandomWeatherPlugin
    ```
 
-3. Save the file, double-click `AssettoServer.exe` to launch the server and generate the plugin config, then close the console and return to the `cfg` folder.
+3. Save the file and launch the server once to generate the plugin configuration file.
 
-4. Open the `plugin_random_weather_cfg.yml`. We will edit the `WeatherWeights` to only allow for `Clear`, `FewClouds`, `ScatteredClouds`, `BrokenClouds` and `OvercastClouds` like so:
+4. Open the `plugin_random_weather_cfg.yml` that should now be next to the `extra_cfg.yml`.  
+   We will edit the `WeatherWeights` to only allow for `Clear`, `FewClouds`, `ScatteredClouds`, `BrokenClouds` and `OvercastClouds` like so:
    ```yaml title="plugin_random_weather_cfg.yml"
    # yaml-language-server: $schema=schemas\plugin_random_weather_cfg.schema.json
 
@@ -608,7 +816,7 @@ When editing plugin configurations, be careful to keep the formating intact. The
    # Maximum weather transition duration
    MaxTransitionDurationSeconds: 600
    ```
-5. Save and close the file and restart the server.  
+5. Save and close the file then restart the server.  
 
 If you did everything correctly you will see two new lines at the beginning of the server log:  
 
@@ -622,7 +830,7 @@ If at some point something goes wrong and the server no longer starts properly, 
 We will be looking at one of the more common reasons for a server crash in this example but learning what to look for can help you figure out how to fix any problem.
 
 :::note
-If the console window just closes when you try to start the server there will always be a server logfile in the `logs` folder and a crash logfile in the `crash` folder that you can read!  
+If the terminal window just closes when you try to start the server there will always be a server logfile in the `logs` folder and a crash logfile in the `crash` folder that you can read!  
 :::
 
 Server logs will be generated in the `logs` folder of the server.
