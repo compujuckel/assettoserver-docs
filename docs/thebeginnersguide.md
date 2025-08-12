@@ -25,19 +25,21 @@ To follow along you will need the following things:
 1. Go to [the latest github release of AssettoServer](https://github.com/compujuckel/AssettoServer/releases/latest).
 
 2. Click on the `assetto-server-win-x64.zip` in the Assets section of the release to download the file.
-   
+
    ![](./assets/guide/asdownload1.png)
 
 ### Purchasing the Full Version of Content Manager {#content-manager-fullversion}
 
 :::note
-You can host, configure, and play on the server without the full version of Content Manager. However, for the sake of simplicity, we will be using features of the full version.
+You can host, configure, and play on the server without the full version of Content Manager.  
+For the sake of simplicity, we will be using the full version to generate the required files for us.  
+If you do not want to purchase the full version, you can use the [Kunos Server manual](https://www.assettocorsa.net/forum/index.php?faq/assetto-corsa-dedicated-server-manual.28/) as a reference to create them manually.
 :::
 
 1. Purchase the full version of Content Manager via the [official website](https://assettocorsa.club/content-manager.html) or by being a patron of [x4fabs Patreon](https://www.patreon.com/user?u=11605034).
 
 2. Enter the key you received via email into Content Manager.
-   
+
    ![](./assets/guide/cmfull1.png)
 
 ### Downloading the Shutoko Revival Project track and AI spline {#downloading-srp}
@@ -56,11 +58,11 @@ In this guide, we will use the SRP track as it is one of the most popular tracks
    If you need help with installing the track, please use the [#help channel](https://discord.com/channels/500246817833877505/504100944846520321) on the [Shutoko Revival Project Discord](https://discord.gg/shutokorevivalproject)
 
 3. Join the [AssettoServer Discord](https://discord.gg/uXEXRcSkyz) by clicking on the link in this sentence or the Discord logo in the navbar of this page.  
-   
+
    ![](./assets/guide/asdiscord1.png)
 
 4. Go into the [#ai-spline-releases](https://discord.com/channels/890676433746268231/929390922624532480) channel, open the `Pinned Messages` and download the spline made for Shutoko Revival Project.
-   
+
    ![](./assets/guide/asdiscord2.png)
 
 ## Initial Setup {#initial-setup}
@@ -71,15 +73,15 @@ For now, we will be using the minimum amount of cars needed for the default traf
 
 1. Start by navigating to the `Server` tab of Content Manager  
    If you do not have this Menu enable it in the Content Manager settings like so:
-   
+
    ![](./assets/guide/cmconfig1.png)
 
 2. Click on `SERVER_00` in the list on the left and then on the `SERVER_00` text field to change the name of the server.
-   
+
    ![](./assets/guide/cmconfig2.png)
 
 3. Click on the track preview image of Imola and change the track to Shutoko Revival Project - Main Layout.
-   
+
    ![](./assets/guide/cmconfig3.png)
 
 4. Click on the `Admin password` field and enter a password that is at least 8 characters long.
@@ -116,7 +118,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    - Move the `Allowed tyres out` slider to the left into the `Any` position.
 
    We will be using the following settings:
-   
+
    ![](./assets/guide/cmconfig5.png)
 
 9. Open the `CONDITIONS` tab and configure the page how you see fit.  
@@ -127,7 +129,7 @@ For now, we will be using the minimum amount of cars needed for the default traf
    - Enable and set the Time/Date/Time multiplier that you want.
 
    We will be using the following settings:
-   
+
    ![](./assets/guide/cmconfig6.png)
 
 10. Open the `SESSIONS` tab and configure it as follows:
@@ -141,14 +143,14 @@ For now, we will be using the minimum amount of cars needed for the default traf
    ![](./assets/guide/cmconfig7.png)
 
 11. At the bottom of the preset, click on `Save`.  
-    
+
     ![](./assets/guide/cmconfig8.png)
 
 ### Selecting where to run the server {#where-to-run}
 
 You can run the server in two ways: inside Content Manager or from a dedicated folder.  
-Running it inside Content Manager is the quickest way to get started, while using a dedicated folder offers better portability and flexibility for advanced setups.  
-Also, keep in mind that not all features of the original server are supported yet, so some of the server settings in CM will either have no effect or the features will just not work.
+Running it inside Content Manager is the quickest way to get started, while using a dedicated folder offers better portability and more flexibility for advanced setups.  
+Also, keep in mind that not all features of the original server are supported, so some of the settings shown in CM will not work as expected.
 
 <Tabs groupId="install-method" >
   <TabItem value="folder" label="Dedicated Folder">
@@ -162,7 +164,7 @@ Now that we're done configuring the server, we can use the packing feature to ex
 2. Select `Windows` as the target and uncheck `Include executable` and `Pack into single exe-file`.
 
 3. Click on `Pack` and save it.  
-   
+
    ![](./assets/guide/cmpacking1.png)
 
 #### Extracting AssettoServer and the packed preset {#server-extraction}
@@ -170,13 +172,13 @@ Now that we're done configuring the server, we can use the packing feature to ex
 You should now have the following .zip files somewhere:
 
 - `assetto-server-win-x64.zip`
-- The server preset we just packed, called something like `Tutorial Server!-X-XXXXXXXX-XXXXXX.zip`
+- The server preset we just packed, called something like `<PresetName>!-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract the content of both .zip files into it.  
 ![](./assets/guide/extract2.png)
 
 :::caution
-You should **NOT** have a folder named `Tutorial Server!-X-XXXXXXXX-XXXXXX` in your server folder.  
+You should **NOT** have a folder named `<PresetName>!-X-XXXXXXXX-XXXXXX` in your server folder.  
 If you do, move the folders inside of it into the main folder.  
 
 Your server folder should look like this:  
@@ -191,9 +193,9 @@ Your server folder should look like this:
 Navigate to the `\server` folder inside your Assetto Corsa installation.  
 By default, this folder is located in `C:\Steam\steamapps\common\assettocorsa\server`.
 
-1. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
+2. Extract `assetto-server-win-x64.zip` into the `C:\Steam\steamapps\common\assettocorsa\server folder so that the `AssettoServer.exe` is in the same folder as `acServer.exe`.
 
-2. Extract `assetto-server-win-x64.zip` into this directory
+1. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
 
 3. Rename `AssettoServer.exe` to `acServer.exe`
 
@@ -206,7 +208,6 @@ By default, this folder is located in `C:\Steam\steamapps\common\assettocorsa\se
   <TabItem value="folder" label="Dedicated Folder">
 
 Start the server by double-clicking `AssettoServer.exe`.
-
 
   </TabItem>
   <TabItem value="cm" label="Inside Content Manager">
@@ -281,7 +282,7 @@ After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you s
 </Tabs>
 
 
-2. Open the `extra_cfg.yml` using a text editor of your choice and set `EnableAi: true`.   
+2. Open the `extra_cfg.yml` using a text editor of your choice and set `EnableAi: true`.
 
    ```yaml title="extra_cfg.yml"
    # Enable AI traffic
@@ -336,12 +337,13 @@ After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you s
    This will make the session infinitely long without resetting the session and sending everyone to pits when the 2 hours are up.  
    Keep in mind that Content Manager and apps will show a `time left`, which is normal and doesn't mean that it's not working.
 
-5. After saving and closing the file, navigate to the content folder of the track, which is `\content\tracks\shuto_revival_project_beta`. Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
-   
-   ![](./assets/guide/asconfig2.png)
-
 <Tabs groupId="install-method" className="hidden-tab-labels">
   <TabItem value="folder" label="Dedicated Folder">
+
+5. After saving and closing the file, navigate to the content folder of the track, which is `\<ServerName>\content\tracks\shuto_revival_project_beta`.  
+  Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
+
+   ![](./assets/guide/asconfig2.png)
 
 6. Now go back into the main folder of the server and launch `AssettoServer.exe` again.  
    Then open Content Manager and go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
@@ -349,6 +351,11 @@ After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you s
 
   </TabItem>
   <TabItem value="cm" label="Inside Content Manager">
+
+5. After saving and closing the file, navigate to the content folder of the track, which is `\<ServerName>\content\tracks\shuto_revival_project_beta`.  
+  Create a new folder called `ai` and place the `fast_lane.aip` we downloaded earlier inside of it.
+
+   ![](./assets/guide/asconfig2.png)
 
 6. Now go back to the preset and click on the `Run` button again.  
    Then go to the `Drive` tab, select the `Online` tab and then the `LAN` tab.  
@@ -362,7 +369,7 @@ After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you s
 7. Select the RUF, click `Join` and drive out of the pits to start spawning AI traffic.
 
 8. Other people will also be able to join the server by searching for it or via the invite link that you can copy from the server log.
-   
+
    :::caution
    Do not click on the `Invite` button to copy the invite link, it will copy your local IP which will only work on your local network.  
    Use the invite link that is generated in the terminal instead.
@@ -375,7 +382,7 @@ After allowing AssettoServer to launch, open the `LOGS` tab of the preset, you s
 <Tabs groupId="install-method">
   <TabItem value="folder" label="Dedicated Folder">
 
-We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date without having to pack and extract again?  
+We selected time and date settings during the preconfiguration, but what if we wanted to change the time/time multiplier/date without having to pack and extract again?
 
 1. Navigate to the `cfg` folder of the server and open the `server_cfg.ini` with a text editor of your choice.
 
@@ -503,7 +510,7 @@ AssettoServer requires CSP version 0.1.77 (1937) by default.
 To change this, edit `MinimumCSPVersion: 1937` in the `extra_cfg.yml`.  
 If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).
 
-Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini`.  
+Navigate to the `cfg` folder of the server and create a file called `csp_extra_options.ini` and paste the CSP Extra Options that you want to use.
 
   </TabItem>
   <TabItem value="cm" label="Inside Content Manager">
@@ -513,7 +520,8 @@ To change this, enable `Require CSP to join` in the `Main` tab of the preset, th
 ![](./assets/guide/asconfig4-2.png)
 
 If you want to require a different CSP version and don't know how where to get the ID from, read this [FAQ section](./faq.md#requiring-csp-version).  
-If you want to disable the requirement, make sure `Require CSP to join` is disabled, then click on the `Folder` button and open the `extra_cfg.yml` to remove the default version:
+
+To disable the requirement, make sure `Require CSP to join` is disabled, then click on the `Folder` button and open the `extra_cfg.yml` to remove the default version:
    ```yaml title="extra_cfg.yml"
    # Override minimum CSP version required to join this server. Leave this empty to not require CSP.
    MinimumCSPVersion: 
@@ -593,8 +601,9 @@ For teleportation and color changing there are additional steps:
    You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
 4. Save and close the file and restart the server. Now you will be able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
-   
+
    ![](./assets/guide/cspextras1.png)
+
   </TabItem>
   <TabItem value="cm" label="Inside Content Manager">
 
@@ -604,9 +613,7 @@ For teleportation and color changing there are additional steps:
 
    ![](./assets/Il4RrjG.png)
 
-3. Now we are ready to add CSP Extra Options to the `Extra Options`.
-
-   So, with color changing and teleportation the pop up will look like this:
+3. So, with color changing and teleportation the pop up will look like this:
 
    ```ini title="Extra Options"
    [EXTRA_RULES]
@@ -629,7 +636,7 @@ For teleportation and color changing there are additional steps:
    You can find the teleports used on the Official Shutoko Revival Projects servers in this [FAQ Section](./faq.md#srp-teleports)
 
 4. Close the popup, click `Save` and `Restart` on your preset. Now you will be able to teleport / change your car color via the lightbulb in the chat app and will have traffic that is randomly colored.  
-   
+
    ![](./assets/guide/cspextras1.png)
   </TabItem>
 </Tabs>
@@ -649,12 +656,12 @@ When editing plugin configurations, be careful to keep the formating intact. The
 <Tabs groupId="install-method">
   <TabItem value="folder" label="Dedicated Folder">
 
-{/*EMPTY SECTION*/}
+{/*EMPTY VISIBLE TAB TO CONTROL BOTH PLUGIN SECTIONS*/}
 
   </TabItem>
   <TabItem value="cm" label="Inside Content Manager">
 
-{/*EMPTY SECTION*/}
+{/*EMPTY VISIBLE TAB TO CONTROL BOTH PLUGIN SECTIONS*/}
 
   </TabItem>
 </Tabs>
@@ -675,7 +682,7 @@ When editing plugin configurations, be careful to keep the formating intact. The
 </Tabs>
 
 
-2. Find `EnablePlugins:` and enable the plugin like so:
+2. Find `EnablePlugins:` and enable the plugin:
    ```yaml title="extra_cfg.yml"
    # List of plugins to enable
    EnablePlugins:
@@ -688,7 +695,7 @@ When editing plugin configurations, be careful to keep the formating intact. The
    Set `Enabled: true` for the features you want and save the file, it should look something like this: 
    ```yml title="plugin_auto_moderation_cfg.yml"
    # yaml-language-server: $schema=schemas\plugin_auto_moderation_cfg.schema.json
-   
+
    # Kick players that are AFK
    AfkPenalty:
      # Set to true to enable
@@ -950,9 +957,9 @@ Posting your problem in #bug-reports or #general will ususally result in the mes
    Screenshots of files can leave out important information and are generally harder to read.  
    If you just want to copy a few lines, use Discord's markdown feature to put it into a codeblock for easier readablitiy.  
    This can be done by surrounding it with ` ``` ` like this: ` ```Text``` `
-   
+
    Some example messages that are easy to read:
-   
+
    ![](./assets/guide/askforhelp2.png)
-   
+
    ![](./assets/guide/askforhelp3.png)
