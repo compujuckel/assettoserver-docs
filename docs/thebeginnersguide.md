@@ -172,13 +172,13 @@ Now that we're done configuring the server, we can use the packing feature to ex
 You should now have the following .zip files somewhere:
 
 - `assetto-server-win-x64.zip`
-- The server preset we just packed, called something like `<PresetName>!-X-XXXXXXXX-XXXXXX.zip`
+- The server preset we just packed, called something like `<PresetName>-X-XXXXXXXX-XXXXXX.zip`
 
 Create a new folder and extract the content of both .zip files into it.  
 ![](./assets/guide/extract2.png)
 
 :::caution
-You should **NOT** have a folder named `<PresetName>!-X-XXXXXXXX-XXXXXX` in your server folder.  
+You should **NOT** have a folder named `<PresetName>-X-XXXXXXXX-XXXXXX` in your server folder.  
 If you do, move the folders inside of it into the main folder.  
 
 Your server folder should look like this:  
