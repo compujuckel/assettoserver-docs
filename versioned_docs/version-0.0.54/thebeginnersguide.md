@@ -492,7 +492,7 @@ If you feel like you don't need a step-by-step explanation, read over the [FAQ s
 
     ![](./assets/guide/21.png)
 
-3. Go back into the `cfg` folder and open the `server_cfg.ini` the `TRACK=` parameter line as follows:  
+3. Go back into the `cfg` folder, open the `server_cfg.ini` and edit the `TRACK=` parameter line as follows:  
     `TRACK=csp/<CSPversionID>/../<trackname>`, in this case `TRACK=csp/2144/../shuto_revival_project_beta`.
 
     The version ID `2144` will mean that in order to join the server, players will need to have **at least** CSP version 1.79 installed.  
