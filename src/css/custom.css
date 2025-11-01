@@ -69,3 +69,8 @@ div {
   height: 24px;
   width: 24px;
 }
+
+/* Hide the tab labels for the tabs that have the class "hidden-tab-labels", used in The Beginner's Guide */
+.tabs.hidden-tab-labels {
+  display: none !important;
+}
