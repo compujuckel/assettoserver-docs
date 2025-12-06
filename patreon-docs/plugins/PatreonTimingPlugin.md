@@ -126,4 +126,68 @@ Stages:
         Forward:  { X: -4759.22, Y: 23.86, Z: -5843.29 }
       - Position: { X: -786.26,  Y: 31.85, Z: -7138.52 }
         Forward:  { X: -783.98,  Y: 31.77, Z: -7139.99 }
+  - Name: Bayshore Southbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: 2198.53,  Y: -4.26, Z: -2316.08 }
+        Forward:  { X: 2194.01,  Y: -4.5,  Z: -2312.07 }
+      - Position: { X: 1709.28,  Y: -1.21, Z: 3316.72  }
+        Forward:  { X: 1721.17,  Y: -1.75, Z: 3323.7   }
+      - Position: { X: 3831.48,  Y: -8.88, Z: 8857.27  }
+        Forward:  { X: 3822.56,  Y: -9.1,  Z: 8863.96  }
+      - Position: { X: -6997.31, Y: 47.26, Z: 15726.07 }
+        Forward:  { X: -6999.81, Y: 47.12, Z: 15731.5  }
+  - Name: Bayshore Northbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: -5376.32, Y: 38,     Z: 13623.5  }
+        Forward:  { X: -5370.39, Y: 38.02,  Z: 13620.5  }
+      - Position: { X: 3821.08,  Y: -8.84,  Z: 8841.8   }
+        Forward:  { X: 3832.02,  Y: -16.52, Z: 8832.65  }
+      - Position: { X: 1700.95,  Y: -1.16,  Z: 3329.1   }
+        Forward:  { X: 1695.08,  Y: -0.896, Z: 3325.75  }
+      - Position: { X: 2190.43,  Y: -4.18,  Z: -2328.53 }
+        Forward:  { X: 2192.97,  Y: -4.04,  Z: -2330.82 }
+      - Position: { X: 5479.73,  Y: 12,     Z: -4506.1  }
+        Forward:  { X: 5483.61,  Y: 11.98,  Z: -4507.9  }
+  - Name: Yokohane Southbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: 1047.68,  Y: 12.82, Z: -4985.14 }
+        Forward:  { X: 1046.48,  Y: 12.82, Z: -4982.37 }
+      - Position: { X: -295.96,  Y: 5.84,  Z: 1275.45  }
+        Forward:  { X: -293.55,  Y: 5.84,  Z: 1277.5   }
+      - Position: { X: -336.48,  Y: 12.3,  Z: 6281.81  }
+        Forward:  { X: -336.29,  Y: 12.17, Z: 6287.25  }
+      - Position: { X: -6025.48, Y: 12.82, Z: 10729.98 }
+        Forward:  { X: -6029.04, Y: 12.83, Z: 10731.43 }
+  - Name: Yokohane Northbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: -6028.78, Y: 12.82, Z: 10721.99 }
+        Forward:  { X: -6026.21, Y: 12.81, Z: 10720.99 }
+      - Position: { X: -348.85,  Y: 15.05, Z: 6150.45  }
+        Forward:  { X: -348.88,  Y: 15.06, Z: 6146.78  }
+      - Position: { X: -303.18,  Y: 5.84,  Z: 1283.01  }
+        Forward:  { X: -305.91,  Y: 5.84,  Z: 1280.69  }
+      - Position: { X: 1040.31,  Y: 12.83, Z: -4988.62 }
+        Forward:  { X: 1041.19,  Y: 12.83, Z: -4990.9  }
+  - Name: Yaesu Northbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: 1455.74, Y: 10.18, Z: -6733.75 }
+        Forward:  { X: 1461.19, Y: 10,    Z: -6742.06 }
+      - Position: { X: 1817.45, Y: 12.79, Z: -8221.92 }
+        Forward:  { X: 1820.93, Y: 12.87, Z: -8228.57 }
+      - Position: { X: 2663.91, Y: -1.54, Z: -8494.79 }
+        Forward:  { X: 2665.11, Y: -1.54, Z: -8497.18 }
+  - Name: Yaesu Southbound
+    ClosedLoop: false
+    Checkpoints:
+      - Position: { X: 2493.15, Y: 12.93, Z: -8155.47 }
+        Forward:  { X: 2486.98, Y: 11.46, Z: -8145.67 }
+      - Position: { X: 1817.75, Y: 12.8,  Z: -8222.51 }
+        Forward:  { X: 1815.6,  Y: 12.74, Z: -8218.15 }
+      - Position: { X: 1383.24, Y: 9.53,  Z: -6577.58 }
+        Forward:  { X: 1382.28, Y: 9.52,  Z: -6576.13 }
 ```

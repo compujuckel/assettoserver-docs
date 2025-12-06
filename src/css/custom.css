@@ -70,7 +70,14 @@ div {
   width: 24px;
 }
 
-/* Hide the tab labels for the tabs that have the class "hidden-tab-labels", used in The Beginner's Guide */
+/* Hides labels for tabs with class "hidden-tab-labels", used in The Beginner's Guide */
 .tabs.hidden-tab-labels {
   display: none !important;
+}
+
+/* Makes version notice caution banner sticky when scrolling */
+.theme-doc-version-banner {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+  z-index: var(--ifm-z-index-fixed);
 }
