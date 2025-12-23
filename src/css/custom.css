@@ -79,5 +79,5 @@ div {
 .theme-doc-version-banner {
   position: sticky;
   top: calc(var(--ifm-navbar-height) + 1rem);
-  z-index: var(--ifm-z-index-fixed);
+  z-index: calc(var(--ifm-z-index-fixed) - 1);
 }
