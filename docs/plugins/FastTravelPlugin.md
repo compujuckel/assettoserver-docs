@@ -16,7 +16,7 @@ Forced minimum CSP version of 0.2.8 (3424), `EnableClientMessages: true` and `En
 ## Features
 * Allows players to teleport anywhere on the track.
 * Supports CSP teleportation points (configured in `csp_extra_options.ini`)
-* Disables collisions for a while after teleporting to reduce the grief potential.
+* Disables collisions for a while after teleporting to reduce the griefing potential.
 
 ## Configuration
 Enable the plugin in `extra_cfg.yml`
@@ -46,9 +46,6 @@ MapMoveSpeeds:
 - 5
 - 20
 - 0
-# Show the map.png of the track layout when in the last zoom level.
-# Don't change if using Shutoko Revival Project
-ShowMapImage: true
 # Last zoom level has a fixed position, the track should be aligned to the center of the screen.
 # If map image is shown, prioritize aligning the track with the map image.
 # Don't change the values if using Shutoko Revival Project
@@ -57,8 +54,11 @@ MapFixedTargetPosition:
 - 0
 - 3200
 # Requires CSP version 0.2.8 (3424) which fixed disabling collisions online. 
-# Setting this to false will lower the version requirement to 0.2.0 (2651) but clients on versions below 0.2.3-preview211 will not have disabled collisions
-RequireCollisionDisable: true
+# Setting this to false will lower the version requirement to 0.2.0 (2651) and clients will not have disabled collisions when teleporting.
+DisableCollisions: true
+# Show the map.png of the track layout when in the last zoom level.
+# Don't change if using Shutoko Revival Project
+ShowMapImage: true
 ```
 
 </TabItem>
@@ -81,9 +81,6 @@ MapMoveSpeeds:
 - 2
 - 3
 - 0
-# Show the map.png of the track layout when in the last zoom level.
-# Don't change if using Shutoko Revival Project
-ShowMapImage: false
 # Last zoom level has a fixed position, the track should be aligned to the center of the screen.
 # If map image is shown, prioritize aligning the track with the map image.
 # Don't change the values if using Shutoko Revival Project
@@ -92,8 +89,11 @@ MapFixedTargetPosition:
 - 0
 - 0
 # Requires CSP version 0.2.8 (3424) which fixed disabling collisions online. 
-# Setting this to false will lower the version requirement to 0.2.0 (2651) but clients on versions below 0.2.3-preview211 will not have disabled collisions
-RequireCollisionDisable: true
+# Setting this to false will lower the version requirement to 0.2.0 (2651) and clients will not have disabled collisions when teleporting.
+DisableCollisions: true
+# Show the map.png of the track layout when in the last zoom level.
+# Don't change if using Shutoko Revival Project
+ShowMapImage: false
 ```
 
 </TabItem>
@@ -485,3 +485,19 @@ POINT_61_GROUP = Yaesu
 </details>
 
 If the whole group inheritance of types sounds too complicated for you, simply add the type to each point.
+
+## Admin Debug Tool
+
+:::note
+
+Make sure you have admin options enabled in your CSP chat app settings.  
+Open the chat app > Click on the wheelcog > under `Administrating` > Check `Enable admin options`  
+Then click on the Hammer icon to login.  
+
+:::
+
+When logged in as admin, you can use the FastTravelDebug extra option to manage map image position, zoom and speed level.  
+Simply click on the lightbulb icon in the chat app and select `FastTravelDebug...`  
+Keep in mind that changes made are not visible to other players until you apply them to the `plugin_fast_travel_cfg.yml` and restart the server.
+
+![](../assets/X8fZvHn.png)
