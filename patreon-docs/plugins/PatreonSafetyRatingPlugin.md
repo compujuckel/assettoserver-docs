@@ -37,7 +37,7 @@ Example configuration
 # Only allow admins to view safety ratings
 AdminOnly: false
 # Change driver chat name colors based on safety rating rank
-EnableChatColors: true
+EnableChatColors: false
 ```
 
 ## Hub configuration

@@ -10,7 +10,7 @@ Extended with a simple TXR-like UI and leaderboard with Elo rating.
 
 PatreonHubPlugin is required for the leaderboard to work.
 
-Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required!
+Forced minimum CSP version of 0.1.77 (1937), `EnableClientMessages: true` and `EnableUdpClientMessages: true` in `extra_cfg.yml` required!
 
 Do not use RaceChallengePlugin and PatreonRaceChallengePlugin at the same time!
 

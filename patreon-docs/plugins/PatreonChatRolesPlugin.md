@@ -4,6 +4,12 @@ description: Change chat colors, nametag color and add name pre-/postfixes for p
 
 # PatreonChatRolesPlugin
 
+:::tip
+
+If your community uses a Discord server, check out the [PatreonSocialPlugin](./PatreonSocialPlugin.md) instead!
+
+:::
+
 :::note
 
 Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required!

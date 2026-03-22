@@ -33,7 +33,7 @@ TooSlowTimeoutSeconds: 3
 OvertakeDistanceMeters: 7
 # Maximum distance for a close overtake (x3 score multiplier)
 CloseOvertakeDistanceMeters: 4
-# Define wether the overtake UI is enabled by default (it can always be enabled/disabled via the light bulb in chat) 
+# Define whether the overtake UI is enabled by default (it can always be enabled/disabled via the light bulb in chat) 
 EnableUIByDefault: true
 # List of random messages to show on collision
 CollisionMessages:

@@ -31,6 +31,12 @@ Aggregated over all players (50th/75th/95th/99th percentile)
 * FPS
 * CPU occupancy
 * Frame time
+* CPU time
+* GPU time
+* Scene Triangles
+* Draw Calls
+* Lights
+* Extra Shadows
 
 ## Server Metrics
 For each car:
@@ -47,7 +53,7 @@ Example configuration (add to bottom of `extra_cfg.yml`)
 ```yaml title="plugin_patreon_analytics_cfg.yml"
 # Enable collection of client metrics
 EnableClientMetrics: true
-# Update interval for client metrics (FPS, CPU occupancy)
+# Update interval for client metrics (FPS, CPU occupancy, etc.)
 ClientMetricsUpdateIntervalSeconds: 10
 # Update interval for server metrics
 ServerMetricsUpdateIntervalSeconds: 10

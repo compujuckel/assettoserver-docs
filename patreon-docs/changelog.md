@@ -3,6 +3,30 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.40
+
+#### PatreonSocialPlugin (new!)
+This plugin can show Discord or Steam profile information, roles, leaderboard ranks and more.
+
+#### PatreonOvertakePlugin
+* Fix `TooSlowTimeoutSeconds` parameter not working
+
+#### PatreonTimingPlugin
+* Add CSP version to lap times
+
+#### PatreonRaceChallengePlugin
+* Completely revamped UI
+* It is now possible to spectate races of other drivers
+
+#### PatreonAnalyticsPlugin
+* Add more metrics: CPU/GPU time, no. of triangles/draw calls/lights/extra shadows
+
+#### PatreonSafetyRatingPlugin
+* New option `ShowNumericRatings`
+
+#### PatreonSpeedtrapPlugin
+* Fix overexposure of images with newer CSP/Pure versions
+
 ### v0.0.39
 
 All plugins now support ARM64 architecture.
@@ -117,6 +141,14 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 :::
 
 ## AssettoServer Hub
+
+### v0.0.9
+* Support for RCON via Discord `/rcon` command
+* Fix timing user groups not always calculated correctly
+* Add timing points user groups
+* Add user group for linked Discord accounts
+* Add race challenge user groups
+* Add tyre filter to timing leaderboards
 
 ### v0.0.8
 
