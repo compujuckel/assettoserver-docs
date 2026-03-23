@@ -1,0 +1,10 @@
+# List of weather types that can't be voted on
+BlacklistedWeathers: []
+# Number of choices players can choose from at each voting interval
+NumChoices: 3
+# How often a vote takes place
+VotingIntervalMinutes: 10
+# How long the vote stays open
+VotingDurationSeconds: 30
+# Should the weather be kept when no vote has been counted
+KeepWeatherOnNoVotes: false

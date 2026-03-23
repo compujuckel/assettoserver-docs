@@ -1,0 +1,21 @@
+# Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
+LeaderboardName: "Default"
+# Minimum speed required for an overtake run to start
+MinimumSpeedKph: 80
+# Number of seconds a player can drive below the minimum speed before the run ends
+TooSlowTimeoutSeconds: 3
+# Maximum distance to another for an overtake to count
+OvertakeDistanceMeters: 7
+# Maximum distance for a close overtake (x3 score multiplier)
+CloseOvertakeDistanceMeters: 4
+# Define whether the overtake UI is enabled by default (it can always be enabled/disabled via the light bulb in chat)
+EnableUIByDefault: false
+# List of random messages to show on collision
+CollisionMessages:
+- "Collision!"
+# List of random messages to show on overtake
+OvertakeMessages:
+- "Overtake"
+# List of random messages to show on close overtake
+CloseOvertakeMessages:
+- "Close Overtake!"

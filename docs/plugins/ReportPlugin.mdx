@@ -1,0 +1,26 @@
+---
+description: Let players submit replays for review by server moderators
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_report_cfg.reference.yml";
+
+# ReportPlugin
+Plugin to let players submit replays for review by server moderators.
+
+It works like this:
+* Player sends a replay clip to the server by pressing Ctrl+Shift+S (CSP 0.1.76+ required)
+  * Replay is saved on the server in the folder `reports/`, along with a json file containing a list of connected players and events
+* Player uses the `/report <reason>` command to specify a reason for the report
+  * Discord message is sent to a specified webhook, containing the replay and json file as an attachment
+* Moderators can review the replay and take appropriate action
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- ReportPlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_report_cfg.yml">{cfg}</CodeBlock>

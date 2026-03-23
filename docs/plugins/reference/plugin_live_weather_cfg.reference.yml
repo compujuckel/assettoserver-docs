@@ -1,0 +1,4 @@
+# OpenWeatherMap API key
+OpenWeatherMapApiKey: 
+# How often the weather is updated
+UpdateIntervalMinutes: 10

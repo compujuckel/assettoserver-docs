@@ -5,7 +5,7 @@ description: Explanation of AssettoServer user groups
 
 # User Groups
 AssettoServer handles user permissions via user groups. A user group is usually a text file containing a list of SteamIDs, for example `admins.txt`.  
-By default, three user groups (`default_admins`, `default_blacklist`, `default_whitelist`) are defined and point to `admins.txt`, `blacklist.txt`, `whitelist.txt` respectively. Some plugins such as [ReservedSlotsPlugin](plugins/PatreonReservedSlotsPlugin.md) use their own user groups to manage permissions.
+By default, three user groups (`default_admins`, `default_blacklist`, `default_whitelist`) are defined and point to `admins.txt`, `blacklist.txt`, `whitelist.txt` respectively. Some plugins such as [ReservedSlotsPlugin](../plugins/PatreonReservedSlotsPlugin.md) use their own user groups to manage permissions.
 
 ## Adding local User Groups
 To create a new file-based user group, just add it to `extra_cfg.yml`:
@@ -32,7 +32,7 @@ FileBasedUserGroups:
 ```
 
 ### Game Server Setup
-When specifying a user group, prefix the user group name in `extra_cfg.yml` with a `+`, for example `+my_group`. This will cause the [PatreonHubPlugin](../plugins/PatreonHubPlugin) to load this user group from AssettoServer Hub.
+When specifying a user group, prefix the user group name in `extra_cfg.yml` with a `+`, for example `+my_group`. This will cause the [PatreonHubPlugin](../plugins/PatreonHubPlugin.md) to load this user group from AssettoServer Hub.
 
 ### Examples
 

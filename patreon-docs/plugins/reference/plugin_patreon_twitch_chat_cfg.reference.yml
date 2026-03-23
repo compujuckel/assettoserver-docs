@@ -1,0 +1,10 @@
+# Username of the Twitch account you generated the access token for
+TwitchUsername: 
+# Twitch Access Token
+TwitchAccessToken: 
+# Twitch channel name that should be linked to in-game chat
+Channel: 
+# Set to true if in-game messages should be sent to Twitch chat
+ForwardIngameMessages: false
+# Show raw Twitch messages in server log
+Debug: false

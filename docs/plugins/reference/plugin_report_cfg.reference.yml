@@ -1,0 +1,4 @@
+# Length of replay clips
+ClipDurationSeconds: 60
+# Discord webhook URL to send reports to. Optional, reports will be logged to the server log if you leave this empty
+WebhookUrl: 

@@ -1,0 +1,4 @@
+# URL of the hub. This default should work fine if AssettoServer Hub is running on the same host
+Address: ""
+# Key as specified in configuration.yml of the hub
+Key: ""

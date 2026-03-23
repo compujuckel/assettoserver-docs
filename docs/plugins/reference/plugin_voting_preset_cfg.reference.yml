@@ -1,0 +1,34 @@
+# Reconnect clients instead of kicking when restart is initiated. 
+# It's recommended to set it to false with varying entry lists between the presets
+EnableReconnect: true
+# Enable Preset voting. Set this to false to enable automatic preset cycling
+EnableVote: false
+# Number of choices available to players in a vote
+VoteChoices: 3
+# If set to true, current preset/track will be included in the randomized cycling 
+# and will always be added to a vote as the first choice
+EnableStayOnTrack: false
+# Will preset/track change randomly with equal odds if no vote has been counted
+ChangePresetWithoutVotes: false
+# Whether to skip the comparison of the starting entry list to the presets entry lists.
+SkipEntryListCheck: false
+# Time between votes or automatic preset cycles. 
+# Minimum 5, Default 90
+IntervalMinutes: 60
+# How long a vote stays open. 
+# Minimum 10, Default 300
+VotingDurationSeconds: 300
+# Time between end of vote and restart notification. 
+# Minimum 0, Default 10
+TransitionDelaySeconds: 30
+# Time between restart notification and restart. 
+# Minimum 2, Default 5
+TransitionDurationSeconds: 10
+# Preset specific settings 
+# The cfg/ directory is always ignored for the presets pool.
+Meta:
+  # The name that is displayed when a vote is going on or the preset is changing
+  Name: "SRP"
+  # Set to true too make this preset only available for admins. 
+  # Set to false to add this preset into the preset pool for voting
+  AdminOnly: false

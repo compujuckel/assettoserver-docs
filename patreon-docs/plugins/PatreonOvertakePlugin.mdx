@@ -1,0 +1,33 @@
+---
+description: Gain points by overtaking other cars
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_patreon_overtake_cfg.reference.yml";
+
+# PatreonOvertakePlugin
+
+Plugin for overtake runs with a leaderboard. Players gain points by overtaking other cars without crashing.
+The score multiplier increases by 1 for every overtake and 3 for every close overtake and slowly decreases over time.
+
+:::note
+
+PatreonHubPlugin is required for the leaderboard to work.
+
+Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required!
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+  - PatreonOvertakePlugin
+```
+
+### Reference configuration
+<CodeBlock language="yaml" title="plugin_patreon_overtake_cfg.yml">{cfg}</CodeBlock>
+
+## UI Customization
+The overtake lua script is located in `plugins/PatreonOvertakePlugin/lua/overtake.lua`. You can edit this file to change the UI, add logos, etc.  
+Note that the score calculation cannot be changed this way because it happens on the server for security reasons.

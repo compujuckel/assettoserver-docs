@@ -1,0 +1,19 @@
+---
+description: Connect a server to AssettoServer Hub
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_patreon_hub_cfg.reference.yml";
+
+# PatreonHubPlugin
+Connects this server to an AssettoServer Hub instance. Required for leaderboards of other plugins to work.
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+  - PatreonHubPlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_patreon_hub_cfg.yml">{cfg}</CodeBlock>

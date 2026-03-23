@@ -170,6 +170,6 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 :::caution Breaking changes!
 
-Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/index.md#how-to-sync-user-groups-from-the-hub-to-your-game-servers).
+Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/user-groups.md).
 
 :::

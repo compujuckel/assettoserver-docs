@@ -1,0 +1,21 @@
+---
+description: Link in-game chat to the chat of a Twitch channel
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_patreon_twitch_chat_cfg.reference.yml";
+
+# PatreonTwitchChatPlugin
+Plugin to link in-game chat to the chat of a Twitch channel.
+
+A Twitch access token can be obtained [here](https://twitchtokengenerator.com/) (select "Bot Chat Token")
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+  - PatreonTwitchChatPlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_patreon_twitch_chat_cfg.yml">{cfg}</CodeBlock>
