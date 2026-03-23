@@ -193,9 +193,9 @@ Your server folder should look like this:
 Navigate to the `\server` folder inside your Assetto Corsa installation.  
 By default, this folder is located in `C:\Steam\steamapps\common\assettocorsa\server`.
 
-2. Extract `assetto-server-win-x64.zip` into the `C:\Steam\steamapps\common\assettocorsa\server folder so that the `AssettoServer.exe` is in the same folder as `acServer.exe`.
+1. Extract `assetto-server-win-x64.zip` into the `C:\Steam\steamapps\common\assettocorsa\server` folder so that the `AssettoServer.exe` is in the same folder as `acServer.exe`.
 
-1. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
+2. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
 
 3. Rename `AssettoServer.exe` to `acServer.exe`
 
