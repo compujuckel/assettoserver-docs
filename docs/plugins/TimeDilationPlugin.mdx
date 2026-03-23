@@ -1,0 +1,26 @@
+---
+description: Dynamically adjust the time multiplier based on the sun position
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_time_dilation_cfg.reference.yml";
+
+# TimeDilationPlugin
+
+Plugin to dynamically adjust the time multiplier based on the sun position or time of day. It can be used to make time pass faster during daytime and slower during nighttime for example.
+
+:::note
+
+Longitude and latitude of the track are required in the `data_tracks_params.ini`
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- TimeDilationPlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_time_dilation_cfg.yml">{cfg}</CodeBlock>

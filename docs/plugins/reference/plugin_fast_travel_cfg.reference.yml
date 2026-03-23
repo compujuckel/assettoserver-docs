@@ -1,0 +1,37 @@
+# Available zoom levels. Last one should show the full track.
+# If map image is shown, prioritize matching the track to the map image.
+# Don't change the values if using Shutoko Revival Project
+MapZoomValues:
+- 100
+- 200
+- 400
+- 600
+# Mouse move speeds of the respective zoom levels.
+# Last value needs to be zero.
+# Don't change the values if using Shutoko Revival Project
+MapMoveSpeeds:
+- 1
+- 2
+- 3
+- 0
+# Last zoom level has a fixed position, the track should be aligned to the center of the screen.
+# If map image is shown, prioritize aligning the track with the map image.
+# Don't change the values if using Shutoko Revival Project
+MapFixedTargetPosition:
+- 0
+- 0
+- 0
+# Requires CSP version 0.2.8 (3424) which fixed disabling collisions online. 
+# Setting this to false will lower the version requirement to 0.2.0 (2651) and clients will not have disabled collisions when teleporting.
+DisableCollisions: false
+# Show the map.png of the track layout when in the last zoom level.
+# Don't change if using Shutoko Revival Project
+ShowMapImage: false
+# If set to true, points without a type inherit the type of the last explicitly typed point within their group.
+UseGroupInheritance: true
+# How teleport icons should cluster when zoomed out.
+# True (Group mode): Displays only the first point of each type within a group.
+# False (Distance mode): Displays one point of each type based on proximity, ignoring group names.
+UseGroupDrawMode: true
+# The required distance between icons of the same type to prevent them from clustering.
+DistanceModeRange: 100

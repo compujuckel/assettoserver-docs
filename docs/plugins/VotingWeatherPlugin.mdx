@@ -1,0 +1,26 @@
+---
+description: Let players vote for a server weather at a specified interval
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_voting_weather_cfg.reference.yml";
+
+# VotingWeatherPlugin
+Plugin to let players vote for a server weather at a specified interval.
+
+:::note
+
+For smooth weather transitions and rain you need to set `EnableWeatherFx` to `true` in `extra_cfg.yml`.
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- VotingWeatherPlugin
+```
+
+### Reference Configuration
+For a list of weather types that can be used with `BlacklistedWeathers` see [WeatherFX Types](../misc/wfx-types.md)
+<CodeBlock language="yaml" title="plugin_voting_weather_cfg.yml">{cfg}</CodeBlock>

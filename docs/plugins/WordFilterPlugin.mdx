@@ -1,0 +1,22 @@
+---
+description: Suppress certain chat message patterns and disallow players with certain usernames to join
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_word_filter_cfg.reference.yml";
+
+# WordFilterPlugin
+## Features
+* Disallow certain player names
+* Filter chat messages
+* Autoban on certain chat messages
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- WordFilterPlugin
+```
+
+### Reference Configuration
+**All patterns are regular expressions. If you don't know what regular expressions are I'd highly recommend reading about them first.**
+<CodeBlock language="yaml" title="plugin_word_filter_cfg.yml">{cfg}</CodeBlock>

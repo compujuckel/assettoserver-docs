@@ -1,0 +1,26 @@
+---
+description: Tag gamemode
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_tag_mode_cfg.reference.yml";
+
+# TagModePlugin 
+
+:::note
+
+Forced minimum CSP version of 0.1.77 (1937) and `EnableClientMessages: true` in `extra_cfg.yml` required for this plugin!  
+
+Cars in the `entry_list.ini` **cannot** have the CSP extra options `Allow Color Changing` flag in their skin line!
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- TagModePlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_tag_mode_cfg.yml">{cfg}</CodeBlock>

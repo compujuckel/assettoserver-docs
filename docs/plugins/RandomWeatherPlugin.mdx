@@ -1,0 +1,26 @@
+---
+description: Change weather randomly
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_random_weather_cfg.reference.yml";
+
+# RandomWeatherPlugin
+Plugin that changes weather randomly.
+
+:::note
+
+For smooth weather transitions and rain you need to set `EnableWeatherFx` to `true` in `extra_cfg.yml`.
+
+:::
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- RandomWeatherPlugin
+```
+
+### Reference Configuration
+For a list of weather types that can be used with `WeatherWeights` see [WeatherFX Types](../misc/wfx-types.md)
+<CodeBlock language="yaml" title="plugin_random_weather_cfg.yml">{cfg}</CodeBlock>

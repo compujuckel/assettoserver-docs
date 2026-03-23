@@ -1,0 +1,6 @@
+# Only allow admins to view safety ratings
+AdminOnly: false
+# Change driver chat name colors based on safety rating rank
+EnableChatColors: false
+# When set to false, players will only see their ranks, but not the underlying numeric ratings
+ShowNumericRatings: true

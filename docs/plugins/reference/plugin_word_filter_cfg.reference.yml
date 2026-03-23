@@ -1,0 +1,14 @@
+# Username patterns it won't be possible to join with
+ProhibitedUsernamePatterns:
+- "^Player$"
+- "^RLD!$"
+- "^Traffic \\d+"
+# Chat message patterns that will not be broadcasted to other players
+ProhibitedChatPatterns:
+- "^DRIFT-STRUCTION POINTS:"
+- "^ACP: App not active$"
+- "^D&O Racing APP:"
+# Chat message patterns that will automatically ban the player on sending them
+BannableChatPatterns:
+- "nicecar"
+- "fallout"

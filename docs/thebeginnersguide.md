@@ -645,7 +645,7 @@ For teleportation and color changing there are additional steps:
 ### AssettoServer Plugins {#enabling-plugins}
 
 AssettoServer comes with a few free to use plugins, we'll look at how to enable and configure two:  
-The [AutoModerationPlugin](./plugins/AutoModerationPlugin.md) and the [RandomWeatherPlugin](./plugins/RandomWeatherPlugin.md).  
+The [AutoModerationPlugin](./plugins/AutoModerationPlugin.mdx) and the [RandomWeatherPlugin](./plugins/RandomWeatherPlugin.mdx).  
 You can add as many or as few as you want, just make sure to carefully read the [documentation pages](./category/plugins) as some plugins might require certain things or won't work together.  
 You can enabled and configured several plugins at once to cut down on the number of times you need to restart the server.  
 However setting them up one by one like we will, makes it easier to find issues if something goes wrong.  

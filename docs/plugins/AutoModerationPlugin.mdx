@@ -1,0 +1,33 @@
+---
+description: Automatically kick players when they violate rules
+---
+
+import CodeBlock from '@theme/CodeBlock';
+import cfg from "!!raw-loader!./reference/plugin_auto_moderation_cfg.reference.yml";
+
+# AutoModerationPlugin
+
+Plugin to automatically kick players when they violate rules:
+* Driving without lights during the night
+* Driving the wrong way
+* Blocking the road
+
+:::note
+Admins are exempt from these rules and will not see flags or get kicked.
+:::
+
+When `EnableClientMessages` is enabled, wrong way / no parking / no lights signs will be shown to the player.  
+Included in the `Flags` folder are Japanese-style signs. You can replace these with custom signs.
+## Demo
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FojgcDgF-Iw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Configuration
+Enable the plugin in `extra_cfg.yml`
+```yaml title="extra_cfg.yml"
+EnablePlugins:
+- AutoModerationPlugin
+```
+
+### Reference Configuration
+<CodeBlock language="yaml" title="plugin_auto_moderation_cfg.yml">{cfg}</CodeBlock>

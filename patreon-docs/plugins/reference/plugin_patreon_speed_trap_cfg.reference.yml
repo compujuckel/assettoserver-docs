@@ -1,0 +1,44 @@
+# This number will be added to the picture ID. It can be used to identify different servers by their ID
+NumberOffset: 0
+# Enable evidence picture processing
+EnablePictures: true
+# Enable image overlay to make it look like a real Japanese speed trap image
+EnableOverlay: true
+# Convert image to grayscale
+Grayscale: true
+# Allow players to disable picture upload. Can be helpful for people with a slow internet connection
+AllowDisablingPictureUpload: true
+# Enable debug app for cameras
+Debug: false
+DiscordWebhook:
+  # Discord webhook URL for evidence pictures
+  Url: "https://discord.com/api/webhooks/..."
+  # Avatar URL of the bot
+  PictureUrl: ""
+  # Username of the bot
+  Username: "Speed Trap"
+  # Template for the message in Scriban format.
+  # Possible variables: SpeedTrapId, Counter, Name, Speed, AllowedSpeed, Lane
+  MessageTemplate: "Speed Trap　{{ SpeedTrapId | math.format \"000\" }}・{{ Counter | math.format \"000\" }}\r\nDriver　{{ Name }}"
+# Define custom speed traps here if you are not using SRP
+CustomSpeedTraps:
+- # ID of speed trap
+  Id: 1
+  # Position of detection line
+  Position: {X: -192.78, Y: -82.89, Z: -426.28}
+  # Forward vector of detection line
+  Forward: {X: -195.07, Y: -82.9, Z: -425.97}
+  # Radius around detection point
+  RadiusMeters: 10
+  # Camera position
+  CameraPosition: {X: -202.15, Y: -76.31, Z: -424.98}
+  # Direction of camera
+  CameraLook: {X: 0.81, Y: -0.58, Z: -0.05}
+  # Camera FOV
+  CameraFov: 60
+  # Allowed speed, speed trap will not trigger when speed is below this value
+  AllowedSpeedKph: 20
+  # Enable red flash
+  EnableFlash: true
+  # Name of mesh that is turned into a red emissive (optional, when in doubt leave empty)
+  MeshName: 

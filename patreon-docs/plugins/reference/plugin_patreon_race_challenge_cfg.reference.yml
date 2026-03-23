@@ -1,0 +1,18 @@
+# Set to false to disable leaderboard and ratings
+EnableLeaderboard: true
+# Name of leaderboard. Use this if you have multiple servers connected to the hub and want them to have different leaderboards.
+#  For example if you don't want traffic- and non-traffic servers to show on the same leaderboard, just use different
+#  leaderboard names for them.
+LeaderboardName: "Default"
+# Number of points players start with. Increase this to make races last longer
+MaxPoints: 3000
+# If the follower is closer than x meters to the leader, the follower will not lose points
+LeaderNeutralDistanceMeters: 25
+# If the follower is closer than x meters to the leader, the leader will lose points
+LeaderLosesPointsDistanceMeters: 6
+# Minimum amount of points lost on collision
+MinCollisionPenaltyPoints: 30
+# Maximum amount of points lost on collision
+MaxCollisionPenaltyPoints: 600
+# Increase this to make players lose more points on higher speed collisions
+CollisionPenaltyMultiplier: 1

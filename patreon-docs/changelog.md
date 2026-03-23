@@ -3,6 +3,30 @@ title: Changelog
 ---
 ## Patreon Plugins
 
+### v0.0.40
+
+#### PatreonSocialPlugin (new!)
+This plugin can show Discord or Steam profile information, roles, leaderboard ranks and more.
+
+#### PatreonOvertakePlugin
+* Fix `TooSlowTimeoutSeconds` parameter not working
+
+#### PatreonTimingPlugin
+* Add CSP version to lap times
+
+#### PatreonRaceChallengePlugin
+* Completely revamped UI
+* It is now possible to spectate races of other drivers
+
+#### PatreonAnalyticsPlugin
+* Add more metrics: CPU/GPU time, no. of triangles/draw calls/lights/extra shadows
+
+#### PatreonSafetyRatingPlugin
+* New option `ShowNumericRatings`
+
+#### PatreonSpeedtrapPlugin
+* Fix overexposure of images with newer CSP/Pure versions
+
 ### v0.0.39
 
 All plugins now support ARM64 architecture.
@@ -14,7 +38,7 @@ This is a **free plugin** that does some additional checks to make it a bit hard
 Plugin for overtake runs, gain points by overtaking other cars without crashing.
 
 #### PatreonRaceChallengePlugin
-* The Lua server script is no longer baked into the plugin, you can [edit the script](./plugins/PatreonRaceChallengePlugin.md#ui-customization) to change the UI to your liking.
+* The Lua server script is no longer baked into the plugin, you can [edit the script](./plugins/PatreonRaceChallengePlugin.mdx#ui-customization) to change the UI to your liking.
 
 ### v0.0.38
 
@@ -52,7 +76,7 @@ This plugin allows you to record various metrics about your servers and your pla
 
 :::caution Breaking Changes!
 
-Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
+Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.mdx).
 
 :::
 
@@ -101,7 +125,7 @@ Thanks to **AEGIS | VISUALS** for commissioning this plugin!
 
 #### PatreonSpeedTrapPlugin
 
-* Now works with maps other than SRP, custom speed traps can be defined in the [configuration](./plugins/PatreonSpeedTrapPlugin.md#custom-speed-traps)
+* Now works with maps other than SRP, custom speed traps can be defined in the [configuration](./plugins/PatreonSpeedTrapPlugin.mdx#custom-speed-traps)
 * Overlay and grayscale can be disabled
 * Allow players to disable picture upload, can help with slow internet connections
 
@@ -112,11 +136,19 @@ Thanks to **AEGIS | VISUALS** for commissioning this plugin!
 
 :::caution Breaking Changes!
 
-Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
+Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.mdx).
 
 :::
 
 ## AssettoServer Hub
+
+### v0.0.9
+* Support for RCON via Discord `/rcon` command
+* Fix timing user groups not always calculated correctly
+* Add timing points user groups
+* Add user group for linked Discord accounts
+* Add race challenge user groups
+* Add tyre filter to timing leaderboards
 
 ### v0.0.8
 
@@ -170,6 +202,6 @@ Please review the [documentation](./plugins/PatreonReservedSlotsPlugin.md).
 
 :::caution Breaking changes!
 
-Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/index.md#how-to-sync-user-groups-from-the-hub-to-your-game-servers).
+Synchronizinig blacklist/whitelist to your game servers requires new configuration, please check the [documentation](./assettoserver-hub/user-groups.md).
 
 :::

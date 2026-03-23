@@ -317,7 +317,7 @@ Some features like Teleportation and Color Changing require you to allow cars to
 ### How do I allow driving the wrong way? {#wrong-way}
 
 This is also used to remove the incorrectly displayed wrong way indicator on tracks like Shutoko Revival Project.  
-If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.md)
+If you want to make sure that people drive the correct way after adding this setting, use the [AutoModerationPlugin.](./plugins/AutoModerationPlugin.mdx)
 
 ```ini title="csp_extra_options.ini"
 [EXTRA_RULES]

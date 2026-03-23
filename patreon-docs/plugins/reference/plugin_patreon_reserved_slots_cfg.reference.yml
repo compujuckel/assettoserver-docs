@@ -1,0 +1,18 @@
+# List of entry list slots that are always reserved
+ReservedEntryListSlots:
+- # List of reserved entry list slots (get the number from CAR_? in entry_list.ini)
+  Slots:
+  - 1
+  - 2
+  - 3
+  # Name of user group for these reserved slots
+  UserGroup: "reserved_1"
+- Slots:
+  - 4
+  - 5
+  - 6
+  UserGroup: "reserved_2"
+# Number of dynamic reserved slots. The number of unreserved slots is calculated like this: Total slots - Fixed AI slots - Reserved entry list slots - Dynamic reserved slots
+DynamicReservedSlotsCount: 2
+# Name of user group for dynamic reserved slots
+DynamicReservedSlotsUserGroup: "reserved_3"

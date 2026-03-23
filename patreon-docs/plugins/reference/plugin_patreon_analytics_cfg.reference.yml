@@ -1,0 +1,8 @@
+# Enable collection of client metrics
+EnableClientMetrics: true
+# Update interval for client metrics (FPS, CPU occupancy, etc.)
+ClientMetricsUpdateIntervalSeconds: 10
+# Update interval for server metrics
+ServerMetricsUpdateIntervalSeconds: 10
+# Minimum speed for collisions to be counted to metrics
+MinimumCollisionsSpeedKph: 5
