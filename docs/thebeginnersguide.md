@@ -193,9 +193,9 @@ Your server folder should look like this:
 Navigate to the `\server` folder inside your Assetto Corsa installation.  
 By default, this folder is located in `C:\Steam\steamapps\common\assettocorsa\server`.
 
-2. Extract `assetto-server-win-x64.zip` into the `C:\Steam\steamapps\common\assettocorsa\server folder so that the `AssettoServer.exe` is in the same folder as `acServer.exe`.
+1. Extract `assetto-server-win-x64.zip` into the `C:\Steam\steamapps\common\assettocorsa\server` folder so that the `AssettoServer.exe` is in the same folder as `acServer.exe`.
 
-1. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
+2. Rename `acServer.exe` to something else. (`acServer_default.exe` for example)
 
 3. Rename `AssettoServer.exe` to `acServer.exe`
 
@@ -479,12 +479,6 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    GRAPHICS=sol_03_scattered_clouds_type=8_time=0_mult=0
    ```
 
-   If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
-   ```ini title="csp_extra_options.ini"
-   [EXTRA_RULES] 
-   DISABLE_RAIN_PHYSICS=1
-   ```
-
 4. Save and restart the server to apply the changes.
 
   </TabItem>
@@ -497,6 +491,13 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
 
   </TabItem>
 </Tabs>
+
+If you just want Rain graphics without the physics, add the following to your `csp_extra_options.ini`.  
+
+```ini title="csp_extra_options.ini"
+[EXTRA_RULES] 
+DISABLE_RAIN_PHYSICS=1
+```
 
 ### CSP Extra Server Options {#csp-server-options}
 

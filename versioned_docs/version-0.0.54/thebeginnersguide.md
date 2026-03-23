@@ -451,12 +451,6 @@ Purchase Custom Shaders Patch previews on [x4fabs Patreon](https://www.patreon.c
    GRAPHICS=sol_03_scattered_clouds_type=8
    ```
 
-   If you just want Rain graphics without the physics you can add the following to your `csp_extra_options.ini`
-   ```ini title="csp_extra_options.ini"
-   [EXTRA_RULES] 
-   DISABLE_RAIN_PHYSICS=1
-   ```
-
 4. Save and restart the server to apply the changes.
 
   </TabItem>
@@ -474,6 +468,13 @@ If the drop down next to `WeatherFX` is not showing you all the available weathe
 
   </TabItem>
 </Tabs>
+
+If you just want Rain graphics without the physics, add the following to your `csp_extra_options.ini`.  
+
+```ini title="csp_extra_options.ini"
+[EXTRA_RULES] 
+DISABLE_RAIN_PHYSICS=1
+```
 
 ### CSP Extra Server Options {#csp-server-options}
 
